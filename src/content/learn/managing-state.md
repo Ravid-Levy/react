@@ -11,10 +11,10 @@ title: "ניהול הstate"
 <YouWillLearn isChapter={true}>
 
 * [איך לחשוב על שינויים בממשק משתמש כשינויים בstate](/learn/reacting-to-input-with-state)
-* [איך לבנות מצב טוב](/למד/בחירת-ה-מצב-מבנה)
+* [איך לבנות מצב טוב](/learn/choosing-the-state-structure)
 * [עזרה "להרים את הstate למעלה" כדי לשתף אותו בין רכיבים](/learn/sharing-state-between-components)
 * [כיצד לשלוט אם הstate ישמר או יאופס](/learn/preserving-and-resetting-state)
-* [כיצד לאחד היגיון מצב מורכב בפונקציה](/learn/extracting-state-logic-to-a-reducer)
+* [כיצד לאחד היגיון מצב מורכב בפונקציה](/learn/extracting-state-logic-into-a-reducer)
 * [כיצד להעביר מידע ללא "קידוח props"](/learn/passing-data-deeply-with-context)
 * [כיצד להרחיב את ניהול הstate ככל שהאפליקציה שלך גדלה](/learn/scaling-up-with-reducer-and-context)
 
@@ -1015,4 +1015,3 @@ ul, li { margin: 0; padding: 0; }
 עבור אל [מגיב לקלט עם מצב](/learn/reacting-to-input-with-state) כדי להתחיל לקרוא פרק זה עמוד אחר עמוד!
 
 או, אם אתה כבר מכיר את הנושאים האלה, למה שלא תקרא על [Escape Hatches](/learn/escape-hatches)?
-
