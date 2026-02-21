@@ -1,5 +1,5 @@
 ---
-title: lazy
+title: "עָצֵל"
 ---
 
 <Intro>
@@ -16,11 +16,11 @@ const SomeComponent = lazy(load)
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `lazy(load)` {/*lazy*/}
 
-קראו ל-`lazy` מחוץ לקומפוננטות שלכם כדי להצהיר על קומפוננטת React בטעינה עצלה:
+קראו ל-`lazy` מחוץ לקומפוננטות שלכם כדי להצהיר על קומפונטת React בטעינה עצלה:
 
 ```js
 import { lazy } from 'react';
@@ -28,35 +28,35 @@ import { lazy } from 'react';
 const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `load`: פונקציה שמחזירה [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) או *thenable* אחר (אובייקט דמוי Promise עם מתודת `then`). React לא תקרא ל-`load` עד הפעם הראשונה שבה תנסו לרנדר את הקומפוננטה המוחזרת. אחרי ש-React קוראת ל-`load` בפעם הראשונה, היא תחכה שהפונקציה תיפתר, ואז תרנדר את `.default` של הערך שנפתר כקומפוננטת React. גם ה-Promise המוחזר וגם הערך שנפתר ממנו יישמרו במטמון, כך ש-React לא תקרא ל-`load` יותר מפעם אחת. אם ה-Promise נדחה, React תבצע `throw` לסיבת הדחייה עבור Error Boundary הקרוב כדי שיטפל בה.
+* `load`: פונקציה שמחזירה [הבטחה](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) או *thenable* אחר פונקציה אישית דמוית הבטחה עם מתודת `then`). React לא תקרא ל-`load` עד הפעם הראשונה שבה תנסו לרנדר היא את הקומפוננטה המוחזרת. תיפתר, ואז תרנדר את `.default` של הערך כקומפוננטת React גם ה-Promise המוחזר וגם הערך שנפתר ממנו ישמרו במטמון, כך ש-React לא תקרא ל-`load` יותר מ-TK_5__ יותר מ-TK_5__ יותר מ-TK_5__ יותר מה-TK___12 הבטחה אחת. שגיאה Boundary בקרוב כדי שיטפל בה.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
-`lazy` מחזירה קומפוננטת React שאפשר לרנדר בעץ שלכם. בזמן שקוד הקומפוננטה העצלה עדיין נטען, ניסיון לרנדר אותה יגרום ל-*suspend*. השתמשו ב-[`<Suspense>`](/reference/react/Suspense) כדי להציג אינדיקציית טעינה בזמן שהיא נטענת.
+`lazy` מחזירה קומפונטת React אפשר לרנדר בעץ שלכם. בזמן שקוד הקומפוננטה העצלה עדיין נטען, ניסיון לרנדר אותה יגרום ל-*השעיה*. השתמשו ב-[`<Suspense>`](/reference/react/Suspense) כדי להציג אינדיקציית טעינה בזמן שהיא נטענת.
 
 ---
 
 ### פונקציית `load` {/*load*/}
 
-#### Parameters {/*load-parameters*/}
+#### פרמטרים {/*load-parameters*/}
 
 `load` לא מקבלת פרמטרים.
 
-#### Returns {/*load-returns*/}
+#### מחזירה {/*load-returns*/}
 
-צריך להחזיר [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) או *thenable* אחר (אובייקט דמוי Promise עם מתודת `then`). בסופו של דבר היא צריכה להיפתר לאובייקט שהמאפיין `.default` שלו הוא סוג קומפוננטת React תקין, כמו פונקציה, קומפוננטת [`memo`](/reference/react/memo), או קומפוננטת [`forwardRef`](/reference/react/forwardRef).
+צריך להחזיר [הבטחה](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) או *thenable* אחר (אובייקט דמוי הבטחה עם מתודת `then`). בסופו של דבר היא צריכה להיפתר לאובייקט שהמאפיין `.default` שלו הוא סוג קומפוננטת React תקין, כמו פונקציה, קומפונטת [__/__/TK_2__]Kreference. קומפונטת [`forwardRef`](/reference/react/forwardRef).
 
 ---
 
 ## שימוש {/*usage*/}
 
-### טעינת קומפוננטות בעצלות עם Suspense {/*suspense-for-code-splitting*/}
+### טעינת קומפונטות בעצלות עם Suspense {/*suspense-for-code-splitting*/}
 
-בדרך כלל מייבאים קומפוננטות באמצעות הצהרת [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) סטטית:
+בדרך כלל מייבאים קומפונטות באמצעות הצהרת [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) סטטיסטית:
 
 ```js
 import MarkdownPreview from './MarkdownPreview.js';
@@ -70,9 +70,9 @@ import { lazy } from 'react';
 const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
 ```
 
-הקוד הזה נשען על [`import()` דינמי](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import), שעשוי לדרוש תמיכה מה-bundler או מה-framework שלכם. שימוש בדפוס הזה דורש שהקומפוננטה העצלה שאתם מייבאים יוצאה כ-`default` export.
+הקוד נשען על [`import()` דינמי](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import), שעשוי לדרוש תמיכה מה-bundler או מה-framework שלכם. שימוש בדפוס הזה דורש שהקומפוננטה העצמה שהם מייבאים יוצאים כ-`default` ייצוא.
 
-עכשיו, כשהקוד של הקומפוננטה נטען לפי דרישה, צריך גם לציין מה יוצג בזמן הטעינה. אפשר לעשות זאת על ידי עטיפת הקומפוננטה העצלה או אחד מההורים שלה בתוך גבול [`<Suspense>`](/reference/react/Suspense):
+עכשיו, כשהקוד של הקומפוננטה נטען לפי דרישה, צריך גם לציין מה יוצג בזמן הטעינה. אפשר לעשות זאת על ידי עטיפת הקומפוננת העצלה או אחד מההורים שלה בתוך גבול [`<Suspense>`](/reference/react/Suspense):
 
 ```js {1,4}
 <Suspense fallback={<Loading />}>
@@ -175,7 +175,7 @@ body {
 
 </Sandpack>
 
-הדמו הזה נטען עם השהיה מלאכותית. בפעם הבאה שתבטלו ותסמנו שוב את תיבת הסימון, `Preview` כבר יהיה במטמון, ולכן לא יהיה מצב טעינה. כדי לראות שוב את מצב הטעינה, לחצו על "Reset" ב-sandbox.
+הדמו הזה נטען עם השהיה מלאכותית. בפעם הבאה שתבטלו ותסמנו שוב את תיבת הסימון, `Preview` כבר תהיה במטמון, לא תהיה מצב טעינה. כדי לראות שוב את מצב הטעינה, לחצו על "איפוס" ב-sandbox.
 
 [קראו עוד על ניהול מצבי טעינה עם Suspense.](/reference/react/Suspense)
 
@@ -183,9 +183,9 @@ body {
 
 ## פתרון תקלות {/*troubleshooting*/}
 
-### ה-state של קומפוננטת `lazy` מתאפס באופן לא צפוי {/*my-lazy-components-state-gets-reset-unexpectedly*/}
+### ה-state של קומפונטת `lazy` מתאפס באופן לא צפוי {/*my-lazy-components-state-gets-reset-unexpectedly*/}
 
-אל תצהירו על קומפוננטות `lazy` *בתוך* קומפוננטות אחרות:
+אל תצהירו על קומפונטות `lazy` *בתוך* קומפונטות אחרות:
 
 ```js {4-5}
 import { lazy } from 'react';

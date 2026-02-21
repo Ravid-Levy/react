@@ -1,5 +1,5 @@
 ---
-title: preinit
+title: "preinit"
 canary: true
 ---
 
@@ -11,13 +11,13 @@ canary: true
 
 <Note>
 
-[Frameworks מבוססי React](/learn/start-a-new-react-project) מטפלים לעיתים קרובות בטעינת משאבים בשבילכם, אז ייתכן שלא תצטרכו לקרוא ל-API הזה בעצמכם. לפרטים, עיינו בתיעוד של ה-framework שלכם.
+[Frameworks מבוססי React](/learn/start-a-new-react-project) מטפלים יכולים לעתים קרובות בטעינת משאבים בשבילכם, אז ייתכן שלא תצטרכו לקרוא ל-API הזה בעצמכם. לפרטים, עיינו בתיעוד של ה-framework שלכם.
 
 </Note>
 
 <Intro>
 
-`preinit` מאפשרת להביא מראש ולהעריך stylesheet או סקריפט חיצוני.
+`preinit` מותר להביא מראש ולהעריך גיליון סגנונות או סקריפט חיצוני.
 
 ```js
 preinit("https://example.com/script.js", {as: "style"});
@@ -29,11 +29,11 @@ preinit("https://example.com/script.js", {as: "style"});
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `preinit(href, options)` {/*preinit*/}
 
-כדי לבצע preinit לסקריפט או stylesheet, קראו לפונקציה `preinit` מתוך `react-dom`.
+כדי לבצע התחלה לסקרפט או גיליון סגנונות, קראו לפונקציה `preinit` מתוך `react-dom`.
 
 ```js
 import { preinit } from 'react-dom';
@@ -45,30 +45,30 @@ function AppRoot() {
 
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-הפונקציה `preinit` מספקת לדפדפן רמז שכדאי להתחיל להוריד ולהריץ את המשאב הנתון, מה שיכול לחסוך זמן. סקריפטים שמבצעים להם `preinit` יורצו כשהורדתם תסתיים. Stylesheets שמבצעים להם preinit יוכנסו למסמך וייכנסו לפעולה מיד.
+הפונקציה `preinit` מספקת לדפדפן רמז שכדאי להתחיל להוריד ולהריץ את המשאב הנתון, מה יכול לחסוך זמן. סקריפטים מבצעים להם `preinit` יורצו כשהורדתם תסתיים. גיליונות סגנונות שמבצעים להם מראש יוכנסו למסמך וייכנסו לפעול מיד.
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `href`: מחרוזת. ה-URL של המשאב שברצונכם להוריד ולהריץ.
+* `href`: מחרוזת. ה-URL הורד של המשאב שברצונכם ולהריץ.
 * `options`: אובייקט. כולל את המאפיינים הבאים:
-  *  `as`: מחרוזת חובה. סוג המשאב. הערכים האפשריים: `script` ו-`style`.
-  * `precedence`: מחרוזת. חובה עבור stylesheets. מציינת איפה להכניס את ה-stylesheet ביחס לאחרים. stylesheets עם קדימות גבוהה יותר יכולים לעקוף כאלה עם קדימות נמוכה יותר. הערכים האפשריים: `reset`, `low`, `medium`, `high`.
-  *  `crossOrigin`: מחרוזת. [מדיניות CORS](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) לשימוש. הערכים האפשריים: `anonymous` ו-`use-credentials`. חובה כשהערך של `as` הוא `"fetch"`.
-  *  `integrity`: מחרוזת. hash קריפטוגרפי של המשאב לצורך [אימות אותנטיות](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
-  *  `nonce`: מחרוזת. [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) קריפטוגרפי שמאפשר את המשאב כשמשתמשים ב-Content Security Policy קשוחה.
-  *  `fetchPriority`: מחרוזת. מציעה עדיפות יחסית לטעינת המשאב. הערכים האפשריים: `auto` (ברירת מחדל), `high`, ו-`low`.
+  * `as`: מחרוזת חובה. סוג המשאב. הערכים האפשריים: `script` ו-`style`.
+  * `precedence`: מחרוזת. חובה עבור גיליונות סגנונות. מציינת איפה להכניס את ה-stylesheet לחוות. גיליונות סגנונות עם קדימות גבוהות יותר יכולות לעקוף כאלה עם קדימות נמוכה יותר. הערכים האפשריים: `reset`, `low`, `medium`, `high`.
+  * `crossOrigin`: מחרוזת. [מדיניות CORS](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) שימוש. הערכים האפשריים: `anonymous` ו-`use-credentials`. חובה כשהערך של `as` הוא `"fetch"`.
+  * `integrity`: מחרוזת. hash קריפטוגרפי של המשאב לצורך [תאימות אותנטיות]https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
+  * `nonce`: מחרוזת. [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) קריפטוגרפי שמאפשר את המשאב כשמשתמשים ב-Content Security Policy קשוחה.
+  * `fetchPriority`: מחרוזת. מציעה עדיפות יחסית לטעינת המשאב. הערכים האפשריים: `auto` (ברירת מחדל), `high`, ו-`low`.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `preinit` לא מחזירה דבר.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
 * כמה קריאות ל-`preinit` עם אותו `href` משפיעות כמו קריאה אחת.
-* בדפדפן אפשר לקרוא ל-`preinit` בכל מצב: בזמן רינדור קומפוננטה, בתוך effect, בתוך event handler, וכן הלאה.
-* ברינדור צד שרת או ברינדור Server Components, ל-`preinit` יש השפעה רק אם קוראים לה בזמן רינדור קומפוננטה או בהקשר async שמקורו ברינדור קומפוננטה. קריאות אחרות ייחסמו.
+* בדפדפן אפשר לקרוא ל-`preinit` בכל מצב: בזמן רינדור קומפונטה, בתוך אפקט, בתוך מטפל באירועים, וכן הלאה.
+* ברינדור צד שרת או ברינדור רכיבי שרת, ל-`preinit` יש רק רק אם קוראים לה בזמן רינדור קומפוננטה או בהקשר אסינכרון שמקורו ברינדור קומפוננטה. קריאות אחרות ייחסמו.
 
 ---
 
@@ -76,7 +76,7 @@ function AppRoot() {
 
 ### Preinit בזמן רינדור {/*preiniting-when-rendering*/}
 
-קראו ל-`preinit` בזמן רינדור קומפוננטה אם אתם יודעים שהיא או הילדים שלה ישתמשו במשאב ספציפי, ואם מקובל עליכם שהמשאב יוערך וייכנס לפעולה מיד כשהורדתו מסתיימת.
+קראו ל-`preinit` בזמן רינדור קומפוננטה אם אתם יודעים שהיא או הילדים שלהן ישתמשו במשאב ספציפי, ואם מקובל עליכם שהמשאב יוערך ויכנס לפעול מיד כשהורדתו מסתיימת.
 
 <Recipes titleText="Examples of preiniting">
 
@@ -106,7 +106,7 @@ function AppRoot() {
 }
 ```
 
-האפשרות `precedence`, שהיא חובה, מאפשרת לשלוט בסדר של stylesheets בתוך המסמך. stylesheets עם קדימות גבוהה יותר יכולים לעקוף כאלה עם קדימות נמוכה יותר.
+אפשרות `precedence`, שהיא חובה, יכולה לשלוט בסדר של גיליונות סגנונות בתוך המסמך. גיליונות סגנונות עם קדימות גבוהות יותר יכולות לעקוף כאלה עם קדימות נמוכה יותר.
 
 אם אתם רוצים להוריד את ה-stylesheet אבל לא להכניס אותו למסמך מיד, השתמשו ב-[`preload`](/reference/react-dom/preload) במקום.
 
@@ -114,9 +114,9 @@ function AppRoot() {
 
 </Recipes>
 
-### Preinit בתוך event handler {/*preiniting-in-an-event-handler*/}
+### Preinit בתוך מטפל באירועים {/*preiniting-in-an-event-handler*/}
 
-קראו ל-`preinit` בתוך event handler לפני מעבר לעמוד או מצב שבהם יידרשו משאבים חיצוניים. כך התהליך מתחיל מוקדם יותר לעומת קריאה בזמן רינדור העמוד או המצב החדש.
+קראו ל-`preinit` בתוך מטפל באירועים לפני מעבר או מצב יידרשו משאבים חיצוניים. כך מתחילים להמשך קריאה בזמן רינדור העמוד או המצב החדש.
 
 ```js
 import { preinit } from 'react-dom';

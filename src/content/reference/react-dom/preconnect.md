@@ -1,5 +1,5 @@
 ---
-title: preconnect
+title: "להתחבר מראש"
 canary: true
 ---
 
@@ -11,7 +11,7 @@ canary: true
 
 <Intro>
 
-`preconnect` מאפשרת להתחבר מראש לשרת שאתם מצפים לטעון ממנו משאבים.
+`preconnect` מאפשרת להתחבר מראש לשרת את מצפים לטעון ממנו משאבים.
 
 ```js
 preconnect("https://example.com");
@@ -23,11 +23,11 @@ preconnect("https://example.com");
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `preconnect(href)` {/*preconnect*/}
 
-כדי לבצע preconnect ל-host, קראו לפונקציה `preconnect` מתוך `react-dom`.
+כדי לבצע חיבור מראש למארח, קראו לפעולה `preconnect` מתוך `react-dom`.
 
 ```js
 import { preconnect } from 'react-dom';
@@ -39,24 +39,24 @@ function AppRoot() {
 
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
 הפונקציה `preconnect` מספקת לדפדפן רמז שכדאי לפתוח חיבור לשרת הנתון. אם הדפדפן בוחר לעשות זאת, זה יכול להאיץ טעינה של משאבים מהשרת הזה.
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
 * `href`: מחרוזת. ה-URL של השרת שאליו רוצים להתחבר.
 
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `preconnect` לא מחזירה דבר.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
 * כמה קריאות ל-`preconnect` עם אותו שרת משפיעות כמו קריאה אחת.
-* בדפדפן אפשר לקרוא ל-`preconnect` בכל מצב: בזמן רינדור קומפוננטה, בתוך effect, בתוך event handler, וכן הלאה.
-* ברינדור צד שרת או ברינדור Server Components, ל-`preconnect` יש השפעה רק אם קוראים לה בזמן רינדור קומפוננטה או בהקשר async שמקורו ברינדור קומפוננטה. קריאות אחרות ייחסמו.
+* בדפדפן אפשר לקרוא ל-`preconnect` בכל מצב: בזמן רינדור קומפונטה, בתוך אפקט, בתוך מטפל באירועים, וכן הלאה.
+* ברינדור צד שרת או ברינדור רכיבי שרת, ל-`preconnect` יש רק רק אם קוראים לה בזמן רינדור קומפוננטה או בהקשר אסינכרון שמקורו ברינדור קומפוננטה. קריאות אחרות ייחסמו.
 * אם אתם יודעים אילו משאבים ספציפיים תצטרכו, אפשר לקרוא [לפונקציות אחרות](/reference/react-dom/#resource-preloading-apis) שמתחילות לטעון את המשאבים מיד.
 * אין תועלת ב-preconnect לאותו שרת שעליו מתארח דף הווב עצמו, כי החיבור אליו כבר פתוח עד לרגע שבו היה ניתן הרמז.
 
@@ -64,9 +64,9 @@ function AppRoot() {
 
 ## שימוש {/*usage*/}
 
-### Preconnect בזמן רינדור {/*preconnecting-when-rendering*/}
+### התחבר מראש בזמן רינדור {/*preconnecting-when-rendering*/}
 
-קראו ל-`preconnect` בזמן רינדור קומפוננטה אם אתם יודעים שהילדים שלה יטענו משאבים חיצוניים מאותו host.
+קראו ל-`preconnect` בזמן רינדור קומפוננטה אם אתם יודעים שהילדים שלהם יטענו משאבים חיצוניים מאותו מארח.
 
 ```js
 import { preconnect } from 'react-dom';
@@ -77,9 +77,9 @@ function AppRoot() {
 }
 ```
 
-### Preconnect בתוך event handler {/*preconnecting-in-an-event-handler*/}
+### התחבר מראש בתוך מטפל באירועים {/*preconnecting-in-an-event-handler*/}
 
-קראו ל-`preconnect` בתוך event handler לפני מעבר לעמוד או מצב שבהם יידרשו משאבים חיצוניים. כך התהליך מתחיל מוקדם יותר לעומת קריאה בזמן רינדור העמוד או המצב החדש.
+קראו ל-`preconnect` בתוך מטפל באירועים לפני מעבר או מצב יידרשו משאבים חיצוניים. כך מתחילים להמשך קריאה בזמן רינדור העמוד או המצב החדש.
 
 ```js
 import { preconnect } from 'react-dom';

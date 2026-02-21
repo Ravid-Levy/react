@@ -1,5 +1,5 @@
 ---
-title: "React DOM Components"
+title: "React DOM רכיבים"
 ---
 
 <Intro>
@@ -14,7 +14,7 @@ React תומכת בכל רכיבי הדפדפן המובנים של [HTML](https
 
 כל רכיבי הדפדפן המובנים תומכים בחלק מה-props ובאירועים.
 
-* [רכיבים נפוצים (למשל `<div>`)](/reference/react-dom/components/common)
+* [רכיבים נפוצים (מידע `<div>`)](/reference/react-dom/components/common)
 
 זה כולל גם props ייחודיים ל-React כמו `ref` ו-`dangerouslySetInnerHTML`.
 
@@ -28,7 +28,7 @@ React תומכת בכל רכיבי הדפדפן המובנים של [HTML](https
 * [`<select>`](/reference/react-dom/components/select)
 * [`<textarea>`](/reference/react-dom/components/textarea)
 
-הם מיוחדים ב-React כי העברת prop בשם `value` אליהם הופכת אותם ל-* [controlled.](/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)*
+הם מיוחדים ב-React כי העברת פרופס בשם `value` אליהם הופכת אותם ל-* [controlled.](/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)*
 
 ---
 
@@ -42,13 +42,13 @@ React תומכת בכל רכיבי הדפדפן המובנים של [HTML](https
 * [`<style>`](/reference/react-dom/components/style)
 * [`<title>`](/reference/react-dom/components/title)
 
-הם מיוחדים ב-React כי React יכולה לרנדר אותם ל-head של המסמך, לבצע suspend בזמן טעינת משאבים, ולהפעיל התנהגויות נוספות שמתוארות בדף ה-reference של כל רכיב.
+הם מיוחדים ב-React כי React יכולה לרנדר אותם לראש של המסמך, לבצע suspend בזמן טעינת משאבים, ולהפעיל התנהגויות נוספות שמתוארות בדף ההפניה של כל הרכיב.
 
 ---
 
 ## כל רכיבי ה-HTML {/*all-html-components*/}
 
-React תומכת בכל רכיבי ה-HTML המובנים של הדפדפן. הרשימה כוללת:
+React תומכת בכל רכיבי ה-HTML המובנים של הדפדפן. כולל הרשימה:
 
 * [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside)
 * [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
@@ -154,20 +154,20 @@ React תומכת בכל רכיבי ה-HTML המובנים של הדפדפן. ה�
 
 <Note>
 
-בדומה ל-[תקן DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model), ב-React משתמשים בקונבנציה של `camelCase` לשמות props. לדוגמה, תכתבו `tabIndex` במקום `tabindex`. אפשר להמיר HTML קיים ל-JSX באמצעות [ממיר אונליין](https://transform.tools/html-to-jsx).
+בדומה ל-[תקן DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model), ב-React משתמשים בקונבנציה של `camelCase` לשמות props. לדוגמה, תכתבו `tabIndex` במקום `tabindex`. אפשר להמיר HTML וקיים ל-https://transform.tools/html-to-jsx).]( [מיר מ"ק_4__)
 
 </Note>
 
 ---
 
-### אלמנטים מותאמים אישית של HTML {/*custom-html-elements*/}
+### אלמנטים מותאמים אישיים שלHTML {/*custom-html-elements*/}
 
-אם תרנדרו תגית עם מקף, כמו `<my-element>`, React תניח שאתם רוצים לרנדר [custom HTML element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements). ב-React רינדור אלמנטים מותאמים אישית עובד אחרת מרינדור תגיות דפדפן מובנות:
+אם תרו תגית עם מקף, כמו `<my-element>`, React תניח אתם רוצים לרנדר [Custom HTML element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements). ב-React רינדור אלמנטים מותאמים אישית עובד אחרת מרינדור תגיות דפדפן מובנות:
 
-- כל props של custom elements עוברים serialization למחרוזות ותמיד נקבעים באמצעות attributes.
-- custom elements מקבלים `class` במקום `className`, ו-`for` במקום `htmlFor`.
+- כל props של אלמנטים מותאמים אישית עוברים סידורי למחרוזות ותמיד קבועים באמצעות מאפיינים.
+- אלמנטים מותאמים אישית מקבלים `class` במקום `className`, ו-`for` במקום `htmlFor`.
 
-אם תרנדרו אלמנט HTML מובנה עם attribute בשם [`is`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is), הוא יטופל גם הוא כ-custom element.
+אם תרנדרו אלמנט HTML מובנה עם תכונה בשם [`is`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is), הוא יטופל גם הוא כ-custom element.
 
 <Note>
 
@@ -178,14 +178,14 @@ React תומכת בכל רכיבי ה-HTML המובנים של הדפדפן. ה�
 - `react@experimental`
 - `react-dom@experimental`
 
-גרסאות ניסיוניות של React עשויות להכיל באגים. אל תשתמשו בהן בפרודקשן.
+גרסאות ניסיוניות של React עשויות להכיל באגים. אל תשתמשו בפרודקשן.
 
 </Note>
 ---
 
 ## כל רכיבי ה-SVG {/*all-svg-components*/}
 
-React תומכת בכל רכיבי ה-SVG המובנים של הדפדפן. הרשימה כוללת:
+React תומכת בכל רכיבי ה-SVG המובנים של הדפדפן. כולל הרשימה:
 
 * [`<a>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a)
 * [`<animate>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)
@@ -256,20 +256,20 @@ React תומכת בכל רכיבי ה-SVG המובנים של הדפדפן. הר
 
 <Note>
 
-בדומה ל-[תקן DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model), ב-React משתמשים בקונבנציה של `camelCase` לשמות props. לדוגמה, תכתבו `tabIndex` במקום `tabindex`. אפשר להמיר SVG קיים ל-JSX בעזרת [ממיר אונליין](https://transform.tools/).
+בדומה ל-[תקן DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model), ב-React משתמשים בקונבנציה של `camelCase` לשמות props. לדוגמה, תכתבו `tabIndex` במקום `tabindex`. אפשר להמיר SVG קיים ל-JSX בעזרת [ממיר אונליין](
 
-attributes עם namespace גם חייבים להיכתב בלי נקודתיים:
+מאפיינים עם מרחב שמות גם חייבים להיכתב בלי נקודתיים:
 
-* `xlink:actuate` הופך ל-`xlinkActuate`.
-* `xlink:arcrole` הופך ל-`xlinkArcrole`.
-* `xlink:href` הופך ל-`xlinkHref`.
-* `xlink:role` הופך ל-`xlinkRole`.
-* `xlink:show` הופך ל-`xlinkShow`.
-* `xlink:title` הופך ל-`xlinkTitle`.
-* `xlink:type` הופך ל-`xlinkType`.
-* `xml:base` הופך ל-`xmlBase`.
-* `xml:lang` הופך ל-`xmlLang`.
-* `xml:space` הופך ל-`xmlSpace`.
-* `xmlns:xlink` הופך ל-`xmlnsXlink`.
+* `xlink:actuate` גורם ל-`xlinkActuate`.
+* `xlink:arcrole` גורם ל-`xlinkArcrole`.
+* `xlink:href` גורם ל-`xlinkHref`.
+* `xlink:role` גורם ל-`xlinkRole`.
+* `xlink:show` גורם ל-`xlinkShow`.
+* `xlink:title` גורם ל-`xlinkTitle`.
+* `xlink:type` גורם ל-`xlinkType`.
+* `xml:base` גורם ל-`xmlBase`.
+* `xml:lang` גורם ל-`xmlLang`.
+* `xml:space` גורם ל-`xmlSpace`.
+* `xmlns:xlink` גורם ל-`xmlnsXlink`.
 
 </Note>

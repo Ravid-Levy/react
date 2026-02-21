@@ -1,10 +1,10 @@
 ---
-title: useId
+title: "useId"
 ---
 
 <Intro>
 
-`useId` הוא React Hook ליצירת מזהים ייחודיים שאפשר להעביר למאפייני נגישות.
+`useId` הוא React __TK_ ליצירת מזהים ייחודיים2__ אפשר להעביר למאפיינים נגישות.
 
 ```js
 const id = useId()
@@ -16,11 +16,11 @@ const id = useId()
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `useId()` {/*useid*/}
 
-קראו ל-`useId` ברמה העליונה של הקומפוננטה כדי ליצור מזהה ייחודי:
+קראו ל-`useId` ברמה העליונה של הקומפוננטה כדי ליצור מזהה ייחודית:
 
 ```js
 import { useId } from 'react';
@@ -30,21 +30,21 @@ function PasswordField() {
   // ...
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
 `useId` לא מקבל פרמטרים.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `useId` מחזיר מחרוזת מזהה ייחודית שמשויכת לקריאה הספציפית הזו ל-`useId` בתוך הקומפוננטה הספציפית הזו.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
-* `useId` הוא Hook, לכן אפשר לקרוא לו **רק ברמה העליונה של הקומפוננטה** או של Hooks משלכם. אי אפשר לקרוא לו בתוך לולאות או תנאים. אם צריך את זה, חלצו קומפוננטה חדשה והעבירו אליה את ה-state.
+* `useId` הוא Hook, אז אפשר לקרוא לו **רק ברמה העליונה של הקומפוננטה** או של Hooks משלכם. אי אפשר לקרוא לו בתוך לולאות או תנאים. אם צריך את זה, חלצו קומפונטה חדשה והעבירו אליה את ה-state.
 
-* **לא צריך להשתמש ב-`useId` כדי לייצר keys** ברשימה. [Keys צריכים להיווצר מהנתונים שלכם.](/learn/rendering-lists#where-to-get-your-key)
+* **לא צריך להשתמש ב-`useId` כדי להשתמש במפתחות** ברשימה. [Keys צריכים להיווצר מהנתונים שלכם.](/learn/rendering-lists#where-to-get-your-key)
 
 ---
 
@@ -52,13 +52,13 @@ function PasswordField() {
 
 <Pitfall>
 
-**אל תקראו ל-`useId` כדי לייצר keys ברשימה.** [Keys צריכים להיווצר מהנתונים שלכם.](/learn/rendering-lists#where-to-get-your-key)
+**אל תקראו ל-`useId` כדי למפתחות ברשימה.** [Keys צריכים להיווצר מהנתונים שלכם.](/learn/rendering-lists#where-to-get-your-key)
 
 </Pitfall>
 
-### יצירת מזהים ייחודיים למאפייני נגישות {/*generating-unique-ids-for-accessibility-attributes*/}
+### יצירת מזהים ייחודיים למאפיינים נגישות {/*generating-unique-ids-for-accessibility-attributes*/}
 
-קראו ל-`useId` ברמה העליונה של הקומפוננטה כדי ליצור מזהה ייחודי:
+קראו ל-`useId` ברמה העליונה של הקומפוננטה כדי ליצור מזהה ייחודית:
 
 ```js [[1, 4, "passwordHintId"]]
 import { useId } from 'react';
@@ -68,7 +68,7 @@ function PasswordField() {
   // ...
 ```
 
-לאחר מכן אפשר להעביר את <CodeStep step={1}>המזהה שנוצר</CodeStep> למאפיינים שונים:
+לאחר מכן אפשר להעביר את <CodeStep step={1}>המזהה אנשים</CodeStep> למאפיינים שונים:
 
 ```js [[1, 2, "passwordHintId"], [1, 3, "passwordHintId"]]
 <>
@@ -79,7 +79,7 @@ function PasswordField() {
 
 **בואו נעבור על דוגמה כדי לראות מתי זה שימושי.**
 
-[מאפייני נגישות ב-HTML](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) כמו [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) מאפשרים לציין ששתי תגיות קשורות זו לזו. למשל, אפשר לציין שאלמנט אחד (כמו input) מתואר על ידי אלמנט אחר (כמו פסקה).
+[מאפיינים נגישות ב-HTML](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) כמו [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) מאפשרים לציין ששתי תגיות קשורות זו לזו. למשל, אפשר לציין שאלמנט אחד (כמו קלט) מתואר על ידי אלמנט אחר (כמו פסקה).
 
 ב-HTML רגיל, הייתם כותבים כך:
 
@@ -96,7 +96,7 @@ function PasswordField() {
 </p>
 ```
 
-אבל hardcoding של IDs כך הוא לא פרקטיקה טובה ב-React. קומפוננטה יכולה להירנדר יותר מפעם אחת בעמוד, אבל IDs חייבים להיות ייחודיים. במקום hardcoding של ID, צרו ID ייחודי עם `useId`:
+אבל קידוד קשיח של מזהים כך הוא לא פרקטיקה טובה ב-React. קומפוננטה יכולה להירנדר יותר מפעם אחת בעמוד, אבל זיהויים חייבים להיות ייחודיים. במקום קוד קשיח של ID, צרו ID ייחודי עם `useId`:
 
 ```js {4,11,14}
 import { useId } from 'react';
@@ -120,7 +120,7 @@ function PasswordField() {
 }
 ```
 
-כעת, גם אם `PasswordField` מופיעה כמה פעמים על המסך, המזהים שנוצרים לא יתנגשו.
+עכשיו, גם אם `PasswordField` מופיעה פעמים על המסך.
 
 <Sandpack>
 
@@ -167,7 +167,7 @@ input { margin: 5px; }
 
 <Pitfall>
 
-עם [server rendering](/reference/react-dom/server), **`useId` דורש עץ קומפוננטות זהה בצד השרת ובצד הלקוח**. אם העצים שאתם מרנדרים בשרת ובלקוח לא תואמים בדיוק, המזהים שנוצרים לא יתאימו.
+עם [עיבוד שרת](/reference/react-dom/server), **`useId` דורש עץ קומפוננטות זהה בצד השרת ובצד הלקוח**. אם העצים הם מרנדרים בשרת ובלקוח לא תואמים בדיוק, המזהים אנשים לא אתאימו.
 
 </Pitfall>
 
@@ -175,13 +175,13 @@ input { margin: 5px; }
 
 #### למה useId עדיף על מונה עולה? {/*why-is-useid-better-than-an-incrementing-counter*/}
 
-אולי אתם שואלים למה `useId` עדיף על הגדלת משתנה גלובלי כמו `nextId++`.
+אולי אתם שואלים למה `useId` עדיף על הגדלת ranking גלובלי כמו `nextId++`.
 
-היתרון המרכזי של `useId` הוא ש-React מבטיחה שהיא עובדת עם [server rendering.](/reference/react-dom/server) בזמן רינדור שרת, הקומפוננטות מייצרות פלט HTML. אחר כך, בצד הלקוח, [hydration](/reference/react-dom/client/hydrateRoot) מחבר את event handlers ל-HTML שנוצר. כדי ש-hydration יעבוד, פלט הלקוח חייב להתאים ל-HTML של השרת.
+זהו המרכזי של `useId` הוא ש-React מבטיחה שהיא עובדת עם [עיבוד שרת.](/reference/react-dom/server) בזמן רינדור שרת, הקומפוננטות מייצרות פלט HTML. אחר כך, חוץ מלקוחות, [hydration](/reference/react-dom/client/hydrateRoot) מחבר את מטפלי האירועים ל-HTML עבור HTML. כדי ש-hydration יעבוד, פלט הלקוח חייב להתאים ל-HTML של השרת.
 
-קשה מאוד להבטיח זאת עם מונה עולה, כי סדר ה-hydration של Client Components עשוי לא להתאים לסדר שבו ה-HTML נוצר בשרת. בקריאה ל-`useId`, אתם מבטיחים שה-hydration יעבוד, ושהפלט יתאים בין השרת ללקוח.
+קשה מאוד זאת עם מונה עולה, כי סדר ה-hydration של רכיבי לקוח עשוי לא להתאים לסדר שבו ה-HTML נוצר בשרת. בקריאה ל-`useId`, אתם מבטיחים שה-hydration יעבוד, ושהפלט מתאים בין השרת ללקוח.
 
-בתוך React, `useId` נוצר מתוך "parent path" של הקומפוננטה הקוראת. לכן, אם העץ בלקוח ובשרת זהה, ה-"parent path" יתאים בלי קשר לסדר הרינדור.
+בתוך React, `useId` נוצר מתוך "נתיב אב" של הקומפוננטה הקוראת. לכן, אם העץ בלקוח ובשרת זהה, ה-"נתיב ההורים" יתאים בלי קשר לסדר הרינדור.
 
 </DeepDive>
 
@@ -189,7 +189,7 @@ input { margin: 5px; }
 
 ### יצירת IDs לכמה אלמנטים קשורים {/*generating-ids-for-several-related-elements*/}
 
-אם צריך לתת IDs לכמה אלמנטים קשורים, אפשר לקרוא ל-`useId` כדי ליצור קידומת משותפת עבורם:
+אם צריך לתת מזהים לכמה אלמנטים קשורים, אפשר לקרוא ל-`useId` כדי ליצור קידומת משותפת עבורם:
 
 <Sandpack>
 
@@ -216,13 +216,13 @@ input { margin: 5px; }
 
 </Sandpack>
 
-כך אפשר להימנע מקריאה ל-`useId` עבור כל אלמנט בודד שצריך ID ייחודי.
+כך אפשר מקריאה ל-`useId` עבור כל קוד זיהוי בודד.
 
 ---
 
-### הגדרת קידומת משותפת לכל ה-IDs שנוצרים {/*specifying-a-shared-prefix-for-all-generated-ids*/}
+### הגדרת קידומת משותפת לכל ה-IDs תכונות {/*specifying-a-shared-prefix-for-all-generated-ids*/}
 
-אם אתם מרנדרים כמה אפליקציות React עצמאיות באותו עמוד, העבירו `identifierPrefix` כאופציה לקריאות [`createRoot`](/reference/react-dom/client/createRoot#parameters) או [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) שלכם. כך מובטח שה-IDs שנוצרים בשתי האפליקציות לא יתנגשו, כי כל מזהה שנוצר עם `useId` יתחיל בקידומת הייחודית שהגדרתם.
+אם אתם מרנדרים כמה אפליקציות React עצמאיות באותו עמוד, העבירו `identifierPrefix` כאופציה לקריאות [`createRoot`](/reference/react-dom/client/createRoot#parameters) או [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) שלכם. כך מובטח שה-IDs מתאים בשתי האפליקציות לא נגשו, כי כל מזהה עובד עם __T בק_3__ יתחילידומת הייחודית שהגדרתם.
 
 <Sandpack>
 
@@ -307,7 +307,7 @@ input { margin: 5px; }
 
 ### שימוש באותה קידומת ID בלקוח ובשרת {/*using-the-same-id-prefix-on-the-client-and-the-server*/}
 
-אם אתם [מרנדרים כמה אפליקציות React עצמאיות באותו עמוד](#specifying-a-shared-prefix-for-all-generated-ids), וחלק מהאפליקציות האלה מרונדרות בשרת, ודאו שה-`identifierPrefix` שאתם מעבירים לקריאה ל-[`hydrateRoot`](/reference/react-dom/client/hydrateRoot) בצד לקוח זהה ל-`identifierPrefix` שאתם מעבירים ל-[Server APIs](/reference/react-dom/server), כמו [`renderToPipeableStream`.](/reference/react-dom/server/renderToPipeableStream)
+אם אתם [מרנדרים כמה אפליקציות שReact עצמאיות באותו עמוד](#specifying-a-shared-prefix-for-all-generated-ids), וחלק מהאפליקציות האלה מרונדרות בשרת, ודאו שה-`identifierPrefix`הם מעבירים לקריאה ל-[`hydrateRoot`](/reference/react-dom/client-___2) מעבירים ל-[שרת APIs](/reference/react-dom/server), כמו [`renderToPipeableStream`.](/reference/react-dom/server/renderToPipeableStream)
 
 ```js
 // Server

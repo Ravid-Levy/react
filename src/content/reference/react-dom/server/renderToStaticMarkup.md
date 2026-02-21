@@ -1,5 +1,5 @@
 ---
-title: renderToStaticMarkup
+title: "renderToStaticMarkup"
 ---
 
 <Intro>
@@ -16,7 +16,7 @@ const html = renderToStaticMarkup(reactNode, options?)
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `renderToStaticMarkup(reactNode, options?)` {/*rendertostaticmarkup*/}
 
@@ -28,27 +28,27 @@ import { renderToStaticMarkup } from 'react-dom/server';
 const html = renderToStaticMarkup(<Page />);
 ```
 
-הפונקציה תייצר פלט HTML לא אינטראקטיבי של קומפוננטות React שלכם.
+הפונקציה תייצר פלט HTML לא אינטראקטיביות של קומפונטות React שלכם.
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `reactNode`: React node שברצונכם לרנדר ל-HTML. למשל, JSX node כמו `<Page />`.
+* `reactNode`: React צומת שברצונכם לרנדר ל-HTML. למשל, צומת JSX כמו `<Page />`.
 * **אופציונלי** `options`: אובייקט עבור רינדור שרת.
-  * **אופציונלי** `identifierPrefix`: מחרוזת קידומת ש-React משתמשת בה עבור מזהים שנוצרים על ידי [`useId`.](/reference/react/useId) שימושי למניעת התנגשויות כשמשתמשים בכמה roots באותו עמוד.
+  * **אופציונלי** `identifierPrefix`: מחרוזת קידומת ש-React משתמשת בה עבור מזהים עובדים על ידי [`useId`.](/reference/react/useId) שימושי למניעת התנגשויות כשמשתמשים בכמה שורשים באותו עמוד.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 מחרוזת HTML.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
-* אי אפשר לבצע hydration לפלט של `renderToStaticMarkup`.
+* אי אפשר לבצע הידרציה לפלט של `renderToStaticMarkup`.
 
-* ל-`renderToStaticMarkup` יש תמיכה מוגבלת ב-Suspense. אם קומפוננטה מבצעת suspend, `renderToStaticMarkup` שולחת מיד את ה-fallback שלה כ-HTML.
+* ל-`renderToStaticMarkup` יש תמיכה מוגבלת ב-Suspense. אם פונתה מבצעת suspend, `renderToStaticMarkup` שולחת מיד את ה-fallback שלה כ-HTML.
 
-* `renderToStaticMarkup` עובדת גם בדפדפן, אבל לא מומלץ להשתמש בה בקוד לקוח. אם צריך לרנדר קומפוננטה ל-HTML בדפדפן, [קבלו את ה-HTML על ידי רינדור ל-DOM node.](/reference/react-dom/server/renderToString#removing-rendertostring-from-the-client-code)
+* `renderToStaticMarkup` עובדת גם בדפדפן, אבל לא מומלץ להשתמש בה בקוד לקוח. אם צריך לרנדר קומפונטה ל-HTML בדפדפן, [קבלו את ה-HTML על ידי רינדור ל-DOM node.](/reference/react-dom/server/renderToString#removing-rendertostring-from-the-client-code)
 
 ---
 
@@ -56,7 +56,7 @@ const html = renderToStaticMarkup(<Page />);
 
 ### רינדור עץ React לא אינטראקטיבי כ-HTML למחרוזת {/*rendering-a-non-interactive-react-tree-as-html-to-a-string*/}
 
-קראו ל-`renderToStaticMarkup` כדי לרנדר את האפליקציה למחרוזת HTML שאפשר לשלוח בתגובת השרת:
+קראו ל-`renderToStaticMarkup` כדי לרנדר את האפליקציה למחרוזת HTML אפשר לשלוח בתגובת השרת:
 
 ```js {5-6}
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -68,12 +68,12 @@ app.use('/', (request, response) => {
 });
 ```
 
-כך יתקבל פלט ה-HTML הראשוני הלא אינטראקטיבי של קומפוננטות React שלכם.
+כך יתקבל פלט ה-HTML הראשוני הלא אינטראקטיבי של קומפונטות React שלכם.
 
 <Pitfall>
 
-המתודה הזו מרנדרת **HTML לא אינטראקטיבי שאי אפשר לבצע לו hydration.** זה שימושי אם רוצים להשתמש ב-React כמחולל עמודים סטטיים פשוט, או אם מרנדרים תוכן סטטי לחלוטין כמו אימיילים.
+המתודה הזו מרנדרת **HTML לא אינטראקטיבי שאי אפשר לבצע לו הידרציה.** זה שימושי אם רוצים להשתמש ב-React כמחולל עמודים סטטיים פשוט, או אם מרנדרים תוכן סטטי לחלוטין כמו אימיילים.
 
-אפליקציות אינטראקטיביות צריכות להשתמש ב-[`renderToString`](/reference/react-dom/server/renderToString) בצד השרת וב-[`hydrateRoot`](/reference/react-dom/client/hydrateRoot) בצד הלקוח.
+אפליקציות אינטראקטיביות צריכות להשתמש ב-[`renderToString`](/reference/react-dom/server/renderToString) בצד השרת וב-[`hydrateRoot`](/reference/react-dom/client/hydrateRoot) לקוח נוסף.
 
 </Pitfall>

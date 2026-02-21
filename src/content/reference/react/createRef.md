@@ -1,5 +1,5 @@
 ---
-title: createRef
+title: "ליצורRef"
 ---
 
 <Pitfall>
@@ -10,7 +10,7 @@ title: createRef
 
 <Intro>
 
-`createRef` יוצרת אובייקט [ref](/learn/referencing-values-with-refs) שיכול להכיל כל ערך.
+`createRef` יוצרת אובייקט [ref](/learn/referencing-values-with-refs) יכול להכיל כל ערך.
 
 ```js
 class MyInput extends Component {
@@ -25,11 +25,11 @@ class MyInput extends Component {
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `createRef()` {/*createref*/}
 
-קראו ל-`createRef` כדי להצהיר על [ref](/learn/referencing-values-with-refs) בתוך [class component.](/reference/react/Component)
+קראו ל-`createRef` כדי להצהיר על [ref](/learn/referencing-values-with-refs) בתוך [רכיב כיתה.](/reference/react/Component)
 
 ```js
 import { createRef, Component } from 'react';
@@ -40,19 +40,19 @@ class MyComponent extends Component {
   // ...
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
 `createRef` לא מקבלת פרמטרים.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `createRef` מחזירה אובייקט עם מאפיין יחיד:
 
-* `current`: בתחילה מוגדר ל-`null`. לאחר מכן אפשר להגדיר אותו לערך אחר. אם מעבירים את אובייקט ה-ref ל-React כמאפיין `ref` ל-JSX node, React תגדיר את המאפיין `current` שלו.
+* `current`: בתחילה מוגדרת ל-`null`. לאחר מכן אפשר להגדיר אותו לערך אחר. אם מעבירים את אובייקט ה-ref ל-React כמאפיין `ref` ל-JSX node, React תגדיר את המאפיין `current` שלו.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
 * `createRef` תמיד מחזירה אובייקט *שונה*. זה שקול לכתיבה ידנית של `{ current: null }`.
 * בקומפוננטת פונקציה, כנראה שתרצו [`useRef`](/reference/react/useRef), שמחזירה תמיד את אותו אובייקט.
@@ -62,9 +62,9 @@ class MyComponent extends Component {
 
 ## שימוש {/*usage*/}
 
-### הצהרה על ref בתוך class component {/*declaring-a-ref-in-a-class-component*/}
+### ההרהור על רכיב המחלקה {/*declaring-a-ref-in-a-class-component*/}
 
-כדי להצהיר על ref בתוך [class component,](/reference/react/Component) קראו ל-`createRef` והקצו את התוצאה לשדה במחלקה:
+כדי להצהיר על ref בתוך [רכיב כיתה,](/reference/react/Component) קראו ל-`createRef` והקצו את התוצאה לשדה במחלקה:
 
 ```js {4}
 import { Component, createRef } from 'react';
@@ -76,7 +76,7 @@ class Form extends Component {
 }
 ```
 
-אם תעבירו כעת `ref={this.inputRef}` ל-`<input>` ב-JSX שלכם, React תאכלס את `this.inputRef.current` עם DOM node של שדה הקלט. למשל, כך יוצרים כפתור שמפקס את שדה הקלט:
+אם תעבירו עכשיו `ref={this.inputRef}` ל-`<input>` ב-JSX שלכם, React תאכלס את `this.inputRef.current` עם DOM node של שדה הקלט. לדוגמה, כך יוצרים כפתור שמפקס את השדה הקלט:
 
 <Sandpack>
 
@@ -115,9 +115,9 @@ export default class Form extends Component {
 
 ## חלופות {/*alternatives*/}
 
-### מעבר מ-class עם `createRef` לפונקציה עם `useRef` {/*migrating-from-a-class-with-createref-to-a-function-with-useref*/}
+### המשך מכיתה עם `createRef` לפונקציה עם `useRef` {/*migrating-from-a-class-with-createref-to-a-function-with-useref*/}
 
-אנחנו ממליצים להשתמש בקומפוננטות פונקציה במקום [class components](/reference/react/Component) בקוד חדש. אם יש לכם class components קיימות שמשתמשות ב-`createRef`, כך אפשר להמיר אותן. זה הקוד המקורי:
+אנחנו ממליצים להשתמש בקומפוננטות פונקציה במקום [רכיבי כיתה](/reference/react/Component) בקוד חדש. אם יש לכם רכיבי כיתה קיימות שמשתמשות ב-`createRef`, כך אפשר להמיר אותן. זה הקוד המקורי:
 
 <Sandpack>
 

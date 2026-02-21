@@ -5,7 +5,7 @@ re: https://github.com/reactjs/react.dev/issues/5960
 
 <Intro>
 
-TypeScript היא דרך פופולרית להוסיף הגדרות סוג לבסיסי קוד של JavaScript. מהקופסה, TypeScript [תומך ב-JSX](/learn/writing-markup-with-jsx) ותוכל לקבל תמיכה מלאה באינטרנט של React על ידי הוספת [`@types/react`](https://www.npmjs.com/package/@types/react) ו-[`@types/react-dom`](j/https://www.com/pm) your pack פרויקט.
+TypeScript היא דרך פופולרית להוסיף הגדרות סוג לבסיסי קוד של JavaScript. מהקופסה, TypeScript [תומך ב-JSX](/learn/writing-markup-with-jsx) ותוכל לקבל תמיכה מלאה באינטרנט של React על ידי הוספת [`@types/react`](https://www.npmjs.com/package/@types/react) ו-[`@types/react-dom`](j/https://www.com/pm) שלך.
 
 </Intro>
 
@@ -35,7 +35,7 @@ TypeScript היא דרך פופולרית להוסיף הגדרות סוג לב�
 npm להתקין את @types/react @types/react-dom
 </TerminalBlock>
 
-יש להגדיר את אפשרויות המהדר הבאות ב-`tsconfig.json` שלך:
+יש להגדיר את האפשרויות שלך המהדר הבאות ב-`tsconfig.json`:
 
 1. יש לכלול `dom` ב-[`lib`](https://www.typescriptlang.org/tsconfig/#lib) (הערה: אם לא צוינה אפשרות `lib`, `dom` נכלל כברירת מחדל).
 1. יש להגדיר את [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) לאחת מהאפשרויות החוקיות. `שמר` אמור להספיק לרוב היישומים.
@@ -45,11 +45,11 @@ npm להתקין את @types/react @types/react-dom
 
 <Note>
 
-כל קובץ המכיל JSX חייב להשתמש בסיומת הקובץ `.tsx`. זוהי הרחבה ספציפית ל-TypeScript שאומרת ל-TypeScript שהקובץ הזה מכיל JSX.
+כל קובץ המכיל JSX חייב להשתמש בסיומת הקובץ `.tsx`. זו הרחבה ספציפית ל-TypeScript שאומרת ל-TypeScript שהקובץ הזה מכיל JSX.
 
 </Note>
 
-כתיבת TypeScript עם React דומה מאוד לכתיבת JavaScript עם React. ההבדל העיקרי בעבודה עם רכיב הוא שאתה יכול לספק סוגים עבור הprops של הרכיב שלך. ניתן להשתמש בסוגים אלה לבדיקת נכונות ולמתן תיעוד מוטבע בעורכים.
+כתיבת TypeScript עם React דומה מאוד לכתיבת JavaScript עם React. מבחר רכיבים בעבודה עם רכיב שהוא יכול לספק סוגים עבור הprops של הרכיב שלך. ניתן להשתמש בסוגים אלה לבדיקת נכונות ולמתן תיעוד מוטבע בעורכים.
 
 אם ניקח את הרכיב [`MyButton`](/learn#components) מהמדריך [התחלה מהירה](/learn), נוכל להוסיף סוג המתאר את ה`כותרת` עבור הכפתור:
 
@@ -80,11 +80,11 @@ export default App = AppTSX;
 
  <Note>
 
-ארגזי חול אלו יכולים להתמודד עם קוד TypeScript, אך הם לא מריצים את בודק הסוג. זה אומר שאתה יכול לשנות את ארגזי החול של TypeScript כדי ללמוד, אבל לא תקבל שגיאות סוג או אזהרות. כדי לבצע בדיקת סוגים, אתה יכול להשתמש ב-[TypeScript Playground](https://www.typescriptlang.org/play) או להשתמש בארגז חול מקוון מלא יותר.
+ארגזי חול אלו יכולים להתמודד עם קוד TypeScript, אבל הם לא מריצים את בודק הסוג. זה אומר שאתה יכול לשנות את ארגזי החול של TypeScript כדי ללמוד, אבל לא לקבל שגיאות סוג או אזהרות. כדי לבצע בדיקת סוגים, אתה יכול להשתמש ב-[TypeScript מגרש משחקים](https://www.typescriptlang.org/play) או להשתמש בארגז חול מקוון מלא יותר.
 
 </Note>
 
-תחביר מוטבע זה הוא הדרך הפשוטה ביותר לספק טיפוסים עבור רכיב, אם כי ברגע שמתחילים לקבל כמה שדות לתאר, זה יכול להפוך למסורבל. במקום זאת, אתה יכול להשתמש ב'ממשק' או 'סוג' כדי לתאר את הprops של הרכיב:
+תחביר מוטבע זה הוא הדרך הפשוטה לספק טיפוסים עבור רכיב, אם כי הם מתחילים לקבל כמה שעובדים, זה יכול להפוך למסורבל. במקום זאת, אתה יכול להשתמש ב'ממשק' או 'סוג' כדי לתאר את הprops של הרכיב:
 
 <Sandpack>
 
@@ -119,18 +119,18 @@ export default App = AppTSX;
 
 </Sandpack>
 
-הסוג המתאר את הprops של הרכיב שלך יכול להיות פשוט או מורכב ככל שאתה צריך, אם כי הם צריכים להיות סוג אובייקט המתואר עם 'סוג' או 'ממשק'. אתה יכול ללמוד כיצד TypeScript מתאר אובייקטים ב-[Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html), אך ייתכן שתהיה מעוניין גם בשימוש ב-[Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) כדי לתאר סוג אחד של [סוגים שונים וסוגים שונים] סוגים](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html) מדריך למקרי שימוש מתקדמים יותר.
+הסוג המתאר את הprops של הרכיב שלך יכול להיות פשוט או מורכב ככל שאתה צריך, אם הם צריכים להיות אובייקטים עם 'סוג' או 'ממשק'. אתה יכול ללמוד כיצד TypeScript מתאר אובייקטים ב-[Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html), אך ייתכן שתהיה מעוניין גם בשימוש ב-[Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) כדי לתאר סוג אחד של [סוגים שונים וסוגים שונים] מדריכים](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html) למקרי שימוש מתקדמים יותר.
 
 
-## ווים לדוגמה {/*example-hooks*/}
+## וווים למשל {/*example-hooks*/}
 
-הגדרות הסוג מ- `@types/react` כוללות טיפוסים עבור ה-Hooks המובנים, כך שתוכל להשתמש בהם ברכיבים שלך ללא כל הגדרה נוספת. הם בנויים כדי לקחת בחשבון את הקוד שאתה כותב ברכיב שלך, כך שתקבל [טיפוסים משוערים](https://www.typescriptlang.org/docs/handbook/type-inference.html) הרבה מהזמן ובאופן אידיאלי לא תצטרך להתמודד עם הפרטים הקטנים של אספקת הסוגים. 
+הגדרות הסוג מ-`@types/react` כוללות טיפוסים עבור ה-Hooks המובנים, כך תוכלו להשתמש ברכיבים שלכם ללא כל תוספת נוספת. הם בנויים כדי לקחת בחשבון את הקוד שאתה כותב ברכיב, כך שתקבל [פוסים משוערים](https://www.typescriptlang.org/docs/handbook/type-inference.html) הרבה מהזמן ובאופן אידיאלי לא תצטרך להתמודד עם הקטנים הפרטיים של אספקת הסוגים.
 
 עם זאת, אנו יכולים להסתכל על כמה דוגמאות כיצד לספק סוגים עבור Hooks.
 
 ### `useState` {/*typing-usestate*/}
 
-ה-[`useState` Hook](/reference/react/useState) יעשה שימוש חוזר בערך המועבר כstate ההתחלתי כדי לקבוע מה סוג הערך צריך להיות. לְדוּגמָה:
+ה-[`useState` Hook](/reference/react/useState) יעשה שימוש בערך המועבר כstate ההתחלה כדי לחזור מה סוג הערך צריך להיות. לְדוּגְמָה:
 
 ```ts
 // Infer the type as "boolean"
@@ -152,7 +152,7 @@ type Status = "idle" | "loading" | "success" | "error";
 const [status, setStatus] = useState<Status>("idle");
 ```
 
-לחלופין, כפי שהומלץ ב-[עקרונות לstate מבנה](/למד/בחירת-ה-מצב-מבנה#עקרונות-ל-מצב-מבנה), אתה יכול לקבץ מצב קשור כאובייקט ולתאר את האפשרויות השונות באמצעות סוגי אובייקטים:
+לחלופין, כפי שהוא מלץ ב-[עקרונות לstate מבנה](/למד/בחירת-ה-מצב-מבנה#עקרונות-ל-מצב-מבנה), אתה יכול לקבץ מצב קשור כאובייקט ולתאר את האפשרויות השונות באמצעות סוגי אובייקטים:
 
 ```ts
 type RequestState =
@@ -166,7 +166,7 @@ const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' 
 
 ### `useReducer` {/*הקלדה-usereducer*/}
 
-ה-[`useReducer` Hook](/reference/react/useReducer) הוא Hook מורכב יותר שלוקח פונקציית reducer וstate התחלתי. הסוגים של פונקציית הreducer נגזרים מstate ההתחלתי. באפשרותך לספק ארגומנט סוג לקריאה 'useReducer' כדי לספק סוג עבור הstate, אך לרוב עדיף להגדיר את הסוג בstate ההתחלתי במקום זאת:
+ה-[`useReducer` Hook](/reference/react/useReducer) הוא Hook מורכב יותר שלוקח פונקציית reducer וstate התחלתי. הסוגים של פונקציית ה-reducer נגזרים מstate ההתחלתי. באפשרותך לספק ארגומנט סוג לקריאה 'useReducer' כדי לספק סוג עבור הstate, אך לרוב עדיף להגדיר את הסוג בstate ההתחלה במקום:
 
 <Sandpack>
 
@@ -223,12 +223,12 @@ export default App = AppTSX;
 
 אנו משתמשים ב-TypeScript בכמה מקומות מרכזיים:
 
- - `מצב ממשק` מתאר את צורת מצב הreducer.
- - `סוג CounterAction` מתאר את הפעולות השונות שניתן לשלוח לreducer.
- - `const initialState: State` מספק סוג עבור הstate ההתחלתי, וגם את הסוג שבו משתמשים `useReducer` כברירת מחדל.
- - `stateReducer(state: State, action: CounterAction): State` מגדיר את סוגי הארגומנטים וערך ההחזרה של פונקציית הreducer.
+- `מצב ממשק` מתאר את צורת המצב המפחית.
+ - `סוג CounterAction` מתאר את הפעולות השונות יכול לשלוח להפחתת.
+ - `const initialState: State` מספק סוג עבור הstate ההתחלתי, וגם את הסוג של משתמשים `useReducer` כברירת מחדל.
+ - `stateReducer(state: State, action: CounterAction): State` מגדיר את סוגי הארגומנטים וערך ההחזרה של פונקציית ה-reducer.
 
-חלופה מפורשת יותר להגדרת הסוג ב-'initialState' היא לספק ארגומנט סוג ל-'useReducer':
+חלופה מפורשת יותר להגדרת הסוג ב-'initialState' היא מספקת ארגומנט סוג ל-'useReducer':
 
 ```ts
 import { stateReducer, State } from './your-reducer-implementation';
@@ -242,7 +242,7 @@ export default function App() {
 
 ### `useContext` {/*הקלדה-usecontext*/}
 
-ה-[`useContext` Hook](/reference/react/useContext) היא טכניקה להעברת נתונים בעץ הרכיבים ללא צורך להעביר props דרך רכיבים. הוא משמש על ידי יצירת רכיב ספק ולעתים קרובות על ידי יצירת Hook כדי לצרוך את הערך ברכיב צאצא.
+ה-[`useContext` Hook](/reference/react/useContext) היא טכנית להעברת נתונים בעץ הרכיבים ללא צורך להעביר props דרך רכיבים. הוא משמש על ידי יצירת רכיב ספק ולעתים קרבות על ידי יצירת Hook כדי לצרוך את הערך ברכיב צאצא.
 
 סוג הערך שסופק על ידי ההקשר מוסק מהערך המועבר לקריאה 'createContext':
 
@@ -284,9 +284,9 @@ export default App = AppTSX;
 
 </Sandpack>
 
-הטכניקה הזו עובדת כשיש לך ערך ברירת מחדל שזה הגיוני - אבל לפעמים יש מקרים שבהם אין לך, ובמקרים האלה `null` יכול להרגיש הגיוני כערך ברירת מחדל. עם זאת, כדי לאפשר למערכת הטיפוסים להבין את הקוד שלך, עליך להגדיר במפורש `ContextShape | null' ב-'createContext'. 
+הטכניקה הזו עובדת כשיש לך ערך ברירת מחדל שזה הגיוני - אבל לפעמים יש סקרנים לך, ובמאלה `null` יכול להרגיש הגיוני כערך ברירת מחדל. עם זאת, כדי לאפשר למערכת הטיפוסים להבין את הקוד שלך, עליך להגדיר במפורש `ContextShape | null' ב-'createContext'.
 
-זה גורם לבעיה שאתה צריך כדי לבטל את ה- `| null` בסוג עבור צרכני הקשר. ההמלצה שלנו היא לבקש מה-Hook לבצע בדיקת זמן ריצה לקיומו ולזרוק שגיאה כאשר אינו קיים:
+זה גורם לבעיה שאתה צריך לבטל את ה-`| null` בסוג עבור צרכני הקשר. ההמלצה שלנו היא לבקש מה-Hook לבצע בדיקת זמן ריצה לקיומו ולזרוק שגיאה כאשר אין:
 
 ```js {5, 16-20}
 import { createContext, useContext, useState, useMemo } from 'react';
@@ -339,7 +339,7 @@ const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 
 ### `useCallback` {/*הקלדה-usecallback*/}
 
-ה-[`useCallback`](/reference/react/useCallback) מספק הפניה יציבה לפונקציה כל עוד התלות שהועברו לפרמטר השני זהות. כמו `useMemo`, סוג הפונקציה נגזר מערך ההחזרה של הפונקציה בפרמטר הראשון, ותוכל להיות מפורש יותר על ידי מתן ארגומנט type ל-Hook.
+ה-[`useCallback`](/reference/react/useCallback) מספקת הפניה יציבה לפונקציה כל עוד התלות שעברו לפרמטר השני זהות. כמו `useMemo`, סוג הפונקציה נגזר מערך ההחזרה של הפונקציה מטר הראשון, ותוכל להיות מפורש יותר על ידי מתן ארגומנט סוג ל-Hook.
 
 
 ```ts
@@ -348,9 +348,9 @@ const handleClick = useCallback(() => {
 }, [todos]);
 ```
 
-כשעובדים ב-TypeScript מצב קפדני `useCallback` דורש הוספת סוגים עבור הפרמטרים בהתקשרות חזרה. הסיבה לכך היא שסוג ההתקשרות חוזרת מוסק מערך ההחזרה של הפונקציה, וללא פרמטרים לא ניתן להבין את הסוג במלואו.
+כשעובדים ב-TypeScript מצב קפדני `useCallback` דורש הוספת סוגים עבור הפרמטרים בהתקשרות חזרה. למה היא סוג ההתקשרות חוזרת מוסק מערך ההיא של הפונקציה, וללא פרמטרים לא ניתן להבין את הסוג השלם.
 
-בהתאם להעדפות סגנון הקוד שלך, תוכל להשתמש בפונקציות `*EventHandler` מסוגי React כדי לספק את הסוג למטפל באירועים במקביל להגדרת ההתקשרות חזרה: 
+בהתאם להעדפות סגנון הקוד, תוכל להשתמש בפונקציות `*EventHandler` סטייל React כדי לספק את הסוג למטפל באירועים נוספים שלך להגדיר את ההתקשרות חזרה:
 
 ```ts
 import { useState, useCallback } from 'react';
@@ -373,11 +373,11 @@ export default function Form() {
 
 ## סוגים שימושיים {/*סוגים-שימושיים*/}
 
-יש קבוצה די נרחבת של טיפוסים שמגיעים מחבילת `@types/react`, כדאי לקרוא כאשר אתה מרגיש בנוח עם האופן שבו React ו-TypeScript מתקשרים. אתה יכול למצוא אותם [בתיקיה של React ב-DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts). נסקור כאן כמה מהסוגים הנפוצים יותר.
+יש קבוצת מודעות של טיפוסים שמגיעים מחבילת `@types/react`, כדאי לקרוא כאשר אתה מרגיש בנוח עם האופן שבו React ו-TypeScript מתקשרים. אתה יכול למצוא אותם [בתיקיה של React ב-DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts). נסקור כאן כמה מהסוגים הנפוצים יותר.
 
 ### אירועי DOM {/*טיינג-דום-אירועים*/}
 
-כאשר עובדים עם אירועי DOM ב-React, לעתים קרובות ניתן להסיק מהמטפל באירוע את סוג האירוע. עם זאת, כאשר אתה רוצה לחלץ פונקציה שתועבר למטפל באירועים, תצטרך להגדיר במפורש את סוג האירוע.
+כאשר עובדים עם אירועי DOM ב-React, אפשריים אפשריים באירוע את סוג האירוע. עם זאת, כאשר אתה רוצה לחלץ פונקציה שתועבר למטפל באירועים, תצטרך להגדיר במפורש את סוג האירועים.
 
 <Sandpack>
 
@@ -411,11 +411,11 @@ export default App = AppTSX;
 
 בעת קביעת הסוג שאתה מחפש אתה יכול קודם כל להסתכל על מידע הרחף עבור מטפל האירוע שבו אתה משתמש, אשר יציג את סוג האירוע.
 
-אם אתה צריך להשתמש באירוע שאינו כלול ברשימה זו, אתה יכול להשתמש בסוג `React.SyntheticEvent`, שהוא סוג הבסיס לכל האירועים.
+אם אתה צריך להשתמש באירוע שאינו כלול ברשימה זו, אתה יכול להשתמש בסוג `React.SyntheticEvent`, שהוא סוג הבסיס לכל העסקים.
 
 ### ילדים {/*הקלדה-ילדים*/}
 
-ישנם שני נתיבים נפוצים לתיאור הילדים של רכיב. הראשון הוא להשתמש בסוג `React.ReactNode`, שהוא איחוד של כל הסוגים האפשריים שניתן להעביר כילדים ב-JSX:
+יש שני נתיבים נפוצים לתיאור הילדים של הרכיב. הראשון הוא להשתמש בסוג `React.ReactNode`, שהוא איחוד של כל הסוגים האפשריים להעביר כילדים ב-JSX:
 
 ```ts
 interface ModalRendererProps {
@@ -424,7 +424,7 @@ interface ModalRendererProps {
 }
 ```
 
-זוהי הגדרה מאוד רחבה של ילדים. השני הוא להשתמש בסוג 'React.ReactElement', שהוא רק רכיבי JSX ולא פרימיטיביים של JavaScript כמו מחרוזות או מספרים:
+זה מאוד רחבה של ילדים. השני הוא להשתמש בסוג 'React.ReactElement', שהוא רק רכיבי JSX ולא פרימיטיביים של JavaScript כמו מחרוזות או מספרים:
 
 ```ts
 interface ModalRendererProps {
@@ -433,13 +433,13 @@ interface ModalRendererProps {
 }
 ```
 
-שימו לב, אינכם יכולים להשתמש ב-TypeScript כדי לתאר שהילדים הם סוג מסוים של רכיבי JSX, ולכן אינכם יכולים להשתמש במערכת-type כדי לתאר רכיב שמקבל רק ילדים ``<li>``. 
+שימו לב, אינכם להשתמש יכולים ב-TypeScript כדי לתאר שהילדים הם סוג מסויים של רכיבי JSX, אינכם יכולים להשתמש ב-_TK_2__ כדי לתאר רכיב שמקבלים רק ילדים ``<li>``.
 
 אתה יכול לראות את כל הדוגמאות של 'React.ReactNode' וגם של 'React.ReactElement' עם בודק הסוג ב-[This TypeScript מגרש משחקים](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDG8BmUIjgIilQ3wChSB 6CxYmAOmXRgDkIATJOdNJMGAZzgwAFpxAR+8YADswAVwGkZMJFEzpOjDKw4AFHGEEBvUnDhphwADZsi0gFw0mDWjqQBuUg F9yaCNMlENzgAXjgACjADfkctFnYkfQhDAEpQgD44AB42YAA3dKMo5P46C2tbJGkvLIpcgt9-QLi3AEEwMFCItJDMrPTTb IQ3dKywdIB5aU4kKyQQKpha8drhhIGzLLWODbNs3b3s8YAxKBQAcwXpAThMaGWDvbH0gFloGbmrgQfBzYpd1YjQZbEYARk B6zMwO2SHSAAlZlYIBCdtCRkZpHIrFYahQYQD8UYYFA5EhcfjyGYqHAXnJAsIUHlOOUbHYhMIIHJzsI0Qk4P9SLUBuRqXE XEwAKKfRZcNA8PiCfxWACEcAAUgBlAAacFm80W-CU11U6h4TgwUv11yShjgJjMLMqDnN9Dilq+nh8pD8AXgCHdMrCkWisV oAet0R6fXqhWKhjKllZVVxMcavpd4Zg7U6Qaj+2hmdG4zeRF10uu-Aeq0LBfLMEe-V+T2L7zLVu+FBWLdLeq+lc7DYFf39 deFVOotMCACNOCh1dq219a+30uC8YWoZsRyuEdjkevR8uvoVMdjyTWt4WiSSydXD4NqZP4AymeZE072ZzuUeZQKheQgA).
 
 ### props סגנון {/*הקלדה-סגנון-props*/}
 
-בעת שימוש בסגנונות מוטבעים ב-React, אתה יכול להשתמש ב-'React.CSSProperties' כדי לתאר את האובייקט המועבר ל-'סגנון'. סוג זה הוא איחוד של כל מאפייני ה-CSS האפשריים, ומהווה דרך טובה להבטיח שאתה מעביר מאפייני CSS חוקיים ל-'סגנון', ולהשלמת השלמה אוטומטית בעורך שלך.
+בזמן שימוש בסגנונות מוטבעים ב-React, אתה יכול להשתמש ב-'React.CSSProperties' כדי לתאר את האובייקט המועבר ל-'סגנון'. סוג זה הוא איחוד של כל מאפיינים ה-CSS האפשריים, ומה טוב ביחד שאתה מעביר מאפיינים מאפיינים CSS חוקיים ל-'TK_4__ חוקיים ל-'השלמה אוטומטית בעורך שלך.
 
 ```ts
 interface MyComponentProps {
@@ -449,16 +449,16 @@ interface MyComponentProps {
 
 ## למידה נוספת {/*למידה-נוספת*/}
 
-מדריך זה כיסה את היסודות של השימוש ב-TypeScript עם React, אבל יש עוד הרבה מה ללמוד.
-דפי API בודדים במסמכים עשויים להכיל תיעוד מעמיק יותר כיצד להשתמש בהם עם TypeScript.
+מדריך זה כיסה את היסודות של שימוש ב-TypeScript עם React, אבל יש עוד הרבה מה ללמוד.
+דפי API בודדים במסמכים כדי להכיל תיעוד מעמיק יותר כיצד להשתמש בהם עם TypeScript.
 
 אנו ממליצים על המשאבים הבאים:
 
- - [המדריך של TypeScript](https://www.typescriptlang.org/docs/handbook/) הוא התיעוד הרשמי של TypeScript, ומכסה את רוב תכונות השפה העיקריות.
+- [המדריך של TypeScript](https://www.typescriptlang.org/docs/handbook/) הוא התיעוד הרשמי של TypeScript, ומכסה את רוב תכונות השפה המדעית.
 
- - [הערות השחרור של TypeScript](https://devblogs.microsoft.com/typescript/) מכסים כל תכונות חדשות לעומק.
+- [הערות השחרור של TypeScript](https://devblogs.microsoft.com/typescript/) מכסים כל תכונות חדשות לעומק.
 
- - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) הוא דף צ'יטים המתוחזק על ידי קהילה לשימוש ב-TypeScript עם React, המכסה הרבה מקרי קצה שימושיים ומספק רוחב רחבה יותר מהמסמך הזה.
+- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) הוא דף מתוחזק על ידי קהילה שימוש ב-TypeScript עם React, המכסה הרבה מקרי קצה שימוש וספק רוחב רחבה יותר מהמסמך הזה.
 
- - [TypeScript Community Discord](https://discord.com/invite/typescript) הוא מקום מצוין לשאול שאלות ולקבל עזרה עם בעיות TypeScript ו-React.
+- [TypeScript דיסקורד קהילתי](https://discord.com/invite/typescript) הוא מקום מצוין לשאול שאלות תשובות לבעיות TypeScript ו-React.
 

@@ -4,20 +4,20 @@ title: "React Hooks מובנים"
 
 <Intro>
 
-*Hooks* מאפשרים להשתמש ביכולות שונות של React מתוך קומפוננטות. אפשר להשתמש ב-Hooks המובנים, או לשלב ביניהם כדי לבנות Hooks משלכם. העמוד הזה מציג את כל ה-Hooks המובנים ב-React.
+*Hooks* אפשר להשתמש באפשרויות שונות של React מתוך קומפונטות. אפשר להשתמש ב-Hooks המובנים, או לשלב בין כדי לבנות Hooks משלכם. העמוד הזה מציג את כל ה-Hooks המובנים ב-React.
 
 </Intro>
 
 ---
 
-## State Hooks {/*state-hooks*/}
+## מצב Hooks {/*state-hooks*/}
 
-*State* מאפשר לקומפוננטה ["לזכור" מידע כמו קלט מהמשתמש.](/learn/state-a-components-memory) לדוגמה, קומפוננטת טופס יכולה להשתמש ב-state כדי לשמור את ערך הקלט, בעוד קומפוננטת גלריית תמונות יכולה להשתמש ב-state כדי לשמור את אינדקס התמונה שנבחרה.
+*State* אפשר לקומפוננטה ["לזכור" מידע כמו קלט מהמשתמש.](/learn/state-a-components-memory) לדוגמה, קומפונטת טופס יכולה להשתמש ב-state כדי לשמור את הערך אינטלקטואלי לבחור תמונה, בעוד קומפונטת גלריית לשמור תמונות שיכולה להשתמש ב-stated.
 
 כדי להוסיף state לקומפוננטה, השתמשו באחד מה-Hooks הבאים:
 
-* [`useState`](/reference/react/useState) מצהיר על משתנה state שאפשר לעדכן ישירות.
-* [`useReducer`](/reference/react/useReducer) מצהיר על משתנה state עם לוגיקת העדכון בתוך [פונקציית reducer.](/learn/extracting-state-logic-into-a-reducer)
+* [`useState`](/reference/react/useState) מצהיר על ranking state אפשר לעדכן בכלל.
+* [`useReducer`](/reference/react/useReducer) מצהיר על ranking state עם לוגיקת העדכון בתוך [פונקציית מפחית.](/learn/extracting-state-logic-into-a-reducer)
 
 ```js
 function ImageGallery() {
@@ -27,11 +27,11 @@ function ImageGallery() {
 
 ---
 
-## Context Hooks {/*context-hooks*/}
+## הקשר Hooks {/*context-hooks*/}
 
-*Context* מאפשר לקומפוננטה [לקבל מידע מהורים רחוקים בלי להעביר אותו כ-props.](/learn/passing-props-to-a-component) לדוגמה, קומפוננטת העליונה של האפליקציה יכולה להעביר את ערכת הנושא הנוכחית לכל הקומפוננטות מתחתיה, לא משנה כמה עמוק הן נמצאות.
+*הקשר* יכול לקומפוננטה [לקבל מהורים רחוקים בלי להעביר אותו מידע כ-props.](/learn/passing-props-to-a-component) למשל, קומפוננטת העליונה של האפליקציה יכולה להעביר את ערכת הנושא הנוכחית לכל הקומפוננטות מתחתיה, לא משנה כמה עמוק הן נמצאות.
 
-* [`useContext`](/reference/react/useContext) קורא ל-context ונרשם אליו.
+* [`useContext`](/reference/react/useContext) קורא ל-הקשר ונרשם אליו.
 
 ```js
 function Button() {
@@ -43,10 +43,10 @@ function Button() {
 
 ## Ref Hooks {/*ref-hooks*/}
 
-*Refs* מאפשרים לקומפוננטה [להחזיק מידע שלא משמש לרינדור,](/learn/referencing-values-with-refs) כמו DOM node או מזהה timeout. בניגוד ל-state, עדכון של ref לא מרנדר מחדש את הקומפוננטה. Refs הם "escape hatch" מהפרדיגמה של React. הם שימושיים כשצריך לעבוד עם מערכות שאינן React, כמו APIs מובנים של הדפדפן.
+*Refs* מאפשרים לקומפוננטה [להחזיק מידע שלא משמש לרינדור,](/learn/referencing-values-with-refs) כמו DOM node או מזהה פסק זמן. נדרש ל-state, עדכון של ref לא מרנדר מחדש את הקומפוננטה. Refs הם "Escape hatch" מהפרדיגמה של React. הם שימושיים כשצריך לעבוד עם מערכות שאינן React, כמו APIs מובנים של הדפדפן.
 
-* [`useRef`](/reference/react/useRef) מצהיר על ref. אפשר לשמור בו כל ערך, אבל לרוב משתמשים בו כדי לשמור DOM node.
-* [`useImperativeHandle`](/reference/react/useImperativeHandle) מאפשר להתאים אישית את ה-ref שהקומפוננטה חושפת. זה בשימוש נדיר.
+* [`useRef`](/reference/react/useRef) מצהיר על ref. אפשר לשמור בו כל ערך, אבל לרוב משתמשים בו כדי לשמור על הצומת DOM.
+* [`useImperativeHandle`](/reference/react/useImperativeHandle) יכול להתאים אישית את ה-ref שהקומפונטה חושפת. זה בשימוש נדיר.
 
 ```js
 function Form() {
@@ -56,9 +56,9 @@ function Form() {
 
 ---
 
-## Effect Hooks {/*effect-hooks*/}
+## אפקט Hooks {/*effect-hooks*/}
 
-*Effects* מאפשרים לקומפוננטה [להתחבר ולהסתנכרן עם מערכות חיצוניות.](/learn/synchronizing-with-effects) זה כולל עבודה עם רשת, DOM של הדפדפן, אנימציות, ווידג'טים שנכתבו בספריית UI אחרת, וקוד נוסף שאינו React.
+*אפקטים* מאפשרים לקומפוננטה [להתחבר ולהסתנכרן עם מערכות חיצוניות.](/learn/synchronizing-with-effects) זה כולל עבודה עם רשת, DOM של הדפדפן, אנימציות, ווידג'טים שנכתבו בספריית UI אחרת, וקוד נוסף שאינו React.
 
 * [`useEffect`](/reference/react/useEffect) מחבר קומפוננטה למערכת חיצונית.
 
@@ -72,23 +72,23 @@ function ChatRoom({ roomId }) {
   // ...
 ```
 
-Effects הם "escape hatch" מהפרדיגמה של React. אל תשתמשו ב-Effects כדי לתזמר את זרימת הנתונים של האפליקציה. אם אתם לא מקיימים אינטראקציה עם מערכת חיצונית, [יכול להיות שאין צורך ב-Effect.](/learn/you-might-not-need-an-effect)
+אפקטים הם "פתח בריחה" מהפרדיגמה של React. אל תשתמשו ב-Effects כדי לתזמר את זרימת האפליקציה. אם אתם לא מקיימים אינטראקציה עם חיצונית, [יכול להיות שאין מערכת.] ב-Effect(/learn/you-might-not-need-an-effect)
 
 יש שתי וריאציות נדירות יותר של `useEffect` עם הבדלים בתזמון:
 
-* [`useLayoutEffect`](/reference/react/useLayoutEffect) מופעל לפני שהדפדפן מצייר מחדש את המסך. אפשר למדוד layout כאן.
-* [`useInsertionEffect`](/reference/react/useInsertionEffect) מופעל לפני ש-React מבצעת שינויים ב-DOM. ספריות יכולות להכניס כאן CSS דינמי.
+* [`useLayoutEffect`](/reference/react/useLayoutEffect) מופעל לפני שהדפדפן מצייר מחדש את המסך. אפשר למדוד פריסה כאן.
+* [`useInsertionEffect`](/reference/react/useInsertionEffect) מופעל לפני ש-React מבצעת שינויים ב-DOM. ספריות יכולה להכניס כאן CSS דינמי.
 
 ---
 
-## Performance Hooks {/*performance-hooks*/}
+## ביצועים Hooks {/*performance-hooks*/}
 
-דרך נפוצה לאופטימיזציה של ביצועי רינדור מחדש היא לדלג על עבודה מיותרת. לדוגמה, אפשר לבקש מ-React להשתמש מחדש בחישוב שמור או לדלג על רינדור חוזר אם הנתונים לא השתנו מאז הרינדור הקודם.
+דרך נפוצה לאופטימיזציה של ביצועי רינדור מחדש לד היאלג על עבודה מיותרת. לדוגמה, אפשר לבקש מ-React להשתמש מחדש בחישוב שמור או לדלג על רינדור חוזר אם לא השתנו מאז הרינדור הקודם.
 
 כדי לדלג על חישובים ורינדורים מיותרים, השתמשו באחד מה-Hooks הבאים:
 
-- [`useMemo`](/reference/react/useMemo) מאפשר לשמור במטמון תוצאה של חישוב יקר.
-- [`useCallback`](/reference/react/useCallback) מאפשר לשמור במטמון הגדרת פונקציה לפני שמעבירים אותה לקומפוננטה ממוטבת.
+- [`useMemo`](/reference/react/useMemo) יכול לשמור במטמון תוצאה של חישוב יקר.
+- [`useCallback`](/reference/react/useCallback) מאפשר לשמור את הגדרת הפונקציה במטמון לפני שמעבירים אותה לקומפוננטה ממוטבת.
 
 ```js
 function TodoList({ todos, tab, theme }) {
@@ -101,18 +101,18 @@ function TodoList({ todos, tab, theme }) {
 
 כדי לתעדף רינדור, השתמשו באחד מה-Hooks הבאים:
 
-- [`useTransition`](/reference/react/useTransition) מאפשר לסמן מעבר state כלא-חוסם ולאפשר לעדכונים אחרים להפריע לו.
-- [`useDeferredValue`](/reference/react/useDeferredValue) מאפשר לדחות עדכון של חלק לא-קריטי ב-UI ולאפשר לחלקים אחרים להתעדכן קודם.
+- [`useTransition`](/reference/react/useTransition) יכול לסמן להמשיך state כלא-חוסם ולאפשר לעדכונים אחרים להפריע לו.
+- [`useDeferredValue`](/reference/react/useDeferredValue) אפשרות לדחות עדכון של חלק לא-קריטי ב-UI ולאפשר לחלקים אחרים להתעדכן קודם.
 
 ---
 
-## Resource Hooks {/*resource-hooks*/}
+## משאב Hooks {/*resource-hooks*/}
 
-*Resources* ניתנים לגישה מתוך קומפוננטה גם בלי להיות חלק מה-state שלה. לדוגמה, קומפוננטה יכולה לקרוא הודעה מתוך Promise או מידע עיצובי מתוך context.
+*משאבים* ניתנים לגישה מתוך קומפונטה גם בלי להיות חלק מה-state שלה. לדוגמה, קומפוננטה יכולה לקרוא הודעה מתוך Promise או עיצוב עיצובי מתוך ההקשר.
 
 כדי לקרוא ערך ממשאב, השתמשו ב-Hook הבא:
 
-- [`use`](/reference/react/use) מאפשר לקרוא ערך ממשאב כמו [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) או [context](/learn/passing-data-deeply-with-context).
+- [`use`](/reference/react/use) אפשר לקרוא ערך ממשאב כמו [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) או [context](/learn/passing-data-deeply-with-context).
 
 ```js
 function MessageComponent({ messagePromise }) {
@@ -126,11 +126,11 @@ function MessageComponent({ messagePromise }) {
 
 ## Hooks נוספים {/*other-hooks*/}
 
-ה-Hooks האלה שימושיים בעיקר למחברי ספריות, ולא בשימוש נפוץ בקוד אפליקטיבי.
+ה-Hooks האלה שימוש בעיקר למחברי ספריות, ולא בשימוש נפוץ בקוד אפליקטיבי.
 
 - [`useDebugValue`](/reference/react/useDebugValue) מאפשר להתאים את התווית ש-React DevTools מציג עבור custom Hook.
-- [`useId`](/reference/react/useId) מאפשר לקומפוננטה לשייך לעצמה מזהה ייחודי. לרוב בשילוב עם APIs של נגישות.
-- [`useSyncExternalStore`](/reference/react/useSyncExternalStore) מאפשר לקומפוננטה להירשם לחנות חיצונית.
+- [`useId`](/reference/react/useId) יכול לקומפוננטה לשייך לעצמה מזהה ייחודית. לרוב בשילוב עם APIs של נגישות.
+- [`useSyncExternalStore`](/reference/react/useSyncExternalStore) יכול לקומפוננטה להירשם לחנות חיצונית.
 
 ---
 

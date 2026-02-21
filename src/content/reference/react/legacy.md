@@ -1,29 +1,29 @@
 ---
-title: "Legacy React APIs"
+title: "מדור קודם React APIs"
 ---
 
 <Intro>
 
-ה-APIs האלה מיוצאים מחבילת `react`, אבל לא מומלצים לשימוש בקוד חדש. ראו את עמודי ה-API המקושרים עבור חלופות מומלצות.
+ה-APIs האלה מיוצאים מחבילת `react`, אבל לא מומלצים להשתמש בקוד חדש. ראו את עמודי ה-API המקושרים עבור חלופות מומלצות.
 
 </Intro>
 
 ---
 
-## Legacy APIs {/*legacy-apis*/}
+## מדור קודם APIs {/*legacy-apis*/}
 
-* [`Children`](/reference/react/Children) מאפשר לבצע מניפולציה וטרנספורמציה ל-JSX שהתקבל דרך prop בשם `children`. [ראו חלופות.](/reference/react/Children#alternatives)
-* [`cloneElement`](/reference/react/cloneElement) מאפשר ליצור React element מנקודת התחלה של element אחר. [ראו חלופות.](/reference/react/cloneElement#alternatives)
-* [`Component`](/reference/react/Component) מאפשר להגדיר קומפוננטת React כ-class ב-JavaScript. [ראו חלופות.](/reference/react/Component#alternatives)
-* [`createElement`](/reference/react/createElement) מאפשר ליצור React element. בדרך כלל תשתמשו ב-JSX במקום.
-* [`createRef`](/reference/react/createRef) יוצר אובייקט ref שיכול להכיל כל ערך. [ראו חלופות.](/reference/react/createRef#alternatives)
-* [`isValidElement`](/reference/react/isValidElement) בודק האם ערך הוא React element. בדרך כלל בשימוש עם [`cloneElement`.](/reference/react/cloneElement)
+* [`Children`](/reference/react/Children) יכול לבצע מניפולציה וטרנספורמציה ל-JSX שהתקבלו דרך פרופס בשם `children`. [ראו חלופות.](/reference/react/Children#alternatives)
+* [`cloneElement`](/reference/react/cloneElement) יכול ליצור React אלמנט מנקודת התחלה של אלמנט אחר. [ראו חלופות.](/reference/react/cloneElement#alternatives)
+* [`Component`](/reference/react/Component) יכול להגדיר קומפונטת React כ-class ב-JavaScript. [ראו חלופות.](/reference/react/Component#alternatives)
+* [`createElement`](/reference/react/createElement) יכול ליצור אלמנט React. בדרך כלל תשתמשו ב-JSX במקום.
+* [`createRef`](/reference/react/createRef) יוצר אובייקט יכול להכיל את כל הערך. [ראו חלופות.](/reference/react/createRef#alternatives)
+* [`isValidElement`](/reference/react/isValidElement) בודק האם הערך הוא React אלמנט. בדרך כלל בשימוש עם [`cloneElement`.](/reference/react/cloneElement)
 * [`PureComponent`](/reference/react/PureComponent) דומה ל-[`Component`,](/reference/react/Component) אבל מדלג על רינדורים חוזרים עם אותם props. [ראו חלופות.](/reference/react/PureComponent#alternatives)
 
 
 ---
 
-## APIs שהוצאו משימוש {/*deprecated-apis*/}
+## APIs שהוצאו שימוש {/*deprecated-apis*/}
 
 <Deprecated>
 
@@ -31,4 +31,4 @@ title: "Legacy React APIs"
 
 </Deprecated>
 
-* [`createFactory`](/reference/react/createFactory) מאפשר ליצור פונקציה שמייצרת React elements מסוג מסוים.
+* [`createFactory`](/reference/react/createFactory) יכול ליצור פונקציית שמייצרת React אלמנטים ספציפיים.

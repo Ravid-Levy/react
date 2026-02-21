@@ -17,13 +17,13 @@ title: התקנת עורך קוד
 
 ## העורך שלך {/*העורך-שלך*/}
 
-אחד מעורכי הקוד הפופולריים (אם לא הכי) הוא [קוד VS](https://code.visualstudio.com/). יש לו תוספים רבים להתקין והוא מתממשק טוב עם שירותים כמו גיטהאב. ניתן להוסיף את רוב הפיצ'רים הכתובים כאן בהמשך ל-VS Code כתוספים. 
+אחד מעורכי הקוד הפופולריים (אם לא הכי) הוא [קוד VS](https://code.visualstudio.com/). יש לו תוספים רבים להתקין והוא מתממשק טוב עם שירותים כמו גיטהאב. ניתן להוסיף את רוב הפיצ'רים הכתובים כאן בהמשך ל-VS Code כתוספים.
 
 עורכי קוד נוספים שמשתמשים בהם בקהילת ריאקט כוללים:
 
 * וובסטורם - [WebStorm](https://www.jetbrains.com/webstorm/) הוא סביבת פיתוח שעוצבה במיוחד לפיתוח בעזרת JavaScript.
 * סאבליים טקסט - [טקסט נשגב](https://www.sublimetext.com/) תומך ב-syntax highlighting של JSX ו-TypeScript.
-* וים - [Vim](https://www.vim.org/) הוא עורך קוד גמיש מאוד שנבנה על מנת לאפשר פיתוח מהיר. הוא כולל מערכות ההפעלה מבוססות Unix וב-MacOS.  
+* וים - [Vim](https://www.vim.org/) הוא עורך קוד גמיש מאוד שנבנה על מנת לאפשר פיתוח מהיר. הוא כולל מערכות מבוססות Unix וב-MacOS.
 
 ## פיצ'רים מומלצים בעורכי קוד {/*תכונות-עורך-טקסט-מומלץ*/}
 
@@ -31,16 +31,16 @@ title: התקנת עורך קוד
 
 ### מוך {/*מוך*/}
 
-לינטרים מוצאים בעיות בקוד שלך בזמן שאתה כותב אותו מוקדם, מה שמאפשר תיקון. לינטר פופולרי ומומלץ הוא [ESLint](https://eslint.org/). 
+לינטרים מוצאים בעיות בקוד שלך בזמן שאתה כותב אותו מוקדם, מה שמאפשר תיקון. לינטר פופולרי ומומלץ הוא [ESLint](https://eslint.org/).
 
-* [התקן ESLint עם האופציות המומלצות לריאקט](https://www.npmjs.com/package/eslint-config-react-app) (וודא שיש לך [Node מותקן!](https://nodejs.org/en/download/current/))
+* [התקן ESLint עם האופציות המומלצות לריאקט](https://www.npmjs.com/package/eslint-config-react-app) (וודא שיש לך [צומת מותקן!](https://nodejs.org/en/download/current/))
 * [שלבו את ESLint ב-VS Code עם התוסף הרשמי](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-**ודאו הפעלתם את הכללים של [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) בפרויקט שלכם.** הכללים האלה חיוניים ותופסים באגים חמורים קודם. המומלץ המוגדר מראש [`eslint-config-react-app`](https://www.npmjs.com/package/eslint-config-react-app) כבר כולל אותם.
+**ודאו הפעלתם הכללים של [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) בפרויקט שלכם.** הכללים האלה חיוניים ותופסים באגים חמורים קודם. המומלץ המוגדר מראש [`eslint-config-react-app`](https://www.npmjs.com/package/eslint-config-react-app) כבר כולל אותם.
 
 ### עיצוב {/*עיצוב*/}
 
-הדבר האחרון שאתה רוצה שאתה מפתח עם אחר הוא להיכנס לוויכוח [tabs vs spaces](https://www.google.com/search?q=tabs+vs+spaces). למזלנו, [Prettier](https://prettier.io/) יסדר את הקוד אוטומטית לפי חוקים עקביים. בעת הרצת Prettier, טאבים יומרו לרווחים, וסגנון המירכאות יותאם לקונפיגורציה. בסביבת פיתוח אידיאלית, יפה יותר ירוץ בכל שמירה ויבצע את כל ההתאמות האלה אוטומטית.
+האחרון האחרון שאתה מפתח עם אחר הוא רוצה להיכנס לוויכוח [טאבים לעומת רווחים](https://www.google.com/search?q=tabs+vs+spaces). למדברנו, [יפה יותר](https://prettier.io/) יסדר את הקוד האוטומטי לפי שמירה על עקביות. בעת הרצת Prettier, טאבים יומרו לרווחים, וסגנון המירכאות יותאם לקונפיגורציה.
 
 ניתן להתקין את Prettier ב[VS Code](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) בעזרת הצעדים הבאים:
 
@@ -53,7 +53,7 @@ title: התקנת עורך קוד
 
 באופן אידיאלי, כדאי לאפשר לתוסף לסדר את הקוד בכל שמירת קובץ. מזל ש-VS Code מאפשר לנו את זה!
 
-1. ב-VS Code, לחץ על `CTRL/CMD + SHIFT + P`. 
+1. ב-VS Code, לחץ על `CTRL/CMD + SHIFT + P`.
 2. כתוב "הגדרות"
 3. לחץ על Enter
 4. בשורת החיפוש, כתוב "פורמט בשמירה"

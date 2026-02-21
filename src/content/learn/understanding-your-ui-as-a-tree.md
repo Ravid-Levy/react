@@ -6,7 +6,7 @@ title: "ה-UI שלכם כעץ"
 
 אפליקציית React שלך מתעצבת כאשר רכיבים רבים מקוננים זה בזה. איך React עוקב אחר מבנה הרכיבים של האפליקציה שלך?
 
-React, וספריות UI רבות אחרות, מדגמים את UI כעץ. חשיבה על האפליקציה שלך כעל עץ שימושית להבנת הקשר בין רכיבים. הבנה זו תעזור לך לנפות באגים במושגים עתידיים כמו ביצועים וניהול state.
+React, וספריות UI אחרים, דגמים את כעץ. חשיבה על האפליקציה שלך כעל עץ שימושית להבנת הקשר בין רכיבים. הבנה זו תעזור לך לנפות באגים במושגים עתידיים כמו ביצועים וניהול state.
 
 </Intro>
 
@@ -20,18 +20,18 @@ React, וספריות UI רבות אחרות, מדגמים את UI כעץ. חש�
 
 ## ממשק המשתמש שלך כעץ {/*הממשק-שלך-כעץ*/}
 
-עצים הם מודל קשר בין פריטים וממשק המשתמש מיוצג לרוב באמצעות מבני עצים. לדוגמה, דפדפנים משתמשים במבני עץ למודל HTML ([DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction)) ו-CSS ([CSSOM](https://developer.mozilla.org/docs/Web/API/CSS_Object_Model)). פלטפורמות ניידות משתמשות גם בעצים כדי לייצג את היררכיית התצוגה שלהן.
+עצים הם מודל קשר בין פריטים וממשק משתמש מי מוצג לרוב באמצעות מבני עצים. לדוגמה, דפדפנים משתמשים במבני עץ למודל HTML ([DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction)) ו-CSS ([CSSOM](https://developer.mozilla.org/docs/Web/API/CSS_Object_Model)). פלטפורמות משתמשות ניידות גם בעלות כדי להציג את התצוגה ההיררכית.
 
 <Diagram name="preserving_state_dom_tree" height={193} width={864} alt="Diagram with three sections arranged horizontally. In the first section, there are three rectangles stacked vertically, with labels 'Component A', 'Component B', and 'Component C'. Transitioning to the next pane is an arrow with the React logo on top labeled 'React'. The middle section contains a tree of components, with the root labeled 'A' and two children labeled 'B' and 'C'. The next section is again transitioned using an arrow with the React logo on top labeled 'React DOM'. The third and final section is a wireframe of a browser, containing a tree of 8 nodes, which has only a subset highlighted (indicating the subtree from the middle section).">
 
 React יוצר עץ ממשק משתמש מהרכיבים שלך. בדוגמה זו, עץ ה-UI משמש לאחר מכן לעיבוד ל-DOM.
 </Diagram>
 
-כמו דפדפנים ופלטפורמות ניידות, גם React משתמשת במבני עצים כדי לנהל ולדגמן את הקשר בין רכיבים באפליקציית React. עצים אלו הם כלים שימושיים כדי להבין כיצד נתונים זורמים דרך אפליקציית React וכיצד לייעל את העיבוד ואת גודל האפליקציה.
+כמו דפדפנים ופלטפורמות ניידות, גם React משתמשת במבני עצים כדי לנהל ולדגמן את הקשר בין רכיבים באפליקציית React. עצים אלו הם כל שימושים כדי להבין כיצד נתונים זורמים דרך אפליקציית React וכיצד לייעל את העיבוד ואת גודל האפליקציה.
 
 ## The Render Tree {/*the-render-tree*/}
 
-תכונה עיקרית של רכיבים היא היכולת להרכיב רכיבים של רכיבים אחרים. כפי שאנו [רכיבי הקן](/learn/your-first-component#nesting-and-organizing-components), יש לנו את הרעיון של רכיבי אב וילד, שבו כל רכיב הורה עשוי להיות בעצמו ילד של רכיב אחר.
+תכונה עיקרית של רכיבים היא כוללת להרכיב רכיבים של רכיבים אחרים. כפי שאנו [רכיבי הקן](/learn/your-first-component#nesting-and-organizing-components), יש לנו את הרעיון של רכיבי אב וילד, שבו כל רכיב הורה עשוי להיות בעצמו ילד של רכיב אחר.
 
 כאשר אנו מעבדים אפליקציית React, אנו יכולים לדגמן את הקשר הזה בעץ, המכונה עץ העיבוד.
 
@@ -129,21 +129,21 @@ React יוצר *עץ רינדור*, עץ ממשק משתמש, המורכב מה�
 
 העץ מורכב מצמתים, שכל אחד מהם מייצג רכיב. `אפליקציה`, `FancyText`, `זכויות יוצרים`, אם להזכיר כמה, הם כולם צמתים בעץ שלנו.
 
-צומת השורש בעץ רינדור React הוא [רכיב השורש](/learn/importing-and-exporting-components#the-root-component-file) של האפליקציה. במקרה זה, רכיב השורש הוא 'אפליקציה' וזהו הרכיב הראשון ש-React מעבד. כל חץ בעץ מצביע מרכיב אב לרכיב צאצא.
+צומת השורש בעץ רינדור React הוא [רכיב השורש](/learn/importing-and-exporting-components#the-root-component-file) של האפליקציה. במקרה זה, רכיב השורש הוא 'אפליקציה' והרכיב הראשון ש-React מעבד. כל חץ בעץ מצביע מרכיב אב לרכיב צאצא.
 
 <DeepDive>
 
-#### היכן נמצאים תגי ה-HTML בעץ הרינדור? {/*היכן-ה-html-elements-in-the-render-tree*/}
+#### היכן נמצא תגי ה-HTML בעץ הרינדור? {/*היכן-ה-html-elements-in-the-render-tree*/}
 
-תבחין בעץ הרינדור לעיל, אין אזכור לתגיות HTML שכל רכיב מעבד. הסיבה לכך היא שעץ הרינדור מורכב רק מ-React [רכיבים](למד/הרכיב-הראשון שלך#רכיבי-UI-אבני-בניין).
+תבחין בעץ הרינדור לעיל, אין אזכור לתגיות HTML שכל רכיב מעבד. למה היא שעץ הרינדור מורכבת רק מ-React [רכיבים](למד/הרכיב-הראשון שלך#רכיבי-UI-אבני-בניין).
 
-React, כמסגרת ממשק משתמש, היא אגנוסטית לפלטפורמה. ב-react.dev, אנו מציגים דוגמאות לעיבוד לאינטרנט, המשתמש בסימון HTML כפרימיטיביות ממשק המשתמש שלו. אבל אפליקציית React יכולה באותה מידה להיות עיבוד לפלטפורמה ניידת או שולחנית, שעשויה להשתמש בפרימיטיבים שונים של ממשק משתמש כמו [UIView](https://developer.apple.com/documentation/uikit/uiview) או [FrameworkElement](https://learn.microsoft.com/en-us/dotnet/api/system.windows.windows-element.desktop=windows.frameworkelement.de?hl=iw).
+React, כמסגרת ממשק משתמש, היא אגנוסטית לפלטפורמה. ב-.dev, אנו מציגים דוגמאות לעיבוד משתמשים, משתמש בסימון HTML כפרימיטיביות ממשק המשתמש שלו. אבל אפליקציית React יכולה באותה מידה להיות עיבוד לפלטפורמה ניידת או שולחנית, שעשויה להשתמש בפרימיטיבים שונים של ממשק משתמש כמו [UIView](https://developer.apple.com/documentation/uikit/uiview) או [FrameworkElement](https://learn.microsoft.com/en-us/dotnet/api/system.windows.windows-element.desktop=windows.frameworkelement.de?hl=iw).
 
-הפרימיטיבים האלה של ממשק המשתמש של הפלטפורמה אינם חלק מ-React. עצי רינדור React יכולים לספק תובנות לאפליקציית React שלנו ללא קשר לאיזו פלטפורמה האפליקציה שלך מעבדת.
+הפרימיטיבים האלה של ממשק המשתמש של הפלטפורמה הזו חלק מ-React. עצי רינדור React יכולים לספק תובנות לאפליקציית React שלנו ללא קשר לאיזו פלטפורמה האפליקציה שלך מעבדת.
 
 </DeepDive>
 
-עץ רינדור מייצג מעבר רינדור בודד של יישום React. עם [עיבוד מותנה](/learn/conditional-rendering), רכיב אב עשוי לעבד ילדים שונים בהתאם לנתונים המועברים.
+עץ רינדור מנקודת מבט רינדור בודד של יישום React. עם [עיבוד מותנה](/learn/conditional-rendering), רכיב אב עשוי לעבד ילדים שונים לנתונים המועברים.
 
 אנחנו יכולים לעדכן את האפליקציה כדי להציג ציטוט או צבע בצורה מותנית.
 
@@ -251,15 +251,15 @@ export default [
 
 </Diagram>
 
-בדוגמה זו, בהתאם למה זה `inspiration.type`, אנו עשויים לעבד `<FancyText>` או `<Color>`. עץ העיבוד עשוי להיות שונה עבור כל מעבר עיבוד.
+בדוגמה זו, בהתאם למה זה `inspiration.type`, אנו `<FancyText>` או `<Color>`. עיבוד עץ עשוי להיות שונה עבור כל המשך עיבוד.
 
-למרות שעצי רינדור עשויים להיות שונים בין מעברי רינדור, עצים אלה מועילים בדרך כלל לזיהוי מה הם *הרמה העליונה* ורכיבי *העלים* באפליקציית React. רכיבים ברמה העליונה הם הרכיבים הקרובים ביותר לרכיב השורש ומשפיעים על ביצועי הרינדור של כל הרכיבים שמתחתיהם ולעיתים מכילים את המורכבות ביותר. רכיבי העלים נמצאים קרוב לתחתית העץ ואין להם רכיבי צאצא ולעתים קרובות הם מעובדים מחדש.
+למרות שעצי רינדור משתנים בין מעברי רינדור, עצים אלה מועילים בדרך רמה כללית לזיהוי מה הם *ה העליונה* ורכיבי *העלים* באפליקציית React. רכיבים ברמה העליונה הם הרכיבים הקרובים ביותר לרכיב השורש ומשפיעים על ביצועי הרינדור של כל הרכיבים שמתחתיהם ולעיתים מכילים את המורכבות ביותר. רכיבי העלים נמצאים קרוב לתחתית העץ ואין להם רכיבי צאצא ולעתים קרבות הם עובדים מחדש.
 
 זיהוי קטגוריות אלו של רכיבים שימושי להבנת זרימת הנתונים והביצועים של האפליקציה שלך.
 
-## The Module Dependency Tree {/*the-module-dependency-tree*/}
+## עץ התלות של המודול {/*the-module-dependency-tree*/}
 
-מערכת יחסים נוספת באפליקציית React שניתן לעצב עם עץ היא התלות במודול של אפליקציה. כאשר אנו [מפרקים את הרכיבים שלנו](/learn/importing-and-exporting-components#exporting-and-importing-a-component) והלוגיקה לקבצים נפרדים, אנו יוצרים [מודולי JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) שבהם אנו עשויים, או לייצא רכיבים קבועים, פונקציות.
+מערכת יחסים נוספת באפליקציית React ניתן לעצב עם עץ היא התלות במודול של אפליקציה. כאשר אנו [מפרקים את הרכיבים שלנו](/learn/importing-and-exporting-components#exporting-and-importing-a-component) והלוגיקה לקבצים נפרדים, אנו יוצרים [מודולי JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) אנו מספקים תועלת, או לייצא רכיבים קבועים, פונקציות.
 
 כל צומת בעץ התלות של מודול הוא מודול וכל ענף מייצג הצהרת 'ייבוא' במודול זה.
 
@@ -276,10 +276,10 @@ export default [
 בהשוואה לעץ הרינדור של אותה אפליקציה, ישנם מבנים דומים אך כמה הבדלים בולטים:
 
 * הצמתים המרכיבים את העץ מייצגים מודולים, לא רכיבים.
-* מודולים שאינם רכיבים, כמו `inspirations.js`, מיוצגים גם הם בעץ זה. עץ העיבוד מקפל רק רכיבים.
-* `Copyright.js` מופיע תחת `App.js` אך בעץ הרינדור, `Copyright`, הרכיב, מופיע כצאצא של `InspirationGenerator`. הסיבה לכך היא ש-'InspirationGenerator' מקבל את JSX כ-[children props](/learn/passing-props-to-a-component#passing-jsx-as-children), אז הוא הופך את 'זכויות יוצרים' כרכיב צאצא אך אינו מייבא את המודול.
+* מודולים רכיבים, כמו `inspirations.js`, מי מוצגים גם הם בעץ זה. עץ העיבוד מקפל רק רכיבים.
+* `Copyright.js` מופיע תחת `App.js` אך בעץ הרינדור, `Copyright`, הרכיב, מופיע כצאצא של `InspirationGenerator`. למה היא ש-'InspirationGenerator' מקבלת את JSX כ-[children props](/learn/passing-props-to-a-component#passing-jsx-as-children), אז הוא יוצר את 'זכויות יוצרים' כרכיב צאצא אך אינו מייבא את המודול.
 
-עצי תלות שימושיים כדי לקבוע אילו מודולים נחוצים להפעלת אפליקציית React שלך. כאשר בונים אפליקציית React לייצור, יש בדרך כלל שלב בנייה שיצרף את כל ה-JavaScript הדרוש למשלוח ללקוח. הכלי שאחראי לכך נקרא [bundler](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Overview#the_modern_tooling_ecosystem), ו-bunlers ישתמשו בעץ התלות כדי לקבוע אילו מודולים יש לכלול.
+עצי תלות שימושיים כדי לקבוע אילו מודולים נחוצים להפעלת אפליקציית React שלך. כאשר בונים אפליקציית React לייצור, יש בדרך כלל שלב בנייה שיצרף את כל ה-JavaScript הדרוש למשלוח ללקוח. הכלי שאחראי לשם נקרא [bundler](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Overview#the_modern_tooling_ecosystem), ו-bunlers ישתמשו בעץ התלות כדי לקבוע אילו מודולים יש לכלול.
 
 ככל שהאפליקציה שלך גדלה, לעתים קרובות גם גודל החבילה עושה זאת. גדלי חבילות גדולים יקרים ללקוח להוריד ולהפעיל. גדלים גדולים של חבילות יכולים לעכב את זמן הציור של ממשק המשתמש שלך. קבלת תחושה של עץ התלות של האפליקציה שלך עשויה לעזור באיתור בעיות אלו.
 

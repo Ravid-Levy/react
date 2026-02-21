@@ -1,5 +1,5 @@
 ---
-title: useDebugValue
+title: "useDebugValue"
 ---
 
 <Intro>
@@ -16,11 +16,11 @@ useDebugValue(value, format?)
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `useDebugValue(value, format?)` {/*usedebugvalue*/}
 
-קראו ל-`useDebugValue` ברמה העליונה של [custom Hook](/learn/reusing-logic-with-custom-hooks) כדי להציג ערך דיבוג קריא:
+קראו ל-`useDebugValue` ברמה העליונה של [custom Hook](/learn/reusing-logic-with-custom-hooks) כדי להציע ערך דיבוג קריא:
 
 ```js
 import { useDebugValue } from 'react';
@@ -32,14 +32,14 @@ function useOnlineStatus() {
 }
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `value`: הערך שאתם רוצים להציג ב-React DevTools. יכול להיות מכל סוג.
-* **אופציונלי** `format`: פונקציית עיצוב. כשבודקים את הקומפוננטה, React DevTools תקרא לפונקציית העיצוב עם `value` כארגומנט, ואז תציג את הערך המעוצב שהוחזר (שגם הוא יכול להיות מכל סוג). אם לא מציינים פונקציית עיצוב, יוצג הערך המקורי `value`.
+* `value`: הערך רוצה להציג ב-React DevTools. יכול להיות מכל סוג.
+* **אופציונלי** `format`: פונקציית עיצוב. כשבודקים את הקומפוננטה, React DevTools תקרא לפונקציית העיצוב עם `value` כארגומנט, ואז תציג את הערך המעוצב שהוא חזר (שגם הוא יכול להיות מכל סוג). אם לא מציינים פונקציית עיצוב, יוצג הערך המקורי `value`.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `useDebugValue` לא מחזירה דבר.
 
@@ -47,7 +47,7 @@ function useOnlineStatus() {
 
 ### הוספת תווית ל-custom Hook {/*adding-a-label-to-a-custom-hook*/}
 
-קראו ל-`useDebugValue` ברמה העליונה של [custom Hook](/learn/reusing-logic-with-custom-hooks) כדי להציג <CodeStep step={1}>ערך דיבוג</CodeStep> קריא עבור [React DevTools.](/learn/react-developer-tools)
+קראו ל-`useDebugValue` ברמה העליונה של [custom Hook](/learn/reusing-logic-with-custom-hooks) כדי להציע <CodeStep step={1}>ערך דיבוג</CodeStep> קריא עבור [React DevTools.](/learn/-react-de)
 
 ```js [[1, 5, "isOnline ? 'Online' : 'Offline'"]]
 import { useDebugValue } from 'react';
@@ -59,11 +59,11 @@ function useOnlineStatus() {
 }
 ```
 
-כך קומפוננטות שקוראות ל-`useOnlineStatus` יקבלו תווית כמו `OnlineStatus: "Online"` כשבודקים אותן:
+כך קומפוננטות שקוראות ל-`useOnlineStatus` יקבלו תווית כמו `OnlineStatus: "Online"` כשבודקים אותם:
 
-![A screenshot of React DevTools showing the debug value](/images/docs/react-devtools-usedebugvalue.png)
+![צילום מסך של React DevTools המציג את ערך ניפוי הבאגים](/images/docs/react-devtools-usedebugvalue.png)
 
-בלי הקריאה ל-`useDebugValue`, יוצגו רק הנתונים הבסיסיים (בדוגמה הזאת, `true`).
+בלי הקריאה ל-`useDebugValue`, יוצגו רק את הבסיסיים (בדוגמה הזאת, `true`).
 
 <Sandpack>
 
@@ -103,7 +103,7 @@ function subscribe(callback) {
 
 <Note>
 
-אל תוסיפו ערכי דיבוג לכל custom Hook. זה הכי שימושי עבור custom Hooks שהם חלק מספריות משותפות ושיש להם מבנה נתונים פנימי מורכב שקשה לבדוק.
+אל תוסיפו ערכי דיבוג לכל מותאם אישית Hook. זה הכי שימושי עבור מותאם אישית Hooks חלק מספריות משותפות ושיש להם מבנה מבנה פנימי מורכב שקשה לבדוק.
 
 </Note>
 
@@ -119,4 +119,4 @@ useDebugValue(date, date => date.toDateString());
 
 פונקציית העיצוב תקבל את <CodeStep step={1}>ערך הדיבוג</CodeStep> כפרמטר וצריכה להחזיר <CodeStep step={2}>ערך תצוגה מעוצב</CodeStep>. כשבודקים את הקומפוננטה, React DevTools תקרא לפונקציה הזו ותציג את התוצאה.
 
-כך אפשר להימנע מהרצת לוגיקת עיצוב יקרה אלא אם הקומפוננטה באמת נבדקת. לדוגמה, אם `date` הוא ערך מסוג Date, זה מונע קריאה ל-`toDateString()` בכל רינדור.
+כך אפשר מהרצת לוגיקת עיצוב יקרה אלא אם הקומפוננטה באמת נבדקת. לדוגמה, אם `date` הוא ערך סוג Date, זה מונע קריאה ל-`toDateString()` בכל רינדור.

@@ -1,10 +1,10 @@
 ---
-title: "<progress>"
+title: "<התקדמות>"
 ---
 
 <Intro>
 
-רכיב הדפדפן המובנה [`<progress>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) מאפשר לרנדר מחוון התקדמות.
+רכיב הדפדפן המובנה [`<progress>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) יכול לרנדר מחוון התקדמות.
 
 ```js
 <progress value={0.5} />
@@ -16,7 +16,7 @@ title: "<progress>"
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `<progress>` {/*progress*/}
 
@@ -26,15 +26,15 @@ title: "<progress>"
 <progress value={0.5} />
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Props {/*props*/}
+#### אבזרים {/*props*/}
 
 `<progress>` תומך בכל [מאפייני האלמנט הנפוצים.](/reference/react-dom/components/common#props)
 
 בנוסף, `<progress>` תומך ב-props האלה:
 
-* [`max`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#max): מספר. מציין את ערך ה-`value` המקסימלי. ברירת המחדל היא `1`.
+* [`max`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#max): מספר. מציין את הערך ה-`value` המקסימלי. ברירת המחדל היא `1`.
 * [`value`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#value): מספר בין `0` ל-`max`, או `null` להתקדמות לא-מוגדרת. מציין כמה כבר הושלם.
 
 ---
@@ -43,9 +43,9 @@ title: "<progress>"
 
 ### שליטה במחוון התקדמות {/*controlling-a-progress-indicator*/}
 
-כדי להציג מחוון התקדמות, רנדרו קומפוננטת `<progress>`. אפשר להעביר מספר ב-`value` בין `0` לבין ערך ה-`max` שתגדירו. אם לא תעבירו `max`, ברירת המחדל תהיה `1`.
+כדי להציג מחוון התקדמות, רנדרו קומפונטת `<progress>`. אפשר להעביר מספר ב-`value` בין `0` לערך ה-`max` שתגדירו. אם לא תעבירו `max`, ברירת המחדל תהיה `1`.
 
-אם הפעולה אינה מתקדמת כרגע, העבירו `value={null}` כדי להעביר את מחוון ההתקדמות למצב לא-מוגדר.
+אם פעולה אינה מתקדמת כרגע, העבירו `value={null}` כדי להעביר את מחוון ההתקדמות מצב לא-מוגדר.
 
 <Sandpack>
 

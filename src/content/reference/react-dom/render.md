@@ -1,12 +1,12 @@
 ---
-title: render
+title: "לְדַקלֵם"
 ---
 
 <Deprecated>
 
 ה-API הזה יוסר בגרסה ראשית עתידית של React.
 
-ב-React 18, `render` הוחלפה ב-[`createRoot`.](/reference/react-dom/client/createRoot) שימוש ב-`render` ב-React 18 יציג אזהרה שהאפליקציה שלכם תתנהג כאילו היא רצה על React 17. מידע נוסף [כאן.](/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis)
+ב-React 18, `render` הוחלפה ב-[`createRoot`.](/reference/react-dom/client/createRoot) שימוש ב-`render` ב-React 18 יציג אזהרה שהאפליקציה שלכם תתנהג כאילו היא רצה על React 17 [כאן.](/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis)
 
 </Deprecated>
 
@@ -24,11 +24,11 @@ render(reactNode, domNode, callback?)
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `render(reactNode, domNode, callback?)` {/*render*/}
 
-קראו ל-`render` כדי להציג קומפוננטת React בתוך אלמנט DOM של דפדפן.
+קראו ל-`render` כדי להציג קומפונטת React בתוך אלמנט DOM של דפדפן.
 
 ```js
 import { render } from 'react-dom';
@@ -39,38 +39,38 @@ render(<App />, domNode);
 
 React תציג את `<App />` בתוך `domNode`, ותיקח שליטה על ניהול ה-DOM שבתוכו.
 
-אפליקציה שבנויה כולה ב-React לרוב תכלול רק קריאת `render` אחת עם קומפוננטת השורש שלה. עמוד שמשתמש ב"sprinkles" של React בחלקים שונים עשוי לכלול כמה קריאות `render` לפי הצורך.
+אפליקציה שבנויה כולה ב-React לרוב תכלול רק קריאת `render` אחת עם קומפוננטת השורש שלה. עמוד שמשתמש ב"sprinkles" של React בחלקים שונים עשויים לכלול כמה קריאות `render` לפי הצורך.
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `reactNode`: ‏*React node* שברצונכם להציג. בדרך כלל זו תהיה חתיכת JSX כמו `<App />`, אבל אפשר גם להעביר React element שנוצר עם [`createElement()`](/reference/react/createElement), מחרוזת, מספר, `null`, או `undefined`.
+* `reactNode`: ‏*React node* שברצונכם להציג. בדרך כלל זו תהיה חתיכת JSX כמו `<App />`, אבל אפשר גם להעביר React אלמנט עם [`createElement()`](/reference/react/createElement), מחרוזת, מספר, `null`, או `undefined`.
 
-* `domNode`: [אלמנט DOM.](https://developer.mozilla.org/en-US/docs/Web/API/Element) React תציג את `reactNode` שהעברתם בתוך אלמנט ה-DOM הזה. מהרגע הזה React תנהל את ה-DOM בתוך `domNode` ותעדכן אותו כשהעץ של React ישתנה.
+* `domNode`: [ אלמנט DOM.](https://developer.mozilla.org/en-US/docs/Web/API/Element) React תציג את `reactNode` שהעברתם בתוך אלמנט ה-DOM הזה. מהרגע הזה React תנהל את ה-DOM בתוך `domNode` ותעדכןT אותו_6__ ות__תכןT אותו_.
 
-* **אופציונלי** `callback`: פונקציה. אם הועברה, React תקרא לה אחרי שהקומפוננטה הוכנסה ל-DOM.
+* **אופציונלי** `callback`: פונקציה. אם הועברה, React תקרא לה אחרי שהקומפוננתה הוכנסה ל-DOM.
 
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
-`render` בדרך כלל מחזירה `null`. עם זאת, אם `reactNode` שהעברתם היא *class component*, יוחזר מופע של הקומפוננטה הזו.
+`render` בדרך כלל מחזירה `null`. עם זאת, אם `reactNode` שהעברתם היא *רכיב כיתה*, יוחזר מופע של הקומפוננטה הזו.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
 * ב-React 18, `render` הוחלפה ב-[`createRoot`.](/reference/react-dom/client/createRoot) השתמשו ב-`createRoot` עבור React 18 ומעלה.
 
-* בפעם הראשונה שקוראים ל-`render`, React תנקה את כל תוכן ה-HTML הקיים בתוך `domNode` לפני רינדור קומפוננטת React לתוכה. אם ה-`domNode` שלכם מכילה HTML שנוצר על ידי React בשרת או בזמן build, השתמשו ב-[`hydrate()`](/reference/react-dom/hydrate) במקום, שמחברת את event handlers ל-HTML הקיים.
+* בפעם הראשונה שקוראים ל-`render`, React תנקה את כל התוכן ה-HTML הקיים בתוך `domNode` רינדור קומפוננטת React לתוכה. אם ה-`domNode` שלכם מכילה HTML אישית על ידי React בשרת או בזמן בנייה, השתמשו ב-[`hydrate()`](/reference/react-dom/hydrate) במקום, ברת שמח את מטפלי האירועים ל-HTML הקיים.
 
-* אם תקראו ל-`render` על אותו `domNode` יותר מפעם אחת, React תעדכן את ה-DOM לפי הצורך כדי לשקף את ה-JSX העדכני ביותר שהעברתם. React תחליט אילו חלקים ב-DOM אפשר למחזר ואילו צריך ליצור מחדש על ידי ["התאמה"](/learn/preserving-and-resetting-state) לעץ שרונדר קודם. קריאה נוספת ל-`render` על אותו `domNode` דומה לקריאה ל-[פונקציית `set`](/reference/react/useState#setstate) בקומפוננטת השורש: React נמנעת מעדכוני DOM מיותרים.
+* אם תקראו ל-`render` על אותו `domNode` יותר מפעם אחת, React תעדכן את ה-DOM לפי הצורך לשקף את ה-JSX העדכני ביותר שהעברתם. React תחליט אילו חלקים ב-DOM אפשר למחזר כשצריך ליצור מחדש על ידי ["התאמה"](/learn/preserving-and-resetting-state) לעץ שרונדר קודם. קריאה נוספת ל-`render` על אותו `domNode` דומה לקריאה ל-[פונקציית `set`](/reference/react/useState#setstate) בקומפוננטת השורש: React נמנעת מעדכוני DOM מיותרים.
 
-* אם האפליקציה שלכם בנויה לגמרי ב-React, כנראה שתהיה בה רק קריאת `render` אחת. (אם אתם משתמשים ב-framework, הוא עשוי לבצע את הקריאה הזו עבורכם.) כשאתם רוצים לרנדר חתיכת JSX בחלק אחר של עץ ה-DOM שאינו ילד של הקומפוננטה שלכם (למשל modal או tooltip), השתמשו ב-[`createPortal`](/reference/react-dom/createPortal) במקום ב-`render`.
+* אם האפליקציה שלכם בנויה לגמרי ב-React, כנראה שתהיה בה רק קריאת `render` אחת. (אם אתם משתמשים ב-framework, הוא יכול לבצע את הקריאה הזו עבורכם.) אתם רוצים לרנדר חתיכת JSX בחלק אחר של עץ ה-DOM שאינו ילד של הקומפוננטה שלכם (מודול אחר או tooltip), השתמשו ב-[`createPortal`](/reference/react-dom/createTK_) ב-__.
 
 ---
 
 ## שימוש {/*usage*/}
 
-קראו ל-`render` כדי להציג <CodeStep step={1}>קומפוננטת React</CodeStep> בתוך <CodeStep step={2}>DOM node של דפדפן</CodeStep>.
+קראו ל-`render` כדי להציג <CodeStep step={1}>קומפונטת React</CodeStep> בתוך <CodeStep step={2}>DOM צומת של דפדפן</CodeStep>.
 
 ```js [[1, 4, "<App />"], [2, 4, "document.getElementById('root')"]]
 import { render } from 'react-dom';
@@ -79,9 +79,9 @@ import App from './App.js';
 render(<App />, document.getElementById('root'));
 ```
 
-### רינדור קומפוננטת השורש {/*rendering-the-root-component*/}
+### רינדור קומפונטת השורש {/*rendering-the-root-component*/}
 
-באפליקציות שבנויות לגמרי עם React, **בדרך כלל עושים את זה פעם אחת בלבד בזמן ההפעלה** — כדי לרנדר את קומפוננטת ה"שורש".
+באפליקציות שבנויות לגמרי עם React, **בדרך כלל עושים את זה פעם אחת בלבד בזמן ההפעלה** — כדי לרנדר את קומפונטת ה"שורש".
 
 <Sandpack>
 
@@ -105,7 +105,7 @@ export default function App() {
 
 ---
 
-### רינדור כמה roots {/*rendering-multiple-roots*/}
+### רינדור כמה שורשים {/*rendering-multiple-roots*/}
 
 אם העמוד שלכם [לא בנוי כולו ב-React](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page), קראו ל-`render` עבור כל יחידת UI עליונה שמנוהלת על ידי React.
 
@@ -183,7 +183,7 @@ nav ul li { display: inline-block; margin-right: 20px; }
 
 ### עדכון העץ המרונדר {/*updating-the-rendered-tree*/}
 
-אפשר לקרוא ל-`render` יותר מפעם אחת על אותו DOM node. כל עוד מבנה עץ הקומפוננטות תואם למה שרונדר קודם, React [תשמר את ה-state.](/learn/preserving-and-resetting-state) שימו לב שאפשר להקליד ב-input, כלומר העדכונים מקריאות `render` חוזרות כל שנייה אינם הרסניים:
+אפשר לקרוא ל-`render` יותר מפעם אחת על אותו DOM צומת. כל עוד מבנה עץ הקומפוננטות תואם למה שרונדר קודם, React [תשמר את ה-state.](/learn/preserving-and-resetting-state) שימו לב אפשרי ב-input, כלומר העדכונים מקריאות `render` חוזרות כל שנייה שנית הרסניים:
 
 <Sandpack>
 

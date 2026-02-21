@@ -13,7 +13,7 @@ React תוכנה מלכתחילה לאימוץ הדרגתי. אפשר להשתמ
 * [איך מתחילים פרויקט React חדש](/learn/start-a-new-react-project)
 * [איך למצוא React לפרויקט ](/learn/add-react-to-an-existing-project)
 * [איך מגדירים את העורך](/learn/editor-setup)
-* [איך מתקינים React Developer Tools](/learn/react-developer-tools)
+* [איך מתקינים React כלים למפתחים](/learn/react-developer-tools)
 
 </YouWillLearn>
 
@@ -45,7 +45,7 @@ export default function App() {
 
 ## התחילו פרויקט React חדש {/*start-a-new-react-project*/}
 
-אם אתם רוצים לבנות אפליקציה או אתר שמבוססים לגמרי על React, [התחילו פרויקט React חדש.](/learn/start-a-new-react-project)
+אם אתם רוצים לבנות אפליקציה או אתר שמבוסים לגמרי על React, [התחילו פרויקט React חדש.](/learn/start-a-new-react-project)
 
 ## הוסיפו React לפרויקט קיים {/*add-react-to-an-existing-project*/}
 

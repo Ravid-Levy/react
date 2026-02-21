@@ -6,14 +6,14 @@ canary: true
 
 <Canary>
 
-`'use server'` נדרש רק אם אתם [משתמשים ב-React Server Components](/learn/start-a-new-react-project#bleeding-edge-react-frameworks) או בונים ספרייה שתואמת אליהם.
+`'use server'` רק אם אתם [משתמשים ב-React רכיבי שרת](/learn/start-a-new-react-project#bleeding-edge-react-frameworks) או בונים ספרייה שתואמת.
 
 </Canary>
 
 
 <Intro>
 
-`'use server'` מסמן פונקציות בצד השרת שאפשר לקרוא להן מקוד בצד הלקוח.
+`'use server'` מסמן פונקציות בצד השרת אפשר לקרוא להן מקוד בצד הלקוח.
 
 </Intro>
 
@@ -25,7 +25,7 @@ canary: true
 
 ### `'use server'` {/*use-server*/}
 
-הוסיפו `'use server'` בתחילת גוף של פונקציה אסינכרונית כדי לסמן אותה כפונקציה שהלקוח יכול לקרוא לה. לפונקציות האלו אנחנו קוראים _Server Actions_.
+הוסיפו `'use server'` התחיל גוף של פונקציה אסינכרונית כדי לסמן אותה כפונקציה שהלקוח יכול לקרוא לה. לפונקציות האלו אנחנו קוראים _פעולות שרת_.
 
 ```js {2}
 async function addToCart(data) {
@@ -34,28 +34,28 @@ async function addToCart(data) {
 }
 ```
 
-כשקוראים ל-Server Action מהלקוח, מתבצעת בקשת רשת לשרת שכוללת עותק מסודר (serialized) של כל הארגומנטים שהועברו. אם ה-Server Action מחזיר ערך, הערך הזה יעבור serialization ויוחזר ללקוח.
+כשקוראים ל-Server Action מהלקוח, בקשת רשת לשרת שכוללת עותק מסודר (בסדרה) של כל הארגומנטים שעברו. אם ה-Server Action מחזיר ערך, הערך הזה יעבור בסידרה ויוחזר ללקוח.
 
-במקום לסמן כל פונקציה בנפרד עם `'use server'`, אפשר להוסיף את ההנחיה בראש קובץ כדי לסמן שכל ה-exports בקובץ הם Server Actions שאפשר להשתמש בהם מכל מקום, כולל ייבוא מתוך קוד לקוח.
+במקום לסמן כל פונקציה בנפרד עם `'use server'`, אפשר להוסיף את ההנחיה בראש קובץ כדי לסמן שכל ה-exports בקובץ הם פעולות שרת שאפשר להשתמש בהם בכל מקום, כולל ייבוא ​​מתוך קוד לקוח.
 
 #### הבהרות {/*caveats*/}
-* `'use server'` חייב להופיע ממש בתחילת הפונקציה או המודול, לפני כל קוד אחר כולל imports (מותרות הערות מעל ההנחיה). יש לכתוב אותו במרכאות יחידות או כפולות, לא עם backticks.
-* אפשר להשתמש ב-`'use server'` רק בקבצים שרצים בצד השרת. את ה-Server Actions שנוצרים אפשר להעביר ל-Client Components דרך props. ראו [types נתמכים ל-serialization](#serializable-parameters-and-return-values).
-* כדי לייבא Server Action מתוך [קוד לקוח](/reference/react/use-client), ההנחיה חייבת להיות ברמת מודול.
-* מכיוון שקריאות הרשת מתחת למכסה המנוע הן תמיד אסינכרוניות, אפשר להשתמש ב-`'use server'` רק על פונקציות async.
-* התייחסו תמיד לארגומנטים של Server Actions כקלט לא מהימן ובצעו הרשאה לכל שינוי מצב. ראו [שיקולי אבטחה](#security).
-* מומלץ לקרוא ל-Server Actions בתוך [transition](/reference/react/useTransition). Server Actions שמועברים ל-[`<form action>`](/reference/react-dom/components/form#props) או ל-[`formAction`](/reference/react-dom/components/input#props) ירוצו אוטומטית בתוך transition.
-* Server Actions מיועדים למוטציות שמעדכנות מצב בצד השרת; הם לא מומלצים לשליפת נתונים. בהתאם לכך, frameworks שמממשים Server Actions לרוב מעבדים פעולה אחת בכל פעם ואין להם דרך למטמן את ערך החזרה.
+* __TK_0 חייב להופיע ממש בתחילת הפונקציה או המודול, לפני כל קוד אחר כולל ייבוא (מותרות הערות מעל ההנחיה). יש לכתוב אותו במרכאות יחידות או כפולות, לא עם תקלות.
+* אפשר להשתמש ב-`'use server'` רק בקבצים שרצים בצד השרת. את ה-Server Actions אפשר להעביר ל-Client Components דרך props. ראו [סוג נתמכים ל-serialization](#serializable-parameters-and-return-values).
+* כדי לייבא פעולת שרת מתוך [קוד לקוח](/reference/react/use-client), ההנחיה חייבת להיות ברמת מודול.
+* מה שקשור הרשת מתחת למכסה המנוע הן תמיד אסינכרוניות, אפשר להשתמש ב-`'use server'` רק על פונקציות אסינכרון.
+*כתובו תמיד לארגומנטים של פעולות שרת כקלט לא מהימן ובצעו הרשאה לכל שינוי מצב. ראו [שיקולי אבטחה](#security).
+* מומלץ לקרוא ל-Server Actions בתוך [transition](/reference/react/useTransition). פעולות שרת שמועברות ל-[`<form action>`](/reference/react-dom/components/form#props) או ל-[`formAction`](/reference/react-dom/components/input#props) ירוצו אוטומטית בתוך המעבר.
+* פעולות שרת מיועדות למוטציות שמעדכנות מצב בצד השרת; הם לא מומלצים לשליפת נתונים. בהתאם לכך, מסגרות שמממשים פעולות שרת מעבדים פועלים אחת בכל פעם ואין להם דרך למטמן את ערך החזרה.
 
 ### שיקולי אבטחה {/*security*/}
 
-הארגומנטים ל-Server Actions נשלטים לגמרי על ידי הלקוח. מטעמי אבטחה, התייחסו אליהם תמיד כקלט לא מהימן, ודאו שאתם מאמתים ומבצעים escaping לארגומנטים לפי הצורך.
+הארגוים ל-Server Actions נשלטים לגמרי על ידי הלקוח. מטעמי אבטחה, רק שאל את זה תמיד כקלט לא מהימן, ודאו שאתה מאמתים ומבצעים escaping לארגומנטים לפי הצורך.
 
-בכל Server Action, ודאו שהמשתמש המחובר מורשה לבצע את הפעולה.
+בכל פעולת שרת, ודאו שהמשתמש המחובר מורשה לבצע את הפעולה.
 
 <Wip>
 
-כדי למנוע שליחה של מידע רגיש מתוך Server Action, קיימים APIs ניסיוניים מסוג taint שמונעים העברת ערכים ייחודיים ואובייקטים לקוד לקוח.
+כדי למנוע שליחה של רגישות מתוך פעולת שרת, קיים מידע APIs ניסיוניים מסוג גוון שמונעים העברת ערכים ייחודיים ואובייקטים לקוד לקוח.
 
 ראו [experimental_taintUniqueValue](/reference/react/experimental_taintUniqueValue) ו-[experimental_taintObjectReference](/reference/react/experimental_taintObjectReference).
 
@@ -63,46 +63,46 @@ async function addToCart(data) {
 
 ### ארגומנטים וערכי החזרה שניתנים ל-serialization {/*serializable-parameters-and-return-values*/}
 
-מכיוון שקוד לקוח קורא ל-Server Action דרך הרשת, כל הארגומנטים שמועברים חייבים להיות ניתנים ל-serialization.
+מה שקוד לקוח קורא ל-Server Action דרך הרשת, כל הארגומנטים שמועברים חייבים להיות ניתנים ל-Serialization.
 
-אלה הסוגים הנתמכים לארגומנטים של Server Action:
+אלה הסוגים הנתמכים לארגומנטים של פעולת שרת:
 
 * פרימיטיביים
-	* [string](https://developer.mozilla.org/en-US/docs/Glossary/String)
-	* [number](https://developer.mozilla.org/en-US/docs/Glossary/Number)
-	* [bigint](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
-	* [boolean](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
-	* [undefined](https://developer.mozilla.org/en-US/docs/Glossary/Undefined)
+* [מחרוזת](https://developer.mozilla.org/en-US/docs/Glossary/String)
+	* [מספר](https://developer.mozilla.org/en-US/docs/Glossary/Number)
+	* [גדול](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+	* [בוליאנית](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
+	* [לא מוגדר](https://developer.mozilla.org/en-US/docs/Glossary/Undefined)
 	* [null](https://developer.mozilla.org/en-US/docs/Glossary/Null)
-	* [symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol), רק symbols שנרשמו ב-global Symbol registry דרך [`Symbol.for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/for)
+	* [סמל](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol), רק סמלים שנרשמו ב-Global Symbol Registry דרך [`Symbol.for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/for)
 * איטרטורים שמכילים ערכים שניתנים ל-serialization
-	* [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-	* [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-	* [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
-	* [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+	* [מחרוזת](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+	* [מערך](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+	* [מפה](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+	* [סט](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 	* [TypedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) ו-[ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
-* [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [תאריך](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * מופעי [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
-* [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) פשוטים: כאלה שנוצרו עם [object initializers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer), עם מאפיינים שניתנים ל-serialization
-* פונקציות שהן Server Actions
-* [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+* [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) פשוטים: אנשים מיוחדים עם [אתחולי אובייקטים](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer), עם מאפיינים שניתנים ל-serialization
+* פונקציות שהן פעולות שרת
+* [הבטחות](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 לעומת זאת, אלה אינם נתמכים:
-* React elements או [JSX](/learn/writing-markup-with-jsx)
-* פונקציות, כולל פונקציות קומפוננטה או כל פונקציה אחרת שאינה Server Action
-* [Classes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Classes_in_JavaScript)
-* אובייקטים שהם מופעים של כל class (מלבד ה-built-ins שהוזכרו) או אובייקטים עם [null prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototype_objects)
-* Symbols שלא נרשמו גלובלית, לדוגמה: `Symbol('my new symbol')`
+* אלמנטים React או [JSX](/learn/writing-markup-with-jsx)
+* פונקציות, כולל פונקציות קומפונטה או כל פונקציה אחרת שאינה Server Action
+* [שיעורים](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Classes_in_JavaScript)
+* אובייקטים שהם מופעים של כל class (מלבד ה-built-ins שהוא זכרו) או אובייקטים עם [null prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototype_objects)
+* סמלים שלא נרשמו גלובלית, למשל: `Symbol('my new symbol')`
 
 
-ערכי חזרה נתמכים ב-serialization זהים ל-[serializable props](/reference/react/use-client#passing-props-from-server-to-client-components) עבור Client Component בגבול.
+ערכי חזרה נתמכים ב-serialization זהים ל-[ניתן להמשכה props](/reference/react/use-client#passing-props-from-server-to-client-components) עבור רכיב לקוח בגבול.
 
 
 ## שימוש {/*usage*/}
 
-### Server Actions בתוך טפסים {/*server-actions-in-forms*/}
+### פעולות שרת בתוך טפסים {/*server-actions-in-forms*/}
 
-מקרה השימוש הנפוץ ביותר ל-Server Actions הוא קריאה לפונקציות שרת שמבצעות מוטציה בנתונים. בדפדפן, אלמנט [HTML form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) הוא הדרך המסורתית לשלוח מוטציה מצד המשתמש. עם React Server Components, React מוסיף תמיכה מדרגה ראשונה ב-Server Actions בתוך [forms](/reference/react-dom/components/form).
+מקרה הפעלה הנפוץ ביותר ל-Server Actions הוא קריאה לפונקציות שרת שמבצעות מוטציה בנתונים. בדפדפן, אלמנט [HTML form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) הוא הדרך המסורתית לשלוח מוטציה מצד המשתמש. עם React Server Components, React מוסיף תמיכה הסבר ראשונה ב-Server Actions בתוך [forms](/reference/react-dom/components/form).
 
 הנה טופס שמאפשר למשתמש לבקש שם משתמש.
 
@@ -125,15 +125,15 @@ export default function App() {
 }
 ```
 
-בדוגמה הזו `requestUsername` הוא Server Action שמועבר ל-`<form>`. כשמשתמש שולח את הטופס, מתבצעת בקשת רשת לפונקציית השרת `requestUsername`. כשקוראים ל-Server Action מתוך טופס, React יעביר את <CodeStep step={1}>[FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)</CodeStep> של הטופס כארגומנט ראשון ל-Server Action.
+בדוגמה הזו `requestUsername` הוא שרת פעולה שמועבר ל-`<form>`. כשמשתמש הטופס, שולחת את בקשת רשת לפונקציית השרת `requestUsername`. כשקוראים ל-Server Action מתוך טופס, React יעביר את <CodeStep step={1}>[FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)</CodeStep> של הטופס כארגומנט ראשון ל-Server Action.
 
-על ידי העברת Server Action ל-`action` של הטופס, React יכול [לבצע progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) לטופס. המשמעות היא שאפשר לשלוח טפסים גם לפני שחבילת JavaScript נטענה.
+על העברת שרת פעולה ל-`action` של הטופס, React יכול [לבצע שיפור פרוגרסיבי](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) לטופס. אנו יכולים לשלוח טפסים גם לפני שחבילת JavaScript נאמר.
 
 #### טיפול בערכי חזרה בטפסים {/*handling-return-values*/}
 
-בטופס בקשת שם משתמש ייתכן שהשם לא זמין. `requestUsername` צריך להחזיר לנו אם הפעולה הצליחה או נכשלה.
+בטופס בקשת שם משתמש יכול שהשם לא זמין. `requestUsername` צריך להחזיר לנו אם לפעול או נכשלה.
 
-כדי לעדכן את ה-UI לפי תוצאת Server Action תוך תמיכה ב-progressive enhancement, השתמשו ב-[`useFormState`](/reference/react-dom/hooks/useFormState).
+כדי לעדכן את ה-UI לפי תוצאת פעולת שרת תוך תמיכה ב-progressive enhancement, השתמשו ב-[`useFormState`](/reference/react-dom/hooks/useFormState).
 
 ```js
 // requestUsername.js
@@ -175,9 +175,9 @@ function UsernameForm() {
 
 ### קריאה ל-Server Action מחוץ ל-`<form>` {/*calling-a-server-action-outside-of-form*/}
 
-Server Actions הם endpoints בשרת, ואפשר לקרוא להם מכל מקום בקוד לקוח.
+פעולות שרת הן נקודות הקצה בשרת, ואפשר לקרוא אותם מכל מקום בקוד לקוח.
 
-כשמשתמשים ב-Server Action מחוץ ל-[form](/reference/react-dom/components/form), קראו לו בתוך [transition](/reference/react/useTransition), כדי שתוכלו להציג אינדיקציית טעינה, להראות [optimistic state updates](/reference/react/useOptimistic), ולטפל בשגיאות לא צפויות. טפסים עוטפים Server Actions אוטומטית בתוך transitions.
+כשמשתמשים ב-Server Action מחוץ ל-[form](/reference/react-dom/components/form), קראו לו בתוך [transition](/reference/react/useTransition), כדי לאפשר להציג אינדיקציית טעינה, להראות [עדכוני state אופטימיים](/reference/react/useOptimistic), ולטפל. טפסים עוטפים פעולות שרת אוטומטית בתוך מעברים.
 
 ```js {9-12}
 import incrementLike from './actions';
@@ -214,4 +214,4 @@ export default async function incrementLike() {
 }
 ```
 
-כדי לקרוא את ערך החזרה של Server Action צריך לבצע `await` ל-promise שמוחזר.
+כדי לקרוא את הערך החזרה של פעולת שרת צריך לבצע `await` להבטחת שמוחזר.

@@ -1,5 +1,5 @@
 ---
-title: experimental_useEffectEvent
+title: "ניסיוני_useEffectEvent"
 ---
 
 <Wip>
@@ -12,7 +12,7 @@ title: experimental_useEffectEvent
 - `react-dom@experimental`
 - `eslint-plugin-react-hooks@experimental`
 
-גרסאות ניסיוניות של React עשויות להכיל באגים. אל תשתמשו בהן ב-production.
+גרסאות ניסיוניות של React עשויות להכיל באגים. אל תשתמשו בהפקה.
 
 </Wip>
 

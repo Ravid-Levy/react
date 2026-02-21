@@ -1,5 +1,5 @@
 ---
-title: createFactory
+title: "createFactory"
 ---
 
 <Deprecated>
@@ -10,7 +10,7 @@ title: createFactory
 
 <Intro>
 
-`createFactory` מאפשרת ליצור פונקציה שמייצרת React elements מסוג נתון.
+`createFactory` מאפשרת ליצור פונקציה שמייצרת React elements סוג נתון.
 
 ```js
 const factory = createFactory(type)
@@ -22,11 +22,11 @@ const factory = createFactory(type)
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `createFactory(type)` {/*createfactory*/}
 
-קראו ל-`createFactory(type)` כדי ליצור פונקציית factory שמייצרת React elements מסוג `type` נתון.
+קראו ל-`createFactory(type)` כדי ליצור פונקציית factory שמייצרת React elements סטייל `type` נתון.
 
 ```js
 import { createFactory } from 'react';
@@ -34,7 +34,7 @@ import { createFactory } from 'react';
 const button = createFactory('button');
 ```
 
-ואז אפשר להשתמש בה כדי ליצור React elements בלי JSX:
+ואז אפשר להשתמש בה כדי ליצור React אלמנטים בלי JSX:
 
 ```js
 export default function App() {
@@ -46,25 +46,25 @@ export default function App() {
 }
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `type`: הארגומנט `type` חייב להיות סוג קומפוננטת React תקין. למשל, מחרוזת שם תגית (כמו `'div'` או `'span'`), או קומפוננטת React (פונקציה, מחלקה, או קומפוננטה מיוחדת כמו [`Fragment`](/reference/react/Fragment)).
+* `type`: הארגומנט `type` חייב להיות סוג קומפונטת React תקין. למשל, מחרוזת שם תגית (כמו `'div'` או `'span'`), או קומפונטת React (פונקציה, מחלקה, או קומפוננטה מיוחדת כמו [`Fragment`](/reference/react/Fragment)).
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
-מחזירה פונקציית factory. פונקציית ה-factory הזו מקבלת אובייקט `props` כארגומנט ראשון, אחריו רשימת ארגומנטים `...children`, ומחזירה React element עם ה-`type`, ה-`props` וה-`children` הנתונים.
+מחזירה פונקציית. פונקציית ה-factory הזו מקבלת אובייקט `props` כארגומנט ראשון, אחריו רשימת ארגומנטים `...children`, ומחזירה React אלמנט עם ה-`type`, ה-`props` וה-`children` בימים.
 
 ---
 
 ## שימוש {/*usage*/}
 
-### יצירת React elements עם factory {/*creating-react-elements-with-a-factory*/}
+### יצירת React אלמנטים עם מפעל {/*creating-react-elements-with-a-factory*/}
 
-למרות שרוב פרויקטי React משתמשים ב-[JSX](/learn/writing-markup-with-jsx) כדי לתאר את ממשק המשתמש, JSX אינה חובה. בעבר, `createFactory` הייתה אחת הדרכים לתאר ממשק משתמש בלי JSX.
+למרות שרוב פרויקטי React משתמשים ב-[JSX](/learn/writing-markup-with-jsx) כדי לתאר את ממשק המשתמש, JSX אינה חובה. בעבר, `createFactory` אחת הדרכים לתאר ממש הייתהק משתמש בלי JSX.
 
-קראו ל-`createFactory` כדי ליצור *פונקציית factory* עבור סוג אלמנט מסוים כמו `'button'`:
+קראו ל-`createFactory` כדי ליצור *פונקציית מפעל* סוג אלמנט מסוים כמו `'button'`:
 
 ```js
 import { createFactory } from 'react';
@@ -72,7 +72,7 @@ import { createFactory } from 'react';
 const button = createFactory('button');
 ```
 
-קריאה לפונקציית ה-factory הזו תייצר React elements עם ה-props וה-children שסיפקתם:
+קריאה לפונקציית ה-factory הזו תייצר React אלמנטים עם ה-props וה-ילדים שסיפקתם:
 
 <Sandpack>
 
@@ -98,9 +98,9 @@ export default function App() {
 
 ## חלופות {/*alternatives*/}
 
-### העתקת `createFactory` לתוך הפרויקט שלכם {/*copying-createfactory-into-your-project*/}
+### העתקת `createFactory` בתוך הפרויקט שלכם {/*copying-createfactory-into-your-project*/}
 
-אם בפרויקט שלכם יש הרבה קריאות ל-`createFactory`, העתיקו את המימוש הבא של `createFactory.js` לתוך הפרויקט:
+אם בפרויקט שלכם יש הרבה קריאות ל-`createFactory`, העתיקות את המימוש הבא של `createFactory.js` לתוך הפרויקט:
 
 <Sandpack>
 
@@ -134,7 +134,7 @@ export function createFactory(type) {
 
 ### החלפת `createFactory` ב-`createElement` {/*replacing-createfactory-with-createelement*/}
 
-אם יש לכם מעט קריאות ל-`createFactory` ואתם לא מתנגדים לבצע המרה ידנית, ואתם לא רוצים להשתמש ב-JSX, אפשר להחליף כל קריאה לפונקציית factory בקריאה ל-[`createElement`](/reference/react/createElement). למשל, אפשר להחליף את הקוד הזה:
+אם יש לכם מעט קריאות ל-`createFactory` ואתם לא מתנגדים לבצע את המרה ידנית, ואתם לא רוצים להשתמש ב-JSX, אפשר להחליף את כל קריאה לפונקציית factory בקריאה ל-[`createElement`](/reference/react/createElement). למשל, אפשר להחליף את הקוד הזה:
 
 ```js {1,3,6}
 import { createFactory } from 'react';
@@ -165,7 +165,7 @@ export default function App() {
 }
 ```
 
-הנה דוגמה מלאה לשימוש ב-React ללא JSX:
+הנה דוגמה מלאה ב-React ללא JSX:
 
 <Sandpack>
 
@@ -207,7 +207,7 @@ export default function App() {
 
 <Pitfall>
 
-לפעמים קוד קיים עשוי להעביר משתנה כלשהו כ-`type` במקום קבוע כמו `'button'`:
+לפעמים קיים קוד קיים כ-`type` במצב קבוע כמו `'button'`:
 
 ```js {3}
 function Heading({ isSubheading, ...props }) {
@@ -217,7 +217,7 @@ function Heading({ isSubheading, ...props }) {
 }
 ```
 
-כדי לעשות את אותו הדבר ב-JSX, צריך לשנות את שם המשתנה כדי שיתחיל באות גדולה, למשל `Type`:
+כדי לעשות את זה ב-JSX, צריך לשנות את שם השינוי כדי לשנות באות גדולות, למשל `Type`:
 
 ```js {2,3}
 function Heading({ isSubheading, ...props }) {

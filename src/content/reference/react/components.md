@@ -1,21 +1,21 @@
 ---
-title: "קומפוננטות React מובנות"
+title: "קומפונטות React מבנות"
 ---
 
 <Intro>
 
-React חושפת כמה קומפוננטות מובנות שאפשר להשתמש בהן ב-JSX.
+React חושפת כמה קומפוננטות מבנות שאפשר להשתמש ב-JSX.
 
 </Intro>
 
 ---
 
-## קומפוננטות מובנות {/*built-in-components*/}
+## קומפוננטות מבנות {/*built-in-components*/}
 
-* [`<Fragment>`](/reference/react/Fragment), שאפשר לכתוב גם כ-`<>...</>`, מאפשר לקבץ כמה nodes של JSX יחד.
-* [`<Profiler>`](/reference/react/Profiler) מאפשר למדוד ביצועי רינדור של עץ React באופן פרוגרמטי.
-* [`<Suspense>`](/reference/react/Suspense) מאפשר להציג fallback בזמן שקומפוננטות ילדים נטענות.
-* [`<StrictMode>`](/reference/react/StrictMode) מפעיל בדיקות נוספות שתקפות רק בפיתוח ועוזרות למצוא באגים מוקדם.
+* [`<Fragment>`](/reference/react/Fragment), אפשר לכתוב גם כ-`<>...</>`, יכול לקבץ כמה צמתים של JSX יחד.
+* [`<Profiler>`](/reference/react/Profiler) יכול למדוד ביצועי רינדור של עץ React באופן פרוגרמטי.
+* [`<Suspense>`](/reference/react/Suspense) אפשר להשתמש ב-fallback בזמן שקומפוננטות ילדים נטענות.
+* [`<StrictMode>`](/reference/react/StrictMode) מפעיל בדיקות נוספות שתקפות רק בפיתוח ועוזות למצוא באגים מוקדם.
 
 ---
 

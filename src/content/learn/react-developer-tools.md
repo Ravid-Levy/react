@@ -4,12 +4,12 @@ title: "כלי הפיתוח של React"
 
 <Intro>
 
-השתמש ב-React Developer Tools על מנת לבחון [קומפוננטות](/learn/your-first-component), לערוך [props](/learn/passing-props-to-a-component) ו-[state](/learn/state-a-components-memory), ובנוות ניתן לבצע בעיות שקשורות.
+השתמש ב-React כלים למפתחים על מנת לבחון [קומפונטות](/learn/your-first-component), לערוך [props](/learn/passing-props-to-a-component) ו-[state](/learn/__TK_component_5____), ובובעיות לבצע שקשורות.
 </Intro>
 
 <YouWillLearn>
 
-* איך להתקין React Developer Tools
+* איך להתקין React כלים למפתחים
 
 </YouWillLearn>
 
@@ -23,10 +23,10 @@ title: "כלי הפיתוח של React"
 
 לאחר ההתקנה, אם תיכנס לאתר **שכתוב בריאקט**, תראה את הפאנלים _Components_ ו-_Profiler_.
 
-![תוסף React Developer Tools](/images/docs/react-devtools-extension.png)
+![תוסף React כלים למפתחים](/images/docs/react-devtools-extension.png)
 
 ### Safari ודפדפנים אחרים {/*safari-and-other-browsers*/}
-כדי להשתמש בתוכם בדפדפנים אחרים כמו Safari, התקינו את חבילת ה-npm הזו: [`react-devtools`](https://www.npmjs.com/package/react-devtools)
+כדי להשתמש בתוכם בדפדפנים אחרים כמו ספארי, התקינו את חבילת ה-npm הזו: [`react-devtools`](https://www.npmjs.com/package/react-devtools)
 ```bash
 # Yarn
 yarn global add react-devtools
@@ -40,7 +40,7 @@ npm install -g react-devtools
 react-devtools
 ```
 
-לאחר התחברו לאתר שלכם על ידי הוספת תגית ה-`<script>` הבאה בתוך ה-`head`:
+לאחר התחברו לאתר על ידי הוספת תגית ה-`<script>` הבאה בתוך ה-`head`:
 ```html {3}
 <html>
   <head>
@@ -49,10 +49,10 @@ react-devtools
 
 טענו מחדש את האתר כדי לראות את הכלים באזור כלי המפתחים:
 
-![React Developer Tools בstate עצמאי](/images/docs/react-devtools-standalone.png)
+![React כלים למפתחים בstate עצמאי](/images/docs/react-devtools-standalone.png)
 
-## מובייל (React Native) {/*mobile-react-native*/}
-אפשר להשתמש בכל המפתחים של React כדי לבחון אפליקציות גם שנבנו עם [React Native](https://reactnative.dev/). 
+## מובייל (React יליד) {/*mobile-react-native*/}
+אפשר להשתמש בכל המפתחים של React כדי לבחון אפליקציות גם שנבנו עם [React Native](https://reactnative.dev/).
 
 הדרך הקלה ביותר להשתמש בכלי המפתחים היא להתקין אותם גלובלית:
 ```bash
@@ -71,5 +71,5 @@ react-devtools
 
 > אם הכלים לא מתחברים תוך כמה שניות, נסו לטעון מחדש את האפליקציה.
 
-[למידע נוסף על ניפוי שגיאות ב-React Native.](https://reactnative.dev/docs/debugging)
+[למידע נוסף על ניפוי שגיאות ב-React יליד.](https://reactnative.dev/docs/debugging)
 

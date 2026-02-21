@@ -1,5 +1,5 @@
 ---
-title: prefetchDNS
+title: "אחזור מראש של DNS"
 canary: true
 ---
 
@@ -11,7 +11,7 @@ canary: true
 
 <Intro>
 
-`prefetchDNS` מאפשרת לבצע חיפוש מוקדם של כתובת ה-IP של שרת שאתם מצפים לטעון ממנו משאבים.
+`prefetchDNS` יכול לבצע חיפוש מוקדם של כתובת ה-IP של שרת את מצפים לטעון ממנו משאבים.
 
 ```js
 prefetchDNS("https://example.com");
@@ -23,11 +23,11 @@ prefetchDNS("https://example.com");
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `prefetchDNS(href)` {/*prefetchdns*/}
 
-כדי לבצע lookup ל-host, קראו לפונקציה `prefetchDNS` מתוך `react-dom`.
+כדי לבצע חיפוש למארח, קראו לפעולה `prefetchDNS` מתוך `react-dom`.
 
 ```js
 import { prefetchDNS } from 'react-dom';
@@ -39,26 +39,26 @@ function AppRoot() {
 
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-הפונקציה `prefetchDNS` מספקת לדפדפן רמז שכדאי לו לבצע lookup לכתובת ה-IP של שרת נתון. אם הדפדפן בוחר לעשות זאת, זה יכול להאיץ טעינה של משאבים מהשרת הזה.
+הפונקציה `prefetchDNS` מספקת לדפדפן רמז שכדאי לו לבצע חיפוש לכתובת ה-IP של שרת נתון. אם הדפדפן בוחר לעשות זאת, זה יכול להאיץ טעינה של משאבים מהשרת הזה.
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
 * `href`: מחרוזת. ה-URL של השרת שאליו רוצים להתחבר.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `prefetchDNS` לא מחזירה דבר.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
 * כמה קריאות ל-`prefetchDNS` עם אותו שרת משפיעות כמו קריאה אחת.
-* בדפדפן אפשר לקרוא ל-`prefetchDNS` בכל מצב: בזמן רינדור קומפוננטה, בתוך effect, בתוך event handler, וכן הלאה.
-* ברינדור צד שרת או ברינדור Server Components, ל-`prefetchDNS` יש השפעה רק אם קוראים לה בזמן רינדור קומפוננטה או בהקשר async שמקורו ברינדור קומפוננטה. קריאות אחרות ייחסמו.
+* בדפדפן אפשר לקרוא ל-`prefetchDNS` בכל מצב: בזמן רינדור קומפונטה, בתוך אפקט, בתוך מטפל באירועים, וכן הלאה.
+* ברינדור צד שרת או ברינדור רכיבי שרת, ל-`prefetchDNS` יש רק רק אם קוראים לה בזמן רינדור קומפוננטה או בהקשר אסינכרון שמקורו ברינדור קומפוננטה. קריאות אחרות ייחסמו.
 * אם אתם יודעים אילו משאבים ספציפיים תצטרכו, אפשר לקרוא [לפונקציות אחרות](/reference/react-dom/#resource-preloading-apis) שמתחילות לטעון את המשאבים מיד.
-* אין תועלת ב-prefetch לאותו שרת שעליו מתארח דף הווב עצמו, כי lookup אליו כבר בוצע עד לזמן שבו היה ניתן הרמז.
-* בהשוואה ל-[`preconnect`](/reference/react-dom/preconnect), ייתכן ש-`prefetchDNS` עדיף אם אתם מתחברים ספקולטיבית למספר גדול של דומיינים, מצב שבו העלות של preconnections עלולה לעלות על התועלת.
+* אין תועלת ב-prefetch לאותו שרת שעליו מתארח דף הווב עצמו, כי בדיקת אליו כבר בוצעה עד לשלו היה ניתן הרמז.
+* בהשוואה ל-[`preconnect`](/reference/react-dom/preconnect), יכול ש-`prefetchDNS` עדיף אם אתם מתחברים ספקולטיבית למספר גדול של דומיינים, מצב שבו העלות של preconnections עלולה לעלות על התועלת.
 
 ---
 
@@ -66,7 +66,7 @@ function AppRoot() {
 
 ### DNS Prefetch בזמן רינדור {/*prefetching-dns-when-rendering*/}
 
-קראו ל-`prefetchDNS` בזמן רינדור קומפוננטה אם אתם יודעים שהילדים שלה יטענו משאבים חיצוניים מאותו host.
+קראו ל-`prefetchDNS` בזמן רינדור קומפוננטה אם אתם יודעים שהילדים שלהם יטענו משאבים חיצוניים מאותו מארח.
 
 ```js
 import { prefetchDNS } from 'react-dom';
@@ -77,9 +77,9 @@ function AppRoot() {
 }
 ```
 
-### DNS Prefetch בתוך event handler {/*prefetching-dns-in-an-event-handler*/}
+### אחזור DNS מראש בתוך מטפל באירועים {/*prefetching-dns-in-an-event-handler*/}
 
-קראו ל-`prefetchDNS` בתוך event handler לפני מעבר לעמוד או מצב שבהם יידרשו משאבים חיצוניים. כך התהליך מתחיל מוקדם יותר לעומת קריאה בזמן רינדור העמוד או המצב החדש.
+קראו ל-`prefetchDNS` בתוך מטפל באירועים לפני מעבר או מצב יידרשו משאבים חיצוניים. כך מתחילים להמשך קריאה בזמן רינדור העמוד או המצב החדש.
 
 ```js
 import { prefetchDNS } from 'react-dom';

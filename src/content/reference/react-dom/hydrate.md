@@ -1,18 +1,18 @@
 ---
-title: hydrate
+title: "מֵימָה"
 ---
 
 <Deprecated>
 
 ה-API הזה יוסר בגרסה ראשית עתידית של React.
 
-ב-React 18, `hydrate` הוחלפה ב-[`hydrateRoot`.](/reference/react-dom/client/hydrateRoot) שימוש ב-`hydrate` ב-React 18 יציג אזהרה שהאפליקציה שלכם תתנהג כאילו היא רצה על React 17. מידע נוסף [כאן.](/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis)
+ב-React 18, `hydrate` הוחלפה ב-[`hydrateRoot`.](/reference/react-dom/client/hydrateRoot) שימוש ב-`hydrate` ב-React 18 יציג אזהרה שהאפליקציה שלכם תתנהג כאילו היא רצה על React 17 [כאן.](/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis)
 
 </Deprecated>
 
 <Intro>
 
-`hydrate` מאפשרת להציג קומפוננטות React בתוך DOM node של דפדפן, כשהתוכן ה-HTML שלו נוצר קודם על ידי [`react-dom/server`](/reference/react-dom/server) ב-React 17 ומטה.
+`hydrate` יכול להמציא קומפוננטות React בתוך DOM צומת של דפדפן, כשהתוכן ה-HTML נוצר קודם על ידי [`react-dom/server`](/reference/react-dom/server) ב-React 17 ומטה.
 
 ```js
 hydrate(reactNode, domNode, callback?)
@@ -24,11 +24,11 @@ hydrate(reactNode, domNode, callback?)
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `hydrate(reactNode, domNode, callback?)` {/*hydrate*/}
 
-ב-React 17 ומטה, קראו ל-`hydrate` כדי "לחבר" את React ל-HTML קיים שכבר רונדר על ידי React בסביבת שרת.
+ב-React 17 ומטה, קראו ל-`hydrate` כדי "לחבר" את React ל-HTML קיים רונדר על ידי React בסביבת שרת.
 
 ```js
 import { hydrate } from 'react-dom';
@@ -36,33 +36,33 @@ import { hydrate } from 'react-dom';
 hydrate(reactNode, domNode);
 ```
 
-React תתחבר ל-HTML שקיים בתוך `domNode`, ותיקח שליטה על ניהול ה-DOM שבתוכו. אפליקציה שבנויה לגמרי ב-React תכלול בדרך כלל קריאת `hydrate` אחת בלבד עם קומפוננטת השורש שלה.
+React תתחבר ל-HTML שקיים בתוך `domNode`, ותיקח שליטה על ניהול ה-DOM שבתוכו. אפליקציה שבנויה לגמרי ב-React כלול בדרך כלל קריאת `hydrate` אחת בלבד עם קומפונטת השורש שלה.
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
 * `reactNode`: ‏"React node" ששימש לרינדור ה-HTML הקיים. בדרך כלל זו חתיכת JSX כמו `<App />` שרונדרה עם מתודת `ReactDOM Server` כמו `renderToString(<App />)` ב-React 17.
 
 * `domNode`: [אלמנט DOM](https://developer.mozilla.org/en-US/docs/Web/API/Element) שרונדר כ-root element בשרת.
 
-* **אופציונלי**: `callback`: פונקציה. אם הועברה, React תקרא לה אחרי שהקומפוננטה עוברת hydration.
+* **אופציונלי**: `callback`: פונקציה. אם הועברה, React תקרא לה אחרי שהקומפוננטה עוברת הידרציה.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `hydrate` מחזירה null.
 
-#### Caveats {/*caveats*/}
-* `hydrate` מצפה שהתוכן המרונדר יהיה זהה לתוכן שרונדר בשרת. React יכולה לתקן הבדלים בתוכן טקסט, אבל צריך להתייחס לחוסר התאמות כבאגים ולתקן אותם.
-* במצב פיתוח, React מציגה אזהרות על חוסר התאמות בזמן hydration. אין הבטחה שהבדלי attributes יתוקנו במקרה של חוסר התאמה. זה חשוב מבחינת ביצועים כי ברוב האפליקציות חוסר התאמות נדיר, ולכן אימות מלא של כל ה-markup יהיה יקר מדי.
-* סביר שתהיה לכם רק קריאת `hydrate` אחת באפליקציה. אם אתם משתמשים ב-framework, ייתכן שהוא יבצע את הקריאה הזו בשבילכם.
+#### אזהרות {/*caveats*/}
+* `hydrate` מצפה שהתוכן המרונדר יהיה זה לתוכן שרונדר בשרת. React יכולה לתקן הבדלים בתוכן טקסט, אבל צריך להתייחס לחוסר התאמות כבאגים ולתקן אותם.
+* במצב פיתוח, React מציגה אזרות על חוסר התאמות בזמן הידרציה. אין הבטחה שהבדלי תכונות יתוקנו במקרה של חוסר התאמה. זה חשוב לביצועים כי ברוב האפליקציות חוסר תאונות נדיר, זה מתאים מלא של כל ה-markup יהיה יקר מדי.
+* סביר שתהיה לכם רק קריאת `hydrate` אחת באפליקציה. אם אתם משתמשים ב-framework, אתם יכולים לבצע את הקריאה הזו בשבילכם.
 * אם האפליקציה שלכם מרונדרת בלקוח בלבד בלי HTML קיים, שימוש ב-`hydrate()` לא נתמך. השתמשו ב-[render()](/reference/react-dom/render) (עבור React 17 ומטה) או ב-[createRoot()](/reference/react-dom/client/createRoot) (עבור React 18+) במקום.
 
 ---
 
 ## שימוש {/*usage*/}
 
-קראו ל-`hydrate` כדי לחבר <CodeStep step={1}>קומפוננטת React</CodeStep> לתוך <CodeStep step={2}>DOM node של דפדפן שרונדר בשרת</CodeStep>.
+קראו ל-`hydrate` כדי לחבר <CodeStep step={1}>קומפונטת React</CodeStep> לתוך <CodeStep step={2}>DOM צומת של דפדפן שרו בשרת</CodeStep>.
 
 ```js [[1, 3, "<App />"], [2, 3, "document.getElementById('root')"]]
 import { hydrate } from 'react-dom';
@@ -72,11 +72,11 @@ hydrate(<App />, document.getElementById('root'));
 
 שימוש ב-`hydrate()` לרינדור אפליקציית לקוח בלבד (אפליקציה ללא HTML מרונדר שרת) לא נתמך. השתמשו ב-[`render()`](/reference/react-dom/render) (ב-React 17 ומטה) או ב-[`createRoot()`](/reference/react-dom/client/createRoot) (ב-React 18+) במקום.
 
-### ביצוע hydration ל-HTML מרונדר שרת {/*hydrating-server-rendered-html*/}
+### ביצוע הידרציה ל-HTML מרונדר שרת {/*hydrating-server-rendered-html*/}
 
-ב-React, "hydration" הוא האופן שבו React "מתחברת" ל-HTML קיים שכבר רונדר על ידי React בסביבת שרת. בזמן hydration, React תנסה לחבר event listeners ל-markup הקיים ולקחת שליטה על רינדור האפליקציה בצד הלקוח.
+ב-React, "hydration" הוא האופן שבו React "מתחברת" ל-HTML קיים רונדר על ידי React בסביבת שרת. בזמן הידרציה, React תנסה לחבר מאזיני אירועים ל-markup הקיים ולקחת שליטה על רינדור האפליקציה בצד הלקוח.
 
-באפליקציות שבנויות לגמרי עם React, **בדרך כלל תבצעו hydration רק ל"root" אחד, פעם אחת בזמן ההפעלה לכל האפליקציה**.
+באפליקציות שבנויות לגמרי עם React, **בדרך כלל תבצעו הידרציה רק ​​ל"root" אחד, פעם אחת בזמן ההפעלה לכל האפליקציה**.
 
 <Sandpack>
 
@@ -106,15 +106,15 @@ export default function App() {
 
 בדרך כלל לא צריך לקרוא ל-`hydrate` שוב או במקומות נוספים. מהנקודה הזו React תנהל את ה-DOM של האפליקציה. כדי לעדכן את ה-UI, הקומפוננטות שלכם [ישתמשו ב-state.](/reference/react/useState)
 
-למידע נוסף על hydration, ראו את התיעוד של [`hydrateRoot`.](/reference/react-dom/client/hydrateRoot)
+למידע נוסף על הידרציה, ראו את התיעוד של [`hydrateRoot`.](/reference/react-dom/client/hydrateRoot)
 
 ---
 
-### השתקת אזהרות hydration mismatch בלתי נמנעות {/*suppressing-unavoidable-hydration-mismatch-errors*/}
+### השתקת אזהרות hydratation dismatch בלתי נמנעות {/*suppressing-unavoidable-hydration-mismatch-errors*/}
 
-אם attribute של אלמנט בודד או תוכן טקסט שלו שונים בהכרח בין השרת ללקוח (למשל timestamp), אפשר להשתיק את אזהרת ה-hydration mismatch.
+אם תכונה של אלמנט בודד או תוכן טקסט שלו שונים בהכרח בין השרת ללקוח (לאחר חותמת זמן), אפשר להשתיק את אזהרת ה-hydration mismatch.
 
-כדי להשתיק אזהרות hydration על אלמנט, הוסיפו `suppressHydrationWarning={true}`:
+כדי להשתיק אזהרות הידרציה על אלמנט, הוסיפו `suppressHydrationWarning={true}`:
 
 <Sandpack>
 
@@ -146,13 +146,13 @@ export default function App() {
 
 </Sandpack>
 
-זה עובד לעומק של רמה אחת בלבד, ומיועד כ-escape hatch. אל תשתמשו בזה מעבר לנדרש. אלא אם מדובר בתוכן טקסט, React עדיין לא תנסה לתקן אותו, ולכן הוא עלול להישאר לא עקבי עד עדכונים עתידיים.
+זה עובד לעומק של רמה אחת בלבד, ומיועד כ-escape hatch. אל תשתמשו בזה מעבר לנדרש. אלא אם מדובר בתוכן טקסט, React עדיין לא תנסה לתקן אותו, הוא יישאר לא עקבי עד עדכונים עתידיים.
 
 ---
 
 ### טיפול בתוכן שונה בין לקוח לשרת {/*handling-different-client-and-server-content*/}
 
-אם אתם צריכים בכוונה לרנדר משהו שונה בשרת ובלקוח, אפשר לבצע רינדור בשני מעברים. קומפוננטות שמרנדרות משהו שונה בלקוח יכולות לקרוא [משתנה state](/reference/react/useState) כמו `isClient`, שאפשר לקבוע ל-`true` בתוך [effect](/reference/react/useEffect):
+אם אתם צריכים בכוונה לרנדר משהו שונה בשרת ובלקוח, אפשר לבצע רינדור בשני מעברים. קומפוננטות שמרנדרות משהו שלקוח יכול לקרוא [שינוי state](/reference/react/useState) כמו `isClient`, אפשר לקבוע ל-`true` בתוך [effect](/reference/react/useEffect):
 
 <Sandpack>
 
@@ -192,10 +192,10 @@ export default function App() {
 
 </Sandpack>
 
-כך מעבר הרינדור הראשוני ירנדר את אותו תוכן כמו בשרת וימנע חוסר התאמות, אבל מעבר נוסף יתרחש באופן סינכרוני מיד אחרי hydration.
+תוכן כמו בשרת וימנע חוסר התאמות, אבל מעבר נוסף יתרחש באופן סינכרוני מיד אחרי הידרציה.
 
 <Pitfall>
 
-הגישה הזו הופכת hydration לאיטית יותר כי הקומפוננטות צריכות לרנדר פעמיים. שימו לב לחוויית המשתמש בחיבורים איטיים. קוד JavaScript עלול להיטען הרבה אחרי רינדור ה-HTML הראשוני, ולכן רינדור UI שונה מיד אחרי hydration עלול להרגיש קופצני למשתמש.
+הגישה הזו הופכת הידרציה לאיתית יותר כי הקומפוננטות צריכות לרנדר פעמיים. שימו לב לחוויית משתמש בחיבורים איטיים. קוד JavaScript אולי להיטען הרבה אחרי רינדור ה-HTML הראשוני, זה רינדור UI שונה מיד אחרי הידרציה אולי להרגיש קופצני למשתמש.
 
 </Pitfall>

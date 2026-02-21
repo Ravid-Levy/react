@@ -10,10 +10,10 @@ React היא ספריית JavaScript לעיבוד ממשקי משתמש (UI). מ
 
 <YouWillLearn isChapter={true}>
 
-* [כיצד לכתוב את רכיב ה-React הראשון שלך](/learn/your-first-component)
+* [כיצד לכתוב את הרכיב ה-React הראשון שלך](/learn/your-first-component)
 * [מתי וכיצד ליצור קבצים מרובי רכיבים](/learn/importing-and-exporting-components)
 * [כיצד להוסיף סימון ל-JavaScript עם JSX](/learn/writing-markup-with-jsx)
-* [להשתמש בסוגרים מסולסלים עם JSX כדי לגשת לפונקציונליות JavaScript מהרכיבים שלך](/learn/javascript-in-jsx-with-curly-braces)
+* [להשתמש בסוגרים מסולסלים עם JSX כדי לגשת לפונקציונליות שלך JavaScript מהרכיבים](/learn/javascript-in-jsx-with-curly-braces)
 * [כיצד להגדיר רכיבים עם props](/learn/passing-props-to-a-component)
 * [כיצד לעבד רכיבים באופן מותנה](/learn/conditional-rendering)
 * [כיצד לעבד מספר רכיבים בו-זמנית](/learn/rendering-lists)
@@ -24,7 +24,7 @@ React היא ספריית JavaScript לעיבוד ממשקי משתמש (UI). מ
 
 ## הרכיב הראשון שלך {/*הרכיב-הראשון-שלך*/}
 
-יישומי React בנויים מחלקים מבודדים של ממשק משתמש הנקראים *רכיבים*. רכיב React הוא פונקציית JavaScript אתה יכול לפזר עם סימון. רכיבים יכולים להיות קטנים כמו כפתור, או גדולים כמו עמוד שלם. הנה רכיב 'גלריה' המציג שלושה רכיבי 'פרופיל':
+ישומי React בנויים מחלקים מבודדים של ממשק משתמש הנקראים *רכיבים*. רכיב React הוא פונקציית JavaScript אתה יכול לפזר עם סימון. רכיבים יכולים להיות קטנים כמו כפתור, או גדולים כמו עמוד שלם. הנה רכיב 'גלריה' המציג שלושה רכיבי 'פרופיל':
 
 <Sandpack>
 
@@ -58,7 +58,7 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 <LearnMore path="/learn/your-first-component">
 
-קרא את **[הרכיב הראשון](/learn/your-first-component)** כדי ללמוד כיצד להשתמש ברכיבי React.
+קרא את **[הרכיב הראשון](/learn/your-first-component)** כדי ללמוד להשתמש ברכיבי React.
 
 </LearnMore>
 
@@ -182,13 +182,13 @@ img { height: 90px; }
 
 <LearnMore path="/learn/writing-markup-with-jsx">
 
-קרא את **[כתיבת סימון עם JSX](/learn/writing-markup-with-jsx)** כדי ללמוד כיצד לכתוב JSX חוקי.
+קרא את **[כתיבת סימון עם JSX](/learn/writing-markup-with-jsx)** כדי ללמוד איך לכתוב JSX חוקי.
 
 </LearnMore>
 
 ## JavaScript ב-JSX עם פלטה מתולתת {/*javascript-in-jsx-with-curly-braces*/}
 
-JSX מאפשר לך לכתוב סימון דמוי HTML בתוך קובץ JavaScript, תוך שמירה על רינדור ההיגיון והתוכן באותו מקום. לפעמים תרצה להוסיף קצת הגיון JavaScript או להתייחס למאפיין דינמי בתוך הסימון הזה. בstate זה, אתה יכול להשתמש בסוגרים מסולסלים ב-JSX שלך כדי "לפתוח חלון" ל-JavaScript:
+JSX יכול לכתוב סימון דמוי HTML בתוך קובץ JavaScript, תוך שמירה על רינדור ההיגיון והתוכן באותו מקום. לפעמים תרצה להוסיף קצת הגיון JavaScript או להתייחס למאפיין דינמי בתוך הסימון הזה. בstate זה, אתה יכול להשתמש בסוגרים מסולסלים ב-JSX שלך כדי "לפתוח חלון" ל-JavaScript:
 
 <Sandpack>
 
@@ -230,7 +230,7 @@ body > div > div { padding: 20px; }
 
 <LearnMore path="/learn/javascript-in-jsx-with-curly-braces">
 
-קרא את **[JavaScript ב-JSX עם פלטה מתולתת](/learn/javascript-in-jsx-with-curly-braces)** כדי ללמוד כיצד לגשת לנתוני JavaScript מ-JSX.
+קרא את **[JavaScript ב-JSX עם פלטה מתולתת](/learn/javascript-in-jsx-with-curly- braces)** כדי ללמוד איך לגשת לנתוני JavaScript מ-JSX.
 
 </LearnMore>
 
@@ -311,7 +311,7 @@ export function getImageUrl(person, size = 's') {
 
 <LearnMore path="/learn/passing-props-to-a-component">
 
-קרא את **[העברת props לרכיב](/learn/passing-props-to-a-component)** כדי ללמוד כיצד להעביר ולקרוא props.
+קרא את **[ העברה props לרכיב](/learn/passing-props-to-a-component)** כדי ללמוד להעביר ולקרוא props.
 
 </LearnMore>
 
@@ -367,7 +367,7 @@ export default function PackingList() {
 
 קרוב תרצה להציג מספר רכיבים דומים מאוסף נתונים. אתה יכול להשתמש ב-'filter()' ו-'map()' של JavaScript עם React כדי לסנן ולהפוך את המערך שלך לרכיבים.
 
-עבור כל פריט מערך, תפרט 'מפתח'. בדרך כלל, תרצה להשתמש במזהה ממסד עבור `מפתח`. מקשים מסוגלים ל-React לעקוב אחר מקומו של כל פריט ברשימה גם אם הרשימה משתנה.
+עבור כל פריט מערך, תפרט 'מפתח'. בדרך כלל, תרצה להשתמש במזהה ממסד עבור `מפתח`. קשים מסוגלים ל-React לעקוב אחר מקומו של כל פריט ברשימה גם אם הרשימה משתנה.
 
 <Sandpack>
 
@@ -459,13 +459,13 @@ h2 { font-size: 20px; }
 
 <LearnMore path="/learn/rendering-lists">
 
-קרא את **[עיבוד רשימות](/learn/rendering-lists)** כדי ללמוד כיצד לעבד רשימה של רכיבים וכיצד לבחור מפתח.
+קרא את **[רשימות עיבוד](/learn/rendering-lists)** כדי ללמוד כיצד לעבד רשימה של רכיבים וכיצד לבחור מפתח.
 
 </LearnMore>
 
 ## שמירה על טהרת הרכיבים {/*שמירה-הרכיבים-טהורים*/}
 
-חלק מפונקציות JavaScript הן *טהורות.* פונקציה טהורה:
+חלק פונקציות JavaScript הן *טה.* פונקציה טהורה:
 
 * ** דואג לעניינים שלו.** זה לא משנה אובייקטים או משתנים שהיו קיימים לפני שנקרא.
 * **אותן כניסות, אותו פלט.** בהינתן אותן כניסות, פונקציה טהורה צריכה תמיד להחזיר את אותה תוצאה.
@@ -528,7 +528,7 @@ export default function TeaSet() {
 
 תגובה משתמש בצים כדי לדגמן את היחסים בין רכיבים ומודולים. 
 
-עץ רינדור React הוא ייצוג של יחסי ההורה והילד בין רכיבים. 
+עץ רינדור React הוא ייצוג של יחסי ההורה והילד בין רכיבים.
 
 <Diagram name="generic_render_tree" height={250} width={500} alt="A tree graph with five nodes, with each node representing a component. The root node is located at the top the tree graph and is labelled 'Root Component'. It has two arrows extending down to two nodes labelled 'Component A' and 'Component C'. Each of the arrows is labelled with 'renders'. 'Component A' has a single 'renders' arrow to a node labelled 'Component B'. 'Component C' has a single 'renders' arrow to a node labelled 'Component D'.">
 
@@ -538,7 +538,7 @@ export default function TeaSet() {
 
 רכיבים ליד ראש העץ, ליד מרכיב השורש, נחשבים לרכיבים ברמה העליונה. רכיבים ללא רכיבי צאצא הם רכיבי עלים. סיווג זה של רכיבים שימושי להבנת זרימת הנתונים וביצועי העיבוד.
 
-מודלים של הקשר בין מודולי JavaScript היא דרך שימושית נוספת להבין את האפליקציה שלך. אנו מתחרים אליו כאל עץ תלות מודול. 
+מודלים של הקשר בין מודולי JavaScript היא דרך שימושית נוספת להבין את האפליקציה שלך. אנו מתחרים אליו כאל עץ תלות מודול.
 
 <Diagram name="generic_dependency_tree" height={250} width={500} alt="A tree graph with five nodes. Each node represents a JavaScript module. The top-most node is labelled 'RootModule.js'. It has three arrows extending to the nodes: 'ModuleA.js', 'ModuleB.js', and 'ModuleC.js'. Each arrow is labelled as 'imports'. 'ModuleC.js' node has a single 'imports' arrow that points to a node labelled 'ModuleD.js'.">
 
@@ -546,7 +546,7 @@ export default function TeaSet() {
 
 </Diagram>
 
-עץ תל כלי משמש כדרך בנייה כדי לאגד את כל קוד ה-JavaScript הרלונטי עבור הלקוח להורדה ולעיבוד. גודל חבילה גדול מחזיר את חוויית המשתמש עבור אפליקציות React. הבנת עץ התלות של המודול מועיל לאיתור באגים מסוג זה. 
+עץ תל כלי משמש כדרך בנייה כדי לאגד את כל הקוד ה-JavaScript הרלונטי עבור הלקוח להורדה ולעיבוד. גודל חבילה גדול מחזיר את חוויית המשתמש עבור אפליקציות React. הבנת עץ התלות של המודול מועיל לאיתור באגים מסוג זה.
 
 <LearnMore path="/learn/understanding-your-ui-as-a-tree">
 

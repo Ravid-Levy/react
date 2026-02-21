@@ -1,10 +1,10 @@
 ---
-title: "<option>"
+title: "<אופציה>"
 ---
 
 <Intro>
 
-רכיב הדפדפן המובנה [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option) מאפשר לרנדר אפשרות בתוך תיבת [`<select>`](/reference/react-dom/components/select).
+רכיב הדפדפן המובנה [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option) אפשרות לרנדר אפשרות בתוך תיבת [`<select>`](/reference/react-dom/components/select).
 
 ```js
 <select>
@@ -19,11 +19,11 @@ title: "<option>"
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `<option>` {/*option*/}
 
-רכיב הדפדפן המובנה [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option) מאפשר לרנדר אפשרות בתוך תיבת [`<select>`](/reference/react-dom/components/select).
+רכיב הדפדפן המובנה [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option) אפשרות לרנדר אפשרות בתוך תיבת [`<select>`](/reference/react-dom/components/select).
 
 ```js
 <select>
@@ -32,31 +32,31 @@ title: "<option>"
 </select>
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Props {/*props*/}
+#### אבזרים {/*props*/}
 
 `<option>` תומך בכל [מאפייני האלמנט הנפוצים.](/reference/react-dom/components/common#props)
 
 בנוסף, `<option>` תומך ב-props האלה:
 
-* [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#disabled): ערך בוליאני. אם `true`, לא ניתן יהיה לבחור באפשרות והיא תוצג מעומעמת.
-* [`label`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#label): מחרוזת. מציינת את משמעות האפשרות. אם לא הוגדרה, ישמש הטקסט שבתוך האפשרות.
-* [`value`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#value): הערך שישמש [בעת שליחת טופס ה-`<select>` ההורה](/reference/react-dom/components/select#reading-the-select-box-value-when-submitting-a-form) אם האפשרות הזו נבחרה.
+* [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#disabled): ערך בוליאני. אם `true`, לא ניתן לבחור באפשרות היא תוצג מעומעמת.
+* [`label`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#label): מחרוזת. מציינת את המשמעות אפשרות. אם לא הוגדרה, ישמש הטקסט שבתוך אפשרות.
+* [`value`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#value): הערך שישמש [בעת שליחת טופס ה-`<select>` ההורה](/reference/react-dom/components/select#reading-the-select-box-value-when-submitting-a-form) אם זו נבחרה.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
-* React לא תומכת במאפיין `selected` על `<option>`. במקום זאת, העבירו את ה-`value` של האפשרות ל-[`<select defaultValue>`](/reference/react-dom/components/select#providing-an-initially-selected-option) של ההורה עבור select לא נשלט, או ל-[`<select value>`](/reference/react-dom/components/select#controlling-a-select-box-with-a-state-variable) עבור select נשלט.
+* React לא תומכת במאפיין `selected` על `<option>`. במקום זאת, העבירו את ה-`value` של אפשרות ל-[`<select defaultValue>`](/reference/react-dom/components/select#providing-an-initially-selected-option) של ההורה עבור select לא נשלט, או ל-[`<select value>`](/reference/react-dom/components/select#controlling-a-select-box-with-a-state-variable) עבור בחר נשלט.
 
 ---
 
 ## שימוש {/*usage*/}
 
-### הצגת תיבת select עם אפשרויות {/*displaying-a-select-box-with-options*/}
+### הצגת תיבת בחר עם אפשרויות {/*displaying-a-select-box-with-options*/}
 
-רנדרו `<select>` עם רשימת קומפוננטות `<option>` בתוכו כדי להציג תיבת select. תנו לכל `<option>` ערך `value` שמייצג את הנתון שיישלח עם הטופס.
+רנדרו `<select>` עם רשימת קומפונטות `<option>` בתוכו כדי להציג תיבת select. תנו לכל `<option>` ערך `value` שמציג את הנתון שישלח עם הטופס.
 
-[קראו עוד על הצגת `<select>` עם רשימת קומפוננטות `<option>`. ](/reference/react-dom/components/select)
+[קראו עוד על הצגת `<select>` עם רשימת קומפונטות `<option>`. ](/reference/react-dom/components/select)
 
 <Sandpack>
 

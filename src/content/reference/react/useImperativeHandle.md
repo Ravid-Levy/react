@@ -1,5 +1,5 @@
 ---
-title: useImperativeHandle
+title: "useImperativeHandle"
 ---
 
 <Intro>
@@ -16,11 +16,11 @@ useImperativeHandle(ref, createHandle, dependencies?)
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `useImperativeHandle(ref, createHandle, dependencies?)` {/*useimperativehandle*/}
 
-קראו ל-`useImperativeHandle` ברמה העליונה של הקומפוננטה כדי להתאים אישית את ref handle שהיא חושפת:
+קראו ל-`useImperativeHandle` ברמה העליונה של הקומפוננטה כדי להתאים אישית את ה-Ref handle שהיא חושפת:
 
 ```js
 import { forwardRef, useImperativeHandle } from 'react';
@@ -34,17 +34,17 @@ const MyInput = forwardRef(function MyInput(props, ref) {
   // ...
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `ref`: ה-`ref` שקיבלתם כארגומנט השני מתוך [`forwardRef` render function.](/reference/react/forwardRef#render-function)
+* `ref`: ה-`ref` קיבלתם כארגומנט השני מתוך [`forwardRef` render function.](/reference/react/forwardRef#render-function)
 
-* `createHandle`: פונקציה שלא מקבלת ארגומנטים ומחזירה את ref handle שתרצו לחשוף. ה-handle הזה יכול להיות מכל סוג. בדרך כלל תחזירו אובייקט עם המתודות שתרצו לחשוף.
+* `createHandle`: פונקציה שלא מקבלת ארגומנטים ומחזירה את ref handle שתרצו לחשוף. ה-handle יכול הזה להיות מכל סוג. בדרך כלל תחזירו אובייקט עם המתודות שתרצו לחשוף.
 
-* **אופציונלי** `dependencies`: רשימה של כל הערכים הריאקטיביים שמופנים בתוך קוד ה-`createHandle`. ערכים ריאקטיביים כוללים props, state וכל המשתנים והפונקציות שמוגדרים ישירות בתוך גוף הקומפוננטה. אם ה-linter שלכם [מוגדר ל-React](/learn/editor-setup#linting), הוא יוודא שכל ערך ריאקטיבי מצוין נכון כ-dependency. רשימת ה-dependencies חייבת להיות במספר פריטים קבוע ולהיכתב inline כמו `[dep1, dep2, dep3]`. React תשווה כל dependency לערך הקודם שלו באמצעות [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is). אם re-render גרם לשינוי ב-dependency כלשהו, או אם השמטתם את הארגומנט הזה, פונקציית `createHandle` תרוץ מחדש, וה-handle החדש שייווצר יוקצה ל-ref.
+* **אופציונלי** `dependencies`: רשימה של כל הערכים הריאקטיביים שמופנים בתוך קוד ה-`createHandle`. ערכים ריאקטיביים כוללים props, state וכל המשתנים והפונקציות שמוגדרים באופן עצמאי בתוך גוף הקומפוננטה. אם ה-linter שלכם [מוגדר ל-React](/learn/editor-setup#linting), הוא יוודא שכל ערך ריאקטיבי מצוין נכון כ-dependency. רשימת התלות חייבת להיות מספר פריטים קבועים וכתב מוטבע כמו `[dep1, dep2, dep3]`. React תשווה כל התלות לערך קודמת שלו באמצעות [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is). אם מחדש גרם לשינוי ב-dependency, או אם השמטתם את הארגומנט הזה, פונקציית `createHandle` תרוץ מחדש, וה-handle החדש שייווצר יוקצה ל-ref.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `useImperativeHandle` מחזיר `undefined`.
 
@@ -54,7 +54,7 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 
 ### חשיפת ref handle מותאם לקומפוננטת ההורה {/*exposing-a-custom-ref-handle-to-the-parent-component*/}
 
-כברירת מחדל, קומפוננטות לא חושפות את ה-DOM nodes שלהן לקומפוננטות הורה. למשל, אם אתם רוצים שלקומפוננטת ההורה של `MyInput` תהיה [גישה](/learn/manipulating-the-dom-with-refs) ל-`<input>` DOM node, צריך לבצע opt-in עם [`forwardRef`:](/reference/react/forwardRef)
+כברירת מחדל, קומפונטות לא חושפות את ה-DOM צמתים שלהן לקומפוננטות הורה. למשל, אם אתם רוצים שלקומפונטת ההורה של `MyInput` תהיה [גישה](/learn/manipulating-the-dom-with-refs) ל-`<input>` DOM צומת, צריך לבצע הסכמה עם [`forwardRef`:](/reference/react/forwardRef)
 
 ```js {4}
 import { forwardRef } from 'react';
@@ -64,7 +64,7 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 });
 ```
 
-עם הקוד למעלה, [ref ל-`MyInput` יקבל את `<input>` DOM node.](/reference/react/forwardRef#exposing-a-dom-node-to-the-parent-component) אבל אפשר גם לחשוף ערך מותאם אישית במקום. כדי להתאים את ה-handle שנחשף, קראו ל-`useImperativeHandle` ברמה העליונה של הקומפוננטה:
+עם הקוד למעלה, [ref L-`MyInput` יקבל את הצומת `<input>` DOM.](/reference/react/forwardRef#exposing-a-dom-node-to-the-parent-component) אבל אפשר גם לחשוף ערך מותאם אישית במקום. כדי להתאים את הידית שנחשף, קראו ל-`useImperativeHandle` ברמה העליונה של הקומפוננטה:
 
 ```js {4-8}
 import { forwardRef, useImperativeHandle } from 'react';
@@ -82,7 +82,7 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 
 שימו לב שבקוד למעלה, ה-`ref` כבר לא מועבר ל-`<input>`.
 
-לדוגמה, נניח שאתם לא רוצים לחשוף את כל `<input>` DOM node, אלא רק שתי מתודות: `focus` ו-`scrollIntoView`. כדי לעשות זאת, שמרו את ה-DOM האמיתי של הדפדפן ב-ref נפרד. אחר כך השתמשו ב-`useImperativeHandle` כדי לחשוף handle שמכיל רק את המתודות שאתם רוצים שההורה יוכל לקרוא להן:
+לדוגמה, נניח שאתה לא רוצה לחשוף את כל הצומת `<input>` DOM, אלא רק שתי מתודות: `focus` ו-`scrollIntoView`. כדי לעשות זאת, שמרו את ה-DOM האמיתי של הדפדפן ב-ref נפרד. אחר כך השתמשו ב-`useImperativeHandle` כדי לחשוף את הידית שמכילה רק את המתודות שההורה תוכל לקרוא להן:
 
 ```js {7-14}
 import { forwardRef, useRef, useImperativeHandle } from 'react';
@@ -105,7 +105,7 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 });
 ```
 
-עכשיו, אם קומפוננטת ההורה מקבלת ref ל-`MyInput`, היא תוכל לקרוא למתודות `focus` ו-`scrollIntoView`. עם זאת, לא תהיה לה גישה מלאה ל-`<input>` DOM node עצמו.
+עכשיו, אם קומפוננתת ההורה מקבלת ref ל-`MyInput`, היא תוכל לקרוא למתודות `focus` ו-`scrollIntoView`. עם זאת, לא תהיה גישה מלאה ל-`<input>` DOM צומת עצמו.
 
 <Sandpack>
 
@@ -166,9 +166,9 @@ input {
 
 ---
 
-### חשיפת מתודות imperative משלכם {/*exposing-your-own-imperative-methods*/}
+### חשיפת מתודות ציווי משלכם {/*exposing-your-own-imperative-methods*/}
 
-המתודות שאתם חושפים דרך imperative handle לא חייבות להתאים בדיוק למתודות DOM. לדוגמה, קומפוננטת `Post` הזו חושפת מתודה בשם `scrollAndFocusAddComment` דרך imperative handle. זה מאפשר ל-`Page` ההורה לגלול את רשימת התגובות *וגם* לפקס את שדה הקלט כשאתם לוחצים על הכפתור:
+המתודות שלך חושפים דרך ציווי ידית לא חייבות להתאים בדיוק למתודות DOM. לדוגמה, קומפונטת `Post` הזו חושפת מתודה בשם `scrollAndFocusAddComment` דרך ציווי אחיזה. זה יכול ל-`Page` ההורה לגלול את רשימת התגובות *וגם* לפקס את שדה הקלט כשהם לוחצים על הכפתור:
 
 <Sandpack>
 
@@ -281,8 +281,8 @@ export default AddComment;
 
 <Pitfall>
 
-**אל תשתמשו ב-refs מעבר לנדרש.** כדאי להשתמש ב-refs רק להתנהגויות *imperative* שלא ניתן לבטא כ-props: למשל גלילה ל-node, פוקוס ל-node, הפעלת אנימציה, בחירת טקסט, וכן הלאה.
+**אל תשתמשו ב-refs המשך לנדרש.** כדאי להשתמש ב-refs רק להתנהגויות *ציווי* ניתן לבטא כ-props: למשל שלא גלילה ל-node, פוקוס ל-node, הפעלת אנימציה, בחירת טקסט, וכן הלאה.
 
-**אם אפשר לבטא משהו כ-prop, לא כדאי להשתמש ב-ref.** לדוגמה, במקום לחשוף imperative handle כמו `{ open, close }` מתוך קומפוננטת `Modal`, עדיף לקבל `isOpen` כ-prop כמו `<Modal isOpen={isOpen} />`. [Effects](/learn/synchronizing-with-effects) יכולות לעזור לחשוף התנהגויות imperative דרך props.
+**אם אפשר לבטא משהו כ-prop, לא כדאי להשתמש ב-ref.** לדוגמה, במקום לחשוף imperative handle כמו `{ open, close }` מתוך קומפוננטת `Modal`, עדיף לקבל `isOpen` כ-prop כמו `<Modal isOpen={isOpen} />`. [אפקטים](/learn/synchronizing-with-effects) יכולים לעזור לחשוף התנהגויות ציווי דרך props.
 
 </Pitfall>

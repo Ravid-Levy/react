@@ -10,18 +10,18 @@ title: "React DOM Hooks מובנים"
 
 ---
 
-## Form Hooks {/*form-hooks*/}
+## טופס Hooks {/*form-hooks*/}
 
 <Canary>
 
-Form Hooks זמינים כרגע רק בערוצי canary ו-experimental של React. מידע נוסף ב-[ערוצי השחרור של React](/community/versioning-policy#all-release-channels).
+טופס Hooks זמינים כרגע רק בערוצי קנרי ו-ניסיוני של React. מידע נוסף ב-[ערוצי השחרור של React](/community/versioning-policy#all-release-channels).
 
 </Canary>
 
-*Forms* מאפשרים ליצור רכיבים אינטראקטיביים לשליחת מידע. כדי לנהל טפסים בתוך הקומפוננטות, השתמשו באחד מה-Hooks הבאים:
+*טפסים* מאפשרים ליצור רכיבים אינטראקטיביים לשליחת מידע. כדי לנהל טפסים בתוך הקומפוננטות, השתמשו באחד מה-Hooks הבאים:
 
-* [`useFormStatus`](/reference/react-dom/hooks/useFormStatus) מאפשר לבצע עדכוני UI לפי הסטטוס של טופס.
-* [`useFormState`](/reference/react-dom/hooks/useFormState) מאפשר לנהל state בתוך טופס.
+* [`useFormStatus`](/reference/react-dom/hooks/useFormStatus) יכול לבצע עדכוני UI לפי הסטטוס של טופס.
+* [`useFormState`](/reference/react-dom/hooks/useFormState) יכול לנהל state בתוך טופס.
 
 ```js
 function Form({ action }) {

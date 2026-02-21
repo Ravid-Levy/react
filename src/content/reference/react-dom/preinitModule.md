@@ -1,5 +1,5 @@
 ---
-title: preinitModule
+title: "preinitModule"
 canary: true
 ---
 
@@ -11,13 +11,13 @@ canary: true
 
 <Note>
 
-[Frameworks מבוססי React](/learn/start-a-new-react-project) מטפלים לעיתים קרובות בטעינת משאבים בשבילכם, אז ייתכן שלא תצטרכו לקרוא ל-API הזה בעצמכם. לפרטים, עיינו בתיעוד של ה-framework שלכם.
+[Frameworks מבוססי React](/learn/start-a-new-react-project) מטפלים יכולים לעתים קרובות בטעינת משאבים בשבילכם, אז ייתכן שלא תצטרכו לקרוא ל-API הזה בעצמכם. לפרטים, עיינו בתיעוד של ה-framework שלכם.
 
 </Note>
 
 <Intro>
 
-`preinitModule` מאפשרת להביא מראש מודול ESM ולהעריך אותו.
+`preinitModule` יכול להביא מראש מודול ESM ולהעריך אותו.
 
 ```js
 preinitModule("https://example.com/module.js", {as: "script"});
@@ -29,11 +29,11 @@ preinitModule("https://example.com/module.js", {as: "script"});
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `preinitModule(href, options)` {/*preinitmodule*/}
 
-כדי לבצע preinit למודול ESM, קראו לפונקציה `preinitModule` מתוך `react-dom`.
+כדי לבצע מראש למודול ESM, קראו לפעולה `preinitModule` מתוך `react-dom`.
 
 ```js
 import { preinitModule } from 'react-dom';
@@ -45,36 +45,36 @@ function AppRoot() {
 
 ```
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-הפונקציה `preinitModule` מספקת לדפדפן רמז שכדאי להתחיל להוריד ולהריץ את המודול הנתון, מה שיכול לחסוך זמן. מודולים שמבצעים להם `preinit` יורצו כשיסיימו לרדת.
+הפונקציה `preinitModule` מספקת לדפדפן רמז שכדאי להתחיל להוריד ולהריץ את המודול הנתון, מה יכול לחסוך זמן. מודולים מבצעים להם `preinit` יורצו כשיסיימו לרדת.
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `href`: מחרוזת. ה-URL של המודול שברצונכם להוריד ולהריץ.
+* `href`: מחרוזת. ה-URL הורד את המודול שברצונכם ולהריץ.
 * `options`: אובייקט. כולל את המאפיינים הבאים:
-  *  `as`: מחרוזת חובה. חייב להיות `'script'`.
-  *  `crossOrigin`: מחרוזת. [מדיניות CORS](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) לשימוש. הערכים האפשריים: `anonymous` ו-`use-credentials`.
-  *  `integrity`: מחרוזת. hash קריפטוגרפי של המודול לצורך [אימות אותנטיות](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
-  *  `nonce`: מחרוזת. [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) קריפטוגרפי שמאפשר את המודול כשמשתמשים ב-Content Security Policy קשוחה.
+  * `as`: מחרוזת חובה. חייב להיות `'script'`.
+  * `crossOrigin`: מחרוזת. [מדיניות CORS](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) שימוש. הערכים האפשריים: `anonymous` ו-`use-credentials`.
+  * `integrity`: מחרוזת. hash קריפטוגרפיה של המודול לצורך [תאימות אותנטיות]https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
+  * `nonce`: מחרוזת. [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) קריפטוגרפי שמאפשר את המודול כשמשתמשים ב-Content Security Policy קשוחה.
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 `preinitModule` לא מחזירה דבר.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
 * כמה קריאות ל-`preinitModule` עם אותו `href` משפיעות כמו קריאה אחת.
-* בדפדפן אפשר לקרוא ל-`preinitModule` בכל מצב: בזמן רינדור קומפוננטה, בתוך effect, בתוך event handler, וכן הלאה.
-* ברינדור צד שרת או ברינדור Server Components, ל-`preinitModule` יש השפעה רק אם קוראים לה בזמן רינדור קומפוננטה או בהקשר async שמקורו ברינדור קומפוננטה. קריאות אחרות ייחסמו.
+* בדפדפן אפשר לקרוא ל-`preinitModule` בכל מצב: בזמן רינדור קומפונטה, בתוך אפקט, בתוך מטפל באירועים, וכן הלאה.
+* ברינדור צד שרת או ברינדור רכיבי שרת, ל-`preinitModule` יש רק רק אם קוראים לה בזמן רינדור קומפוננטה או בהקשר אסינכרון שמקורו ברינדור קומפוננטה. קריאות אחרות ייחסמו.
 
 ---
 
 ## שימוש {/*usage*/}
 
-### Preloading בזמן רינדור {/*preloading-when-rendering*/}
+### טעינה מראש בזמן רינדור {/*preloading-when-rendering*/}
 
-קראו ל-`preinitModule` בזמן רינדור קומפוננטה אם אתם יודעים שהיא או הילדים שלה ישתמשו במודול ספציפי, ואם מקובל עליכם שהמודול יוערך וייכנס לפעולה מיד כשהורדתו מסתיימת.
+קראו ל-`preinitModule` בזמן רינדור קומפוננטה אם אתם יודעים שהיא או הילדים שלה ישתמשו במודול ספציפי, ואם מקובל עליכם שהמודול יוערך וייכנס לפעול מיד כשהורדתו מסתיימת.
 
 ```js
 import { preinitModule } from 'react-dom';
@@ -85,11 +85,11 @@ function AppRoot() {
 }
 ```
 
-אם אתם רוצים שהדפדפן יוריד את המודול אבל לא יריץ אותו מייד, השתמשו ב-[`preloadModule`](/reference/react-dom/preloadModule) במקום. אם אתם רוצים לבצע preinit לסקריפט שאינו מודול ESM, השתמשו ב-[`preinit`](/reference/react-dom/preinit).
+אם אתם רוצים שהדפדפן יוריד את המודול אבל לא יריץ אותו מייד, השתמשו ב-[`preloadModule`](/reference/react-dom/preloadModule) במקום. אם אתם רוצים לבצע preinit לקריפט שאינו מודול ESM, השתמשו ב-[`preinit`](/reference/react-dom/preinit).
 
-### Preloading בתוך event handler {/*preloading-in-an-event-handler*/}
+### טוען מראש בתוך מטפל באירועים {/*preloading-in-an-event-handler*/}
 
-קראו ל-`preinitModule` בתוך event handler לפני מעבר לעמוד או מצב שבהם המודול יידרש. כך התהליך מתחיל מוקדם יותר לעומת קריאה בזמן רינדור העמוד או המצב החדש.
+קראו ל-`preinitModule` בתוך מטפל באירועים לפני מעבר וכנס או מצב המודול יידרש. כך מתחילים להמשך קריאה בזמן רינדור העמוד או המצב החדש.
 
 ```js
 import { preinitModule } from 'react-dom';

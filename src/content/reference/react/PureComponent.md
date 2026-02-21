@@ -1,16 +1,16 @@
 ---
-title: PureComponent
+title: "PureComponent"
 ---
 
 <Pitfall>
 
-אנחנו ממליצים להגדיר קומפוננטות כפונקציות במקום classes. [ראו איך לבצע מיגרציה.](#alternatives)
+אנחנו ממליצים להגדיר קומפוננטות כפונקציות במקום שיעורים. [ראו איך לבצע מיגרציה.](#alternatives)
 
 </Pitfall>
 
 <Intro>
 
-`PureComponent` דומה ל-[`Component`](/reference/react/Component) אבל מדלגת על רינדורים חוזרים עבור אותם props ו-state. קומפוננטות class עדיין נתמכות ב-React, אבל אנחנו לא ממליצים להשתמש בהן בקוד חדש.
+`PureComponent` דומה ל-[`Component`](/reference/react/Component) אבל מדלגת על רינדורים חוזרים עבורם props ו-state. כיתת קומפוננטות עדיין נתמכות ב-React, אבל אנחנו לא ממליצים להשתמש בקוד חדש.
 
 ```js
 class Greeting extends PureComponent {
@@ -26,11 +26,11 @@ class Greeting extends PureComponent {
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `PureComponent` {/*purecomponent*/}
 
-כדי לדלג על רינדור חוזר של class component עבור אותם props ו-state, הרחיבו את `PureComponent` במקום את [`Component`:](/reference/react/Component)
+כדי לדלג על רינדור חוזר של רכיב המחלקה עבורם props ו-state, הרחיבו את `PureComponent` במקום את [`Component`:](/reference/react/Component)
 
 ```js
 import { PureComponent } from 'react';
@@ -42,18 +42,18 @@ class Greeting extends PureComponent {
 }
 ```
 
-`PureComponent` היא תת-מחלקה של `Component` ותומכת [בכל ה-APIs של `Component`.](/reference/react/Component#reference) הרחבה של `PureComponent` שקולה להגדרת מתודת [`shouldComponentUpdate`](/reference/react/Component#shouldcomponentupdate) מותאמת אישית שמשווה shallow את ה-props וה-state.
+`PureComponent` היא תת-מחלקה של `Component` ותומכת [בכל ה-APIs של `Component`.](/reference/react/Component#reference) הרחבה של `PureComponent` שק לולה הגדרת מתודת [`shouldComponentUpdate`](/reference/hould/component את#) ווה אישי/react/Component את# ה-props וה-state.
 
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
 ---
 
 ## שימוש {/*usage*/}
 
-### דילוג על רינדורים חוזרים מיותרים עבור class components {/*skipping-unnecessary-re-renders-for-class-components*/}
+### דילוג על רינדורים חוזרים מיותרים עבור רכיבי הכיתה {/*skipping-unnecessary-re-renders-for-class-components*/}
 
-React בדרך כלל מרנדרת קומפוננטה מחדש בכל פעם שההורה שלה מרונדר מחדש. כאופטימיזציה, אפשר ליצור קומפוננטה ש-React לא תרנדר מחדש כשההורה מרונדר מחדש, כל עוד ה-props וה-state החדשים שלה זהים לישנים. [Class components](/reference/react/Component) יכולות להצטרף להתנהגות הזו על ידי הרחבת `PureComponent`:
+React בדרך כלל מרנדרת קומפוננת מחדש בכל פעם שהורה שלה מרונדר מחדש. כאופטימיזציה, אפשר ליצור פוננטה ש-React לא תרנדר מחדש כשההורה מרונדר מחדש, כל עוד ה-props וה-state החדשים שלהן לישנים. [רכיבי כיתה](/reference/react/Component) יכולים להצטרף להתנהגות הזו על ידי הרחבת `PureComponent`:
 
 ```js {1}
 class Greeting extends PureComponent {
@@ -63,9 +63,9 @@ class Greeting extends PureComponent {
 }
 ```
 
-לקומפוננטת React תמיד צריכה להיות [לוגיקת רינדור טהורה.](/learn/keeping-components-pure) כלומר, היא חייבת להחזיר את אותו פלט אם ה-props, ה-state וה-context לא השתנו. בשימוש ב-`PureComponent` אתם מצהירים בפני React שהקומפוננטה עומדת בדרישה הזו, לכן React לא צריכה לרנדר מחדש כל עוד ה-props וה-state לא השתנו. עם זאת, הקומפוננטה עדיין תרונדר מחדש אם context שבו היא משתמשת משתנה.
+לקומפוננטת React תמיד צריכה להיות [לוגיקת רינדור טהורה.](/learn/keeping-components-pure) כלומר, היא חייבת להחזיר אותו פלט אם ה-props, ה-state וה-הקשר לא השתתנו. בשימוש ב-`PureComponent` אתם מצירים בפני React שהקומפוננתה עומדת בדרישה הזו, לכן React לא צריכה לרנדר מחדש כל עוד ה-props וה-state לא השתנתנו. עם זאת, הקומפוננטה עדיין תרונדר מחדש אם ההקשר שבו היא משתמשת.
 
-בדוגמה הזו שימו לב שקומפוננטת `Greeting` מרונדרת מחדש בכל פעם ש-`name` משתנה (כי זה אחד ה-props שלה), אבל לא כש-`address` משתנה (כי הוא לא מועבר ל-`Greeting` כ-prop):
+בדוגמה הזו שימו לב שקומפונטת `Greeting` מרונדרת מחדש בכל פעם ש-`name` ranking (כי זה אחד ה-props שלה), אבל לא כש-`address` (כי הוא לא מועבר ל-`Greeting` כ-prop):
 
 <Sandpack>
 
@@ -109,7 +109,7 @@ label {
 
 <Pitfall>
 
-אנחנו ממליצים להגדיר קומפוננטות כפונקציות במקום classes. [ראו איך לבצע מיגרציה.](#alternatives)
+אנחנו ממליצים להגדיר קומפוננטות כפונקציות במקום שיעורים. [ראו איך לבצע מיגרציה.](#alternatives)
 
 </Pitfall>
 
@@ -119,7 +119,7 @@ label {
 
 ### מיגרציה מ-`PureComponent` class component לפונקציה {/*migrating-from-a-purecomponent-class-component-to-a-function*/}
 
-אנחנו ממליצים להשתמש בקומפוננטות פונקציה במקום [class components](/reference/react/Component) בקוד חדש. אם יש לכם class components קיימות שמשתמשות ב-`PureComponent`, כך אפשר להמיר אותן. זה הקוד המקורי:
+אנחנו ממליצים להשתמש בקומפוננטות פונקציה במקום [רכיבי כיתה](/reference/react/Component) בקוד חדש. אם יש לכם רכיבי כיתה קיימות שמשתמשות ב-`PureComponent`, כך אפשר להמיר אותן. זה הקוד המקורי:
 
 <Sandpack>
 
@@ -203,6 +203,6 @@ label {
 
 <Note>
 
-בניגוד ל-`PureComponent`, [`memo`](/reference/react/memo) לא משווה בין state חדש לישן. בקומפוננטות פונקציה, קריאה ל-[פונקציית `set`](/reference/react/useState#setstate) עם אותו state [כבר מונעת רינדורים חוזרים כברירת מחדל,](/reference/react/memo#updating-a-memoized-component-using-state) גם בלי `memo`.
+נדרש ל-`PureComponent`, [`memo`](/reference/react/memo) לא משווה בין state חדש לישן. בקומפוננטות פונקציה, קריאה ל-[פונקציית `set`](/reference/react/useState#setstate) עם אותו state [כבר מונעת רינדורים חוזרים כברירתם מחדל,](/reference/react/memo#updating-a-memoized-component-using-state) גם בלי `memo`.
 
 </Note>

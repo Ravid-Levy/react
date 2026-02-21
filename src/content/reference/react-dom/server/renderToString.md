@@ -1,5 +1,5 @@
 ---
-title: renderToString
+title: "renderToString"
 ---
 
 <Pitfall>
@@ -22,7 +22,7 @@ const html = renderToString(reactNode, options?)
 
 ---
 
-## Reference {/*reference*/}
+## הפניה {/*reference*/}
 
 ### `renderToString(reactNode, options?)` {/*rendertostring*/}
 
@@ -34,24 +34,24 @@ import { renderToString } from 'react-dom/server';
 const html = renderToString(<App />);
 ```
 
-בצד הלקוח, קראו ל-[`hydrateRoot`](/reference/react-dom/client/hydrateRoot) כדי להפוך את ה-HTML שנוצר בשרת לאינטראקטיבי.
+בצד, קראו ל-[`hydrateRoot`](/reference/react-dom/client/hydrateRoot) כדי להפוך את ה-HTML בשרת לאינטראקטיביות.
 
-[ראו דוגמאות נוספות בהמשך.](#usage)
+[עוד דוגמאות נוספות.](#usage)
 
-#### Parameters {/*parameters*/}
+#### פרמטרים {/*parameters*/}
 
-* `reactNode`: React node שברצונכם לרנדר ל-HTML. למשל, JSX node כמו `<App />`.
+* `reactNode`: React צומת שברצונכם לרנדר ל-HTML. למשל, צומת JSX כמו `<App />`.
 
 * **אופציונלי** `options`: אובייקט עבור רינדור שרת.
-  * **אופציונלי** `identifierPrefix`: מחרוזת קידומת ש-React משתמשת בה עבור מזהים שנוצרים על ידי [`useId`.](/reference/react/useId) שימושי למניעת התנגשויות כשמשתמשים בכמה roots באותו עמוד. חייב להיות זהה לקידומת שמועברת ל-[`hydrateRoot`.](/reference/react-dom/client/hydrateRoot#parameters)
+  * **אופציונלי** `identifierPrefix`: מחרוזת קידומת ש-React משתמשת בה עבור מזהים עובדים על ידי [`useId`.](/reference/react/useId) שימושי למניעת התנגשויות כשמשתמשים בכמה שורשים באותו עמוד. חייב להיות זהה לקידומת שמועברת ל-[`hydrateRoot`.](/reference/react-dom/client/hydrateRoot#parameters)
 
-#### Returns {/*returns*/}
+#### מחזירה {/*returns*/}
 
 מחרוזת HTML.
 
-#### Caveats {/*caveats*/}
+#### אזהרות {/*caveats*/}
 
-* ל-`renderToString` יש תמיכה מוגבלת ב-Suspense. אם קומפוננטה מבצעת suspend, `renderToString` שולחת מיד את ה-fallback שלה כ-HTML.
+* ל-`renderToString` יש תמיכה מוגבלת ב-Suspense. אם פונתה מבצעת suspend, `renderToString` שולחת מיד את ה-fallback שלה כ-HTML.
 
 * `renderToString` עובדת בדפדפן, אבל שימוש בה בקוד לקוח [לא מומלץ.](#removing-rendertostring-from-the-client-code)
 
@@ -61,7 +61,7 @@ const html = renderToString(<App />);
 
 ### רינדור עץ React כ-HTML למחרוזת {/*rendering-a-react-tree-as-html-to-a-string*/}
 
-קראו ל-`renderToString` כדי לרנדר את האפליקציה שלכם למחרוזת HTML שאפשר לשלוח בתגובת השרת:
+קראו ל-`renderToString` כדי לרנדר את האפליקציה שלכם למחרוזת HTML אפשר לשלוח בתגובת השרת:
 
 ```js {5-6}
 import { renderToString } from 'react-dom/server';
@@ -73,7 +73,7 @@ app.use('/', (request, response) => {
 });
 ```
 
-כך יתקבל פלט ה-HTML הראשוני הלא אינטראקטיבי של קומפוננטות React שלכם. בצד הלקוח תצטרכו לקרוא ל-[`hydrateRoot`](/reference/react-dom/client/hydrateRoot) כדי לבצע *hydration* ל-HTML שנוצר בשרת ולהפוך אותו לאינטראקטיבי.
+כך יתקבל פלט ה-HTML הראשוני הלא אינטראקטיבי של קומפונטות React שלכם. בצד תצטרכו לקרוא ל-[`hydrateRoot`](/reference/react-dom/client/hydrateRoot) כדי לבצע *hydration* ל-HTML בשרת ולהפוך אותו לאינטראקטיבי.
 
 
 <Pitfall>
@@ -86,14 +86,14 @@ app.use('/', (request, response) => {
 
 ## חלופות {/*alternatives*/}
 
-### מעבר מ-`renderToString` למתודת streaming בצד שרת {/*migrating-from-rendertostring-to-a-streaming-method-on-the-server*/}
+### המשך מ-`renderToString` למתודת הזרמת בצד שרת {/*migrating-from-rendertostring-to-a-streaming-method-on-the-server*/}
 
-`renderToString` מחזירה מחרוזת מיד, ולכן לא תומכת ב-streaming או בהמתנה לנתונים.
+`renderToString` מחזירה מחרוזת מיד, לא תומכת ב-streaming או בהמתנה לנתונים.
 
 כשאפשר, מומלץ להשתמש בחלופות המלאות האלה:
 
 * אם אתם משתמשים ב-Node.js, השתמשו ב-[`renderToPipeableStream`.](/reference/react-dom/server/renderToPipeableStream)
-* אם אתם משתמשים ב-Deno או runtime מודרני של edge עם [Web Streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API), השתמשו ב-[`renderToReadableStream`.](/reference/react-dom/server/renderToReadableStream)
+* אם אתם משתמשים ב-Deno או זמן ריצה מודרני של edge עם [זרמי אינטרנט](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API), השתמשו ב-[`renderToReadableStream`.](/reference/react-dom/server/renderToReadableStream)
 
 אפשר להמשיך להשתמש ב-`renderToString` אם סביבת השרת שלכם לא תומכת ב-streams.
 
@@ -101,7 +101,7 @@ app.use('/', (request, response) => {
 
 ### הסרת `renderToString` מקוד לקוח {/*removing-rendertostring-from-the-client-code*/}
 
-לפעמים `renderToString` משמשת בצד לקוח כדי להמיר קומפוננטה ל-HTML.
+לפעמים `renderToString` משתמשת בצד לקוח כדי להמיר קומפונטה ל-HTML.
 
 ```js {1-2}
 // 🚩 Unnecessary: using renderToString on the client
@@ -111,7 +111,7 @@ const html = renderToString(<MyIcon />);
 console.log(html); // For example, "<svg>...</svg>"
 ```
 
-ייבוא של `react-dom/server` **בצד לקוח** מגדיל את גודל ה-bundle ללא צורך ויש להימנע ממנו. אם צריך לרנדר קומפוננטה ל-HTML בדפדפן, השתמשו ב-[`createRoot`](/reference/react-dom/client/createRoot) וקראו את ה-HTML מתוך ה-DOM:
+ייבוא ​​של `react-dom/server` **בצד לקוח** מגדיל את גודל ה-bundle ללא צורך ממנו. אם צריך לרנדר קומפונטה ל-HTML בדפדפן, השתמשו ב-[`createRoot`](/reference/react-dom/client/createRoot) וקראו את ה-HTML מתוך ה-DOM:
 
 ```js
 import { createRoot } from 'react-dom/client';
@@ -125,16 +125,16 @@ flushSync(() => {
 console.log(div.innerHTML); // For example, "<svg>...</svg>"
 ```
 
-הקריאה ל-[`flushSync`](/reference/react-dom/flushSync) נדרשת כדי שה-DOM יתעדכן לפני שקוראים את המאפיין [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML).
+הקריאה ל-[`flushSync`](/reference/react-dom/flushSync) חייבת כדי שה-DOM יתעדכן לפני שקוראים את המפיין [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML).
 
 ---
 
 ## פתרון תקלות {/*troubleshooting*/}
 
-### כשקומפוננטה מבצעת suspend, ה-HTML תמיד כולל fallback {/*when-a-component-suspends-the-html-always-contains-a-fallback*/}
+### כשקומפונטה מבצעת suspend, ה-HTML תמיד כולל fallback {/*when-a-component-suspends-the-html-always-contains-a-fallback*/}
 
 `renderToString` לא תומכת באופן מלא ב-Suspense.
 
-אם קומפוננטה כלשהי מבצעת suspend (למשל כי היא מוגדרת עם [`lazy`](/reference/react/lazy) או מביאה נתונים), `renderToString` לא תחכה שהתוכן שלה ייפתר. במקום זאת, `renderToString` תמצא את גבול ה-[`<Suspense>`](/reference/react/Suspense) הקרוב ביותר מעליה ותרנדר את prop ה-`fallback` שלו בתוך ה-HTML. התוכן לא יופיע עד שטעינת קוד הלקוח תושלם.
+אם קומפוננטה בכל מבצעת suspend (מכאן שהיא מוגדרת עם [`lazy`](/reference/react/lazy) או מביא נתונים), `renderToString` לא תחכה שהתוכן שלה ייפתר. במקום זאת, `renderToString` תמצא את גבול ה-[`<Suspense>`](/reference/react/Suspense) הקרוב ביותר מעליה ותרנדר את הפרופס ה-`fallback` שלו בתוך ה-HTML. התוכן לא יופי עד שטעינת קוד הלקוח תושלם.
 
-כדי לפתור זאת, השתמשו באחד מ-[פתרונות ה-streaming המומלצים.](#migrating-from-rendertostring-to-a-streaming-method-on-the-server) הם יכולים להזרים תוכן במקטעים כשהוא נפתר בשרת, כך שהמשתמש יראה את העמוד מתמלא בהדרגה עוד לפני שקוד הלקוח נטען.
+כדי לפתור זאת, השתמשו באחד מ-[פתרונות ה-streaming המומלצים.](#migrating-from-rendertostring-to-a-streaming-method-on-the-server) הם יכולים להזרים תוכן במקטעים בזמן נפתר בשרת, כך שהמשתמש יראה את העמוד מתמלא בהדרגה עוד לפני שקוד הלקוח נטען.
